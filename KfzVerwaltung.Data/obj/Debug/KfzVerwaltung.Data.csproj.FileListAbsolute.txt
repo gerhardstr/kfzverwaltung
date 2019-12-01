@@ -1,0 +1,5 @@
+F:\entw\KfzVerwaltung\KfzVerwaltung.Data\obj\Debug\KfzVerwaltung.Data.csprojAssemblyReference.cache
+F:\entw\KfzVerwaltung\KfzVerwaltung.Data\bin\Debug\KfzVerwaltung.Data.dll
+F:\entw\KfzVerwaltung\KfzVerwaltung.Data\bin\Debug\KfzVerwaltung.Data.pdb
+F:\entw\KfzVerwaltung\KfzVerwaltung.Data\obj\Debug\KfzVerwaltung.Data.dll
+F:\entw\KfzVerwaltung\KfzVerwaltung.Data\obj\Debug\KfzVerwaltung.Data.pdb

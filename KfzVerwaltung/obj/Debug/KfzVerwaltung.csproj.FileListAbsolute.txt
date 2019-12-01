@@ -1,0 +1,16 @@
+F:\entw\KfzVerwaltung\KfzVerwaltung\bin\Debug\KfzVerwaltung.exe.config
+F:\entw\KfzVerwaltung\KfzVerwaltung\bin\Debug\KfzVerwaltung.exe
+F:\entw\KfzVerwaltung\KfzVerwaltung\bin\Debug\KfzVerwaltung.pdb
+F:\entw\KfzVerwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.csprojAssemblyReference.cache
+F:\entw\KfzVerwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.FormLogin.resources
+F:\entw\KfzVerwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.FormMain.resources
+F:\entw\KfzVerwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.Properties.Resources.resources
+F:\entw\KfzVerwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.csproj.GenerateResource.cache
+F:\entw\KfzVerwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.exe
+F:\entw\KfzVerwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.pdb
+F:\entw\KfzVerwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.FormKfz.resources
+F:\entw\KfzVerwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.UserControlKfz.resources
+F:\entw\KfzVerwaltung\KfzVerwaltung\bin\Debug\KfzVerwaltung.Data.dll
+F:\entw\KfzVerwaltung\KfzVerwaltung\bin\Debug\KfzVerwaltung.Data.pdb
+F:\entw\KfzVerwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.csproj.CopyComplete
+F:\entw\KfzVerwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.UserControlCosts.resources
