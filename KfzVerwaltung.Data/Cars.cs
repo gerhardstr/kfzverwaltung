@@ -8,7 +8,7 @@ namespace KfzVerwaltung.Data
 {
     public class Cars
     {
-        private int leistung = 0;
+        private double leistung = 0;
 
         #region properties
         public string Marke { get; set; } = string.Empty;
@@ -17,13 +17,13 @@ namespace KfzVerwaltung.Data
         public DateTime DatumZulassung { get; set; } = DateTime.Now;
         public double Gesamtkosten { get; set; } // todo
         public string Farbe { get; set; } = string.Empty;
-        public int LeistungKW { get; set; } = 0;
-        public int LeistungPS
+        public double LeistungKW { get; set; } = 0;
+        public double LeistungPS
         {
             get
             {
                 double temp = (double)this.LeistungKW * 1.35962;
-                return (int)temp;
+                return (double)temp;
             }
             set
             {

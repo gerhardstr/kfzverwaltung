@@ -27,7 +27,7 @@ namespace KfzVerwaltung
             InitializeComponent();
             this.cars = cars;
             this.comboBoxKategorie.SelectedItem = cars.Kategorie;
-            this.textBoxCostsDatum.Text = cars.DatumKategorieXy.ToShortDateString();
+            this.dateTimePickerCosts.Text = cars.DatumKategorieXy.ToShortDateString();
             this.textBoxCostsBemerkung.Text = cars.Bemerkung;
             this.textBoxCostsKosten.Text = Convert.ToString(cars.Kosten);
             this.textBoxCostsKm.Text = Convert.ToString(cars.Kilometerstand);
@@ -41,11 +41,7 @@ namespace KfzVerwaltung
                 {
                     if (this.cars == null) this.cars = new Cars();
                     this.cars.Kategorie = this.comboBoxKategorie.SelectedItem.ToString();
-
-                    if (!DateTime.TryParse(textBoxCostsDatum.Text, out DateTime d)) // start parsing action
-                        MessageBox.Show($"Der Wert >{this.textBoxCostsDatum.Text}< ist kein Datum. Bitte korrigieren.");
-                    else
-                        this.cars.DatumKategorieXy = DateTime.Parse(textBoxCostsDatum.Text);
+                    this.cars.DatumKategorieXy = DateTime.Parse(dateTimePickerCosts.Text);
                     if (!double.TryParse(this.textBoxCostsKm.Text, out double b))
                         MessageBox.Show($"Der Wert >{this.textBoxCostsKm.Text}< ist keine Zahl. Bitte korrigieren.");
                     else

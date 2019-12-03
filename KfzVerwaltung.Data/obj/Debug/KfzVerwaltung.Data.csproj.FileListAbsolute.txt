@@ -3,3 +3,8 @@ F:\entw\KfzVerwaltung\KfzVerwaltung.Data\bin\Debug\KfzVerwaltung.Data.dll
 F:\entw\KfzVerwaltung\KfzVerwaltung.Data\bin\Debug\KfzVerwaltung.Data.pdb
 F:\entw\KfzVerwaltung\KfzVerwaltung.Data\obj\Debug\KfzVerwaltung.Data.dll
 F:\entw\KfzVerwaltung\KfzVerwaltung.Data\obj\Debug\KfzVerwaltung.Data.pdb
+C:\Solutions\kfzverwaltung\KfzVerwaltung.Data\obj\Debug\KfzVerwaltung.Data.csprojAssemblyReference.cache
+C:\Solutions\kfzverwaltung\KfzVerwaltung.Data\obj\Debug\KfzVerwaltung.Data.dll
+C:\Solutions\kfzverwaltung\KfzVerwaltung.Data\obj\Debug\KfzVerwaltung.Data.pdb
+C:\Solutions\kfzverwaltung\KfzVerwaltung.Data\bin\Debug\KfzVerwaltung.Data.dll
+C:\Solutions\kfzverwaltung\KfzVerwaltung.Data\bin\Debug\KfzVerwaltung.Data.pdb

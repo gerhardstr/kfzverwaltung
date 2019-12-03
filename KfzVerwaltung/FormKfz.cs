@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Linq;
 using KfzVerwaltung.Data;
 
 namespace KfzVerwaltung
@@ -34,11 +33,11 @@ namespace KfzVerwaltung
             this.textBoxMarke.Text = cars.Marke;
             this.textBoxModell.Text = cars.Modell;
             this.textBoxKennzeichen.Text = cars.KfzKennzeichen;
-            this.textBoxDatumZulassung.Text = cars.DatumZulassung.ToShortDateString();
+            this.dateTimePickerZulassung.Text = cars.DatumZulassung.ToShortDateString();
             this.textBoxKW.Text = Convert.ToString(cars.LeistungKW);
             this.textBoxPS.Text = Convert.ToString(cars.LeistungPS);
             this.textBoxFarbe.Text = cars.Farbe;
-            // this.textBoxFarbe.BackColor = car.Farbe; // todo
+            //this.textBoxFarbe.BackColor = cars.Farbe; // todo
             this.textBoxWartungsintervall.Text = Convert.ToString(cars.Wartungsintervall);
 
             UserControlCosts uc = null;
@@ -66,19 +65,21 @@ namespace KfzVerwaltung
             this.cars.Marke = this.textBoxMarke.Text;
             this.cars.Modell = this.textBoxModell.Text;
             this.cars.KfzKennzeichen = this.textBoxKennzeichen.Text;
-            if (!DateTime.TryParse(textBoxDatumZulassung.Text, out DateTime d)) // start parsing action
-                MessageBox.Show($"Der Wert >{this.textBoxDatumZulassung.Text}< ist kein Datum. Bitte korrigieren.");
+            if (!DateTime.TryParse(dateTimePickerZulassung.Text, out DateTime d)) // start parsing action
+                MessageBox.Show($"Der Wert >{this.dateTimePickerZulassung.Text}< ist kein Datum. Bitte korrigieren.");
             else
-                this.cars.DatumZulassung = DateTime.Parse(textBoxDatumZulassung.Text);
+                this.cars.DatumZulassung = DateTime.Parse(dateTimePickerZulassung.Text);
 
             double total = 0;
             foreach (Cars cart in cars.CarList)
             {
                 total = total + cart.Kosten;  // sum all costs
             }
+
             this.cars.Gesamtkosten = total;
-            this.cars.LeistungKW = Convert.ToInt32(this.textBoxKW.Text);
+            this.cars.LeistungKW = Convert.ToDouble(this.textBoxKW.Text);
             this.cars.Farbe = this.textBoxFarbe.Text;
+					
             this.cars.Wartungsintervall = Convert.ToDouble(this.textBoxWartungsintervall.Text);
 
             this.cars.CarList = new List<Cars>();
@@ -97,13 +98,14 @@ namespace KfzVerwaltung
 
         private void textBoxKW_TextChanged(object sender, EventArgs e)
         {
-            this.textBoxPS.Refresh();
-        }
+						if (!string.IsNullOrEmpty(this.textBoxKW.Text))
+							this.textBoxPS.Text = (int.Parse(this.textBoxKW.Text) * 1.35962).ToString();
+				}
 
         private void buttonAddUserControlCosts_Click(object sender, EventArgs e)
         {
             UserControlCosts uc = new UserControlCosts();
             this.panelListCosts.Controls.Add(uc);
         }
-    }
+	}
 }

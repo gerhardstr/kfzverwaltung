@@ -7,22 +7,26 @@ using System.Windows.Forms;
 namespace KfzVerwaltung
 {
 
-    // ToDo
-    // Datetime fixin
-    // blank car save fixing
-    // Bilder anzeigen wenn VW, SEAT, etc.
-    // Settings zurückschreiben
-    // Fehler für andere Datei abfangen
-    // grid layout ausblenden?
-    // eventuell Logo Del ändern
-    // anzeige speichervorgang
-    // Abfrage speichern beim Beenden
-    // FormLogin abbrechen nochmal testen
-    // check auf numerische Werte bei Eingabe kw und wartungsintervall
-    // textboxfarbe ####### setzen
-    // Eingabevalidierung 
+	// ToDo
+	// 1 Klasse Auto, 1 Klasse Kosten, 1 Klasse Tankkosten
+	// blank car save fixing
+	// Settings zurückschreiben
+	// check auf numerische Werte bei Eingabe kw und wartungsintervall
+	// Fehler für andere Datei abfangen
+	// textboxfarbe ####### setzen
+	// Abfrage speichern beim Beenden
+	// check auf numerische Werte bei Eingabe kw und wartungsintervall
 
-    static class Program
+
+
+	// nicetohave
+	// Eingabevalidierung 
+	// Bilder anzeigen wenn VW, SEAT, etc.
+	// grid layout ausblenden?
+	// eventuell Logo Del ändern
+	// anzeige speichervorgang
+
+	static class Program
     {
         /// <summary>
         /// The main entry point for the application.
@@ -34,16 +38,8 @@ namespace KfzVerwaltung
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                //Anmeldung am Programm
-                FormLogin loginForm = new FormLogin();
-                if (loginForm.ShowDialog() == DialogResult.OK)
-                {
-                    Application.Run(new FormMain());
-                }
-                else
-                {
-                    MessageBox.Show("Sie haben leider nicht die Berechtigung das Programm zu nutzen.", "Keine Berechtigung", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+								Application.Run(new FormMain());
+                
             }
             catch (Exception ex)
             {
