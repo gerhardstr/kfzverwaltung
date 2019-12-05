@@ -13,16 +13,16 @@ namespace KfzVerwaltung
 {
     public partial class UserControlKfz : UserControl
     {
-        public Cars Cars { get; set; } = null;
+        public Car Car { get; set; } = null;
         public UserControlKfz()
         {
             InitializeComponent();
         }
 
-        public UserControlKfz(Cars car)
+        public UserControlKfz(Car car)
         {
             InitializeComponent();
-            this.Cars = car;
+            this.Car = car;
             this.labelMarke.Text = car.Marke;
             this.labelModell.Text = car.Modell;
             this.labelKennzeichen.Text = car.KfzKennzeichen;
@@ -32,16 +32,15 @@ namespace KfzVerwaltung
 
         private void UserControlKfz_MouseDoubleClick(object sender, EventArgs e)
         {
-            FormKfz kfzForm = new FormKfz(this.Cars);
+            FormKfz kfzForm = new FormKfz(this.Car);
             if (kfzForm.ShowDialog() == DialogResult.OK)
             {
-                this.labelMarke.Text = this.Cars.Marke;
-                this.labelModell.Text = this.Cars.Modell;
-                this.labelKennzeichen.Text = this.Cars.KfzKennzeichen;
-                this.labelDatumZulassung.Text = this.Cars.DatumZulassung.ToShortDateString();
-                this.labelGesamtkosten.Text = Convert.ToString(this.Cars.Gesamtkosten);
+                this.labelMarke.Text = this.Car.Marke;
+                this.labelModell.Text = this.Car.Modell;
+                this.labelKennzeichen.Text = this.Car.KfzKennzeichen;
+                this.labelDatumZulassung.Text = this.Car.DatumZulassung.ToShortDateString();
+                this.labelGesamtkosten.Text = Convert.ToString(this.Car.Gesamtkosten);
             }
-
         }
 
         private void pictureBoxKfzDelete_Click(object sender, EventArgs e)

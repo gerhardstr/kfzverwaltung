@@ -11,101 +11,107 @@ using KfzVerwaltung.Data;
 
 namespace KfzVerwaltung
 {
-    public partial class FormKfz : Form
-    {
-        private Cars cars = null;
+	public partial class FormKfz : Form
+	{
+		private Car car = null;
 
-        public Cars Cars
-        {
-            get { return cars; }
-            set { cars = value; }
-        }
+		public Car Car
+		{
+			get { return car; }
+			set { car = value; }
+		}
 
-        public FormKfz()
-        {
-            InitializeComponent();
-        }
+		public FormKfz()
+		{
+			InitializeComponent();
+		}
 
-        public FormKfz(Cars cars)
-        {
-            InitializeComponent();
-            this.cars = cars;
-            this.textBoxMarke.Text = cars.Marke;
-            this.textBoxModell.Text = cars.Modell;
-            this.textBoxKennzeichen.Text = cars.KfzKennzeichen;
-            this.dateTimePickerZulassung.Text = cars.DatumZulassung.ToShortDateString();
-            this.textBoxKW.Text = Convert.ToString(cars.LeistungKW);
-            this.textBoxPS.Text = Convert.ToString(cars.LeistungPS);
-            this.textBoxFarbe.Text = cars.Farbe;
-            //this.textBoxFarbe.BackColor = cars.Farbe; // todo
-            this.textBoxWartungsintervall.Text = Convert.ToString(cars.Wartungsintervall);
+		public FormKfz(Car car)
+		{
+			InitializeComponent();
+			this.car = car;
+			this.textBoxMarke.Text = car.Marke;
+			this.textBoxModell.Text = car.Modell;
+			this.textBoxKennzeichen.Text = car.KfzKennzeichen;
+			this.dateTimePickerZulassung.Text = car.DatumZulassung.ToShortDateString();
+			this.textBoxKW.Text = Convert.ToString(car.LeistungKW);
+			this.textBoxPS.Text = Convert.ToString(car.LeistungPS);
+			this.textBoxFarbe.Text = car.Farbe;
+			//this.textBoxFarbe.BackColor = cars.Farbe; // todo
+			this.textBoxWartungsintervall.Text = Convert.ToString(car.Wartungsintervall);
 
-            UserControlCosts uc = null;
-            foreach (Cars cart in cars.CarList)
-            {
-                uc = new UserControlCosts(cart);
-                this.panelListCosts.Controls.Add(uc);   
-            }
-        }
+			UserControlCost uc = null;
+			foreach (Cost cost in car.Costs)
+			{
+				uc = new UserControlCost(cost);
+				this.panelListCosts.Controls.Add(uc);
+			}
+		}
 
-        private void buttonKfzColor_Click(object sender, EventArgs e)
-        {
-            ColorDialog dlgColor = new ColorDialog();
-            dlgColor.AllowFullOpen = false; // user is not allowed to pick custom color
-            dlgColor.Color = textBoxFarbe.ForeColor;
+		private void buttonKfzColor_Click(object sender, EventArgs e)
+		{
+			ColorDialog dlgColor = new ColorDialog();
+			dlgColor.AllowFullOpen = false; // user is not allowed to pick custom color
+			dlgColor.Color = textBoxFarbe.ForeColor;
 
-            if (dlgColor.ShowDialog() == DialogResult.OK)
-                textBoxFarbe.BackColor = dlgColor.Color;
-            textBoxFarbe.Text = (dlgColor.Color.ToArgb() & 0x00FFFFFF).ToString("X6"); // Alpha, red, green, blue; filter out Alpha (& 0x00FFFFFF); format as hex
-        }
+			if (dlgColor.ShowDialog() == DialogResult.OK)
+				textBoxFarbe.BackColor = dlgColor.Color;
+			textBoxFarbe.Text = (dlgColor.Color.ToArgb() & 0x00FFFFFF).ToString("X6"); // Alpha, red, green, blue; filter out Alpha (& 0x00FFFFFF); format as hex
+		}
 
-        private void buttonKfzOK_Click(object sender, EventArgs e)
-        {
-            if (this.cars == null) this.cars = new Cars();
-            this.cars.Marke = this.textBoxMarke.Text;
-            this.cars.Modell = this.textBoxModell.Text;
-            this.cars.KfzKennzeichen = this.textBoxKennzeichen.Text;
-            if (!DateTime.TryParse(dateTimePickerZulassung.Text, out DateTime d)) // start parsing action
-                MessageBox.Show($"Der Wert >{this.dateTimePickerZulassung.Text}< ist kein Datum. Bitte korrigieren.");
-            else
-                this.cars.DatumZulassung = DateTime.Parse(dateTimePickerZulassung.Text);
+		private void buttonKfzOK_Click(object sender, EventArgs e)
+		{
+			if (this.car == null) this.car = new Car();
+			if ((String.IsNullOrEmpty(this.textBoxMarke.Text)) || (String.IsNullOrEmpty(this.textBoxModell.Text)) || (String.IsNullOrEmpty(this.textBoxKennzeichen.Text)))
+			{
+				this.textBoxMarke.BackColor = Color.Red;
+				this.textBoxModell.BackColor = Color.Red;
+				this.textBoxKennzeichen.BackColor = Color.Red;
+				MessageBox.Show("Die rot markierten Felder sind Pflichtfelder. Für die Anlage eines neuen Kfz füllen Sie diese bitte aus.", "Validierung", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+			else
+			{
+				this.car.Marke = this.textBoxMarke.Text;
+				this.car.Modell = this.textBoxModell.Text;
+				this.car.KfzKennzeichen = this.textBoxKennzeichen.Text;
+				this.car.DatumZulassung = DateTime.Parse(dateTimePickerZulassung.Text);
 
-            double total = 0;
-            foreach (Cars cart in cars.CarList)
-            {
-                total = total + cart.Kosten;  // sum all costs
-            }
-
-            this.cars.Gesamtkosten = total;
-            this.cars.LeistungKW = Convert.ToDouble(this.textBoxKW.Text);
-            this.cars.Farbe = this.textBoxFarbe.Text;
-					
-            this.cars.Wartungsintervall = Convert.ToDouble(this.textBoxWartungsintervall.Text);
-
-            this.cars.CarList = new List<Cars>();
-            foreach (UserControlCosts uc in this.panelListCosts.Controls)
-                if (uc.Cars != null) this.cars.CarList.Add(uc.Cars);
-
-            this.DialogResult = DialogResult.OK;
-            this.Close();
-        }
-
-        private void buttonKfzCancel_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
-        }
-
-        private void textBoxKW_TextChanged(object sender, EventArgs e)
-        {
-						if (!string.IsNullOrEmpty(this.textBoxKW.Text))
-							this.textBoxPS.Text = (int.Parse(this.textBoxKW.Text) * 1.35962).ToString();
+				double total = 0;
+				foreach (Cost cost in car.Costs)
+				{
+						total = total + cost.Kosten;  // sum all costs
 				}
 
-        private void buttonAddUserControlCosts_Click(object sender, EventArgs e)
-        {
-            UserControlCosts uc = new UserControlCosts();
-            this.panelListCosts.Controls.Add(uc);
-        }
+				this.car.Gesamtkosten = total;
+				if (!String.IsNullOrEmpty(this.textBoxKW.Text)) this.car.LeistungKW = Convert.ToDouble(this.textBoxKW.Text);
+				if (!String.IsNullOrEmpty(this.textBoxFarbe.Text)) this.car.Farbe = this.textBoxFarbe.Text;
+				if (!String.IsNullOrEmpty(this.textBoxWartungsintervall.Text)) this.car.Wartungsintervall = Convert.ToDouble(this.textBoxWartungsintervall.Text);
+
+				this.car.Costs = new List<Cost>();
+				foreach (UserControlCost uc in this.panelListCosts.Controls)
+					if (uc.Cost != null) this.car.Costs.Add(uc.Cost);
+
+				this.DialogResult = DialogResult.OK;
+				this.Close();
+			}
+		}
+
+		private void buttonKfzCancel_Click(object sender, EventArgs e)
+		{
+			this.DialogResult = DialogResult.Cancel;
+			this.Close();
+		}
+
+		private void textBoxKW_TextChanged(object sender, EventArgs e)
+		{
+			if (!string.IsNullOrEmpty(this.textBoxKW.Text))
+				this.textBoxPS.Text = (int.Parse(this.textBoxKW.Text) * 1.35962).ToString();
+		}
+
+		private void buttonAddUserControlCosts_Click(object sender, EventArgs e)
+		{
+			UserControlCost uc = new UserControlCost();
+			this.panelListCosts.Controls.Add(uc);
+		}
 	}
 }

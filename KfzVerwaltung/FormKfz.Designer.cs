@@ -72,9 +72,9 @@
 			this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.label1.Location = new System.Drawing.Point(9, 79);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(51, 16);
+			this.label1.Size = new System.Drawing.Size(57, 16);
 			this.label1.TabIndex = 0;
-			this.label1.Text = "Marke";
+			this.label1.Text = "Marke*";
 			// 
 			// textBoxMarke
 			// 
@@ -101,9 +101,9 @@
 			this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.label2.Location = new System.Drawing.Point(9, 105);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(55, 16);
+			this.label2.Size = new System.Drawing.Size(61, 16);
 			this.label2.TabIndex = 2;
-			this.label2.Text = "Modell";
+			this.label2.Text = "Modell*";
 			// 
 			// textBoxKennzeichen
 			// 
@@ -121,9 +121,9 @@
 			this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.label3.Location = new System.Drawing.Point(9, 132);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(119, 16);
+			this.label3.Size = new System.Drawing.Size(125, 16);
 			this.label3.TabIndex = 4;
-			this.label3.Text = "Kfz Kennzeichen";
+			this.label3.Text = "Kfz Kennzeichen*";
 			// 
 			// label4
 			// 
@@ -159,6 +159,8 @@
 			// 
 			// textBoxPS
 			// 
+			this.textBoxPS.BackColor = System.Drawing.SystemColors.Window;
+			this.textBoxPS.Enabled = false;
 			this.textBoxPS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.textBoxPS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.textBoxPS.Location = new System.Drawing.Point(502, 102);
@@ -378,6 +380,7 @@
 			// 
 			// dateTimePickerZulassung
 			// 
+			this.dateTimePickerZulassung.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.dateTimePickerZulassung.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.dateTimePickerZulassung.Format = System.Windows.Forms.DateTimePickerFormat.Short;
 			this.dateTimePickerZulassung.ImeMode = System.Windows.Forms.ImeMode.NoControl;

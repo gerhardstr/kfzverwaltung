@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
 			this.menuStrip = new System.Windows.Forms.MenuStrip();
 			this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,6 +47,7 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
+			this.notifyIconSave = new System.Windows.Forms.NotifyIcon(this.components);
 			this.menuStrip.SuspendLayout();
 			this.statusStripUserInformation.SuspendLayout();
 			this.SuspendLayout();
@@ -131,7 +133,7 @@
 			this.menuItemGridLayout.Image = global::KfzVerwaltung.Properties.Resources.GridApplication_16x;
 			this.menuItemGridLayout.Name = "menuItemGridLayout";
 			this.menuItemGridLayout.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.G)));
-			this.menuItemGridLayout.Size = new System.Drawing.Size(180, 22);
+			this.menuItemGridLayout.Size = new System.Drawing.Size(177, 22);
 			this.menuItemGridLayout.Text = "Grid Layout";
 			this.menuItemGridLayout.Click += new System.EventHandler(this.menuItemGridLayout_Click);
 			// 
@@ -217,6 +219,11 @@
 			this.label5.TabIndex = 7;
 			this.label5.Text = "Gesamtkosten";
 			// 
+			// notifyIconSave
+			// 
+			this.notifyIconSave.Text = "notifyIcon1";
+			this.notifyIconSave.Visible = true;
+			// 
 			// FormMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -264,6 +271,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.NotifyIcon notifyIconSave;
 	}
 }
 

@@ -24,9 +24,9 @@ C:\Solutions\kfzverwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.FormKfz.resourc
 C:\Solutions\kfzverwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.FormLogin.resources
 C:\Solutions\kfzverwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.FormMain.resources
 C:\Solutions\kfzverwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.Properties.Resources.resources
-C:\Solutions\kfzverwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.UserControlCosts.resources
 C:\Solutions\kfzverwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.UserControlKfz.resources
 C:\Solutions\kfzverwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.csproj.GenerateResource.cache
 C:\Solutions\kfzverwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.csproj.CopyComplete
 C:\Solutions\kfzverwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.exe
 C:\Solutions\kfzverwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.pdb
+C:\Solutions\kfzverwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.UserControlCost.resources
