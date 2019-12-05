@@ -16,7 +16,6 @@ namespace KfzVerwaltung
 		private SecuredFile securedFile = null;
 		private string masterPassword = string.Empty;
 		private string userPath = string.Empty;
-		private static NotifyIcon notico;
 
 		public FormMain()
 		{
@@ -97,8 +96,8 @@ namespace KfzVerwaltung
 
 			int ucTop = 0;
 			if (this.panelList.Controls.Count > 0)
-				//Styling
-				ucTop = this.panelList.Controls[this.panelList.Controls.Count - 1].Location.Y + this.panelList.Controls[this.panelList.Controls.Count - 1].Size.Height;
+			//Styling
+			ucTop = this.panelList.Controls[this.panelList.Controls.Count - 1].Location.Y + this.panelList.Controls[this.panelList.Controls.Count - 1].Size.Height;
 			userControl.Location = new Point(5, ucTop + 2);
 			userControl.Width = this.panelList.ClientRectangle.Width - 30;
 			userControl.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -147,7 +146,7 @@ namespace KfzVerwaltung
 			this.securedFile.LastUpdate = DateTime.Now;
 			if (!String.IsNullOrEmpty(userName)) this.securedFile.Owner = userName;
 			this.securedFile.Save(fileName, password);
-			NotifyMe();
+			toolStripStatusLabelSave.Text = "Speichern erfolgreich durchgeführt.";
 			Properties.Settings.Default.LastFilePath = LastFilePath; // save new Usersettings
 		}
 		private void menuItemGridLayout_Click(object sender, EventArgs e)
@@ -155,16 +154,6 @@ namespace KfzVerwaltung
 			//if (this.pictureBox1.Visible == false) this.pictureBox1.Visible = true;
 			//else this.pictureBox1.Visible = false;
 			//PictureBox einbauen
-		}
-
-		private void NotifyMe()
-		{
-			notico = new NotifyIcon();
-			notico.Text = "Speichervorgang erfolgreich";
-			notico.Visible = true;
-
-			// Ohne Appplication.Run geht es nicht
-			Application.Run();
 		}
 
 		private void menuItemQuit_Click(object sender, EventArgs e)

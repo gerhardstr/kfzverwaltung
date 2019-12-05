@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
 			this.menuStrip = new System.Windows.Forms.MenuStrip();
 			this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,7 +46,7 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
-			this.notifyIconSave = new System.Windows.Forms.NotifyIcon(this.components);
+			this.toolStripStatusLabelSave = new System.Windows.Forms.ToolStripStatusLabel();
 			this.menuStrip.SuspendLayout();
 			this.statusStripUserInformation.SuspendLayout();
 			this.SuspendLayout();
@@ -157,7 +156,8 @@
 			// 
 			this.statusStripUserInformation.BackColor = System.Drawing.Color.LightGray;
 			this.statusStripUserInformation.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.statusLabelInfo});
+            this.statusLabelInfo,
+            this.toolStripStatusLabelSave});
 			this.statusStripUserInformation.Location = new System.Drawing.Point(0, 350);
 			this.statusStripUserInformation.Name = "statusStripUserInformation";
 			this.statusStripUserInformation.Size = new System.Drawing.Size(800, 22);
@@ -219,10 +219,12 @@
 			this.label5.TabIndex = 7;
 			this.label5.Text = "Gesamtkosten";
 			// 
-			// notifyIconSave
+			// toolStripStatusLabelSave
 			// 
-			this.notifyIconSave.Text = "notifyIcon1";
-			this.notifyIconSave.Visible = true;
+			this.toolStripStatusLabelSave.AutoToolTip = true;
+			this.toolStripStatusLabelSave.Name = "toolStripStatusLabelSave";
+			this.toolStripStatusLabelSave.Size = new System.Drawing.Size(0, 17);
+			this.toolStripStatusLabelSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// FormMain
 			// 
@@ -271,7 +273,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.NotifyIcon notifyIconSave;
+		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelSave;
 	}
 }
 
