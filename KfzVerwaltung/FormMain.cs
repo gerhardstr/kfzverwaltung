@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using KfzVerwaltung.Data;
@@ -29,48 +30,49 @@ namespace KfzVerwaltung
 		}
 		private void menuItemFileOpen_Click(object sender, EventArgs e)
 		{
+
 			OpenFileDialog dialog = new OpenFileDialog();
 			dialog.Filter = "Kfz XML Datei|*.xml";
 
 			if (Properties.Settings.Default.LastFilePath != string.Empty) dialog.InitialDirectory = Properties.Settings.Default.LastFilePath; // open last file path
+			if (Properties.Settings.Default.WindowLocation != null) this.Location = Properties.Settings.Default.WindowLocation;
+			if (Properties.Settings.Default.WindowSize != null) this.Size = Properties.Settings.Default.WindowSize;
 
-			if (dialog.ShowDialog() == DialogResult.OK)
+			while (!dialog.FileName.ToLower().EndsWith(".xml"))
+			{
+				if (dialog.ShowDialog() == DialogResult.OK);
+				if (!dialog.FileName.ToLower().EndsWith(".xml")) MessageBox.Show("Bitte wählen Sie eine .xml-Datei aus.", "Falsche Dateiauswahl", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			//	if (dialog.ShowDialog() == DialogResult.Cancel) Application.Exit();
+			}
 			{
 				FormLogin loginForm = new FormLogin();  // check user access
 				if (loginForm.ShowDialog() == DialogResult.OK)
 				{
+
+
+					panelList.Controls.Clear();
 					try
 					{
-						panelList.Controls.Clear();
 						this.securedFile = SecuredFile.Read(dialog.FileName, loginForm.Password);
-						if (dialog.FileName.ToLower().EndsWith(".xml"))
-							try
-							{
-								if (this.securedFile.Owner == loginForm.Username)
-								{
-									this.masterPassword = loginForm.Password;
-									foreach (Car car in this.securedFile.Cars) LoadUserControl(car);
-									this.statusLabelInfo.Text = "Benutzer: " + loginForm.Username.ToString() + " | Dateipfad: " + dialog.FileName.ToString(); // statusstrip is required
-									this.statusStripUserInformation.Text = dialog.FileName; // required for menuItemFileSave_Click
-								}
-								else
-								{
-									MessageBox.Show("Sie sind nicht berechtigt die Datei zu lesen!");
-									this.securedFile = null;
-									return;
-								}
-							}
-							catch (Exception)
-							{
-								MessageBox.Show("Bitte wählen Sie eine xml-Datei aus!");
-								this.securedFile = null;
-								return;
-							}
+						if (this.securedFile.Owner == loginForm.Username)
+						{
+							this.masterPassword = loginForm.Password;
+							foreach (Car car in this.securedFile.Cars) LoadUserControl(car);
+							this.statusLabelInfo.Text = "Benutzer: " + loginForm.Username.ToString() + " | Dateipfad: " + dialog.FileName.ToString(); // statusstrip is required
+							this.statusStripUserInformation.Text = dialog.FileName; // required for menuItemFileSave_Click
+						}
+						else
+						{
+							MessageBox.Show("Sie sind nicht berechtigt die Datei zu lesen!", "Berechtigung", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+							this.securedFile = null;
+							return;
+						}
 					}
 					catch (Exception ex)
 					{
-						MessageBox.Show("Bitte wählen Sie eine xml-Datei aus!");
+						MessageBox.Show("Sie sind nicht berechtigt die Datei zu lesen!", "Berechtigung", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 						this.securedFile = null;
+						return;
 					}
 				}
 			}
@@ -96,8 +98,8 @@ namespace KfzVerwaltung
 
 			int ucTop = 0;
 			if (this.panelList.Controls.Count > 0)
-			//Styling
-			ucTop = this.panelList.Controls[this.panelList.Controls.Count - 1].Location.Y + this.panelList.Controls[this.panelList.Controls.Count - 1].Size.Height;
+				//Styling
+				ucTop = this.panelList.Controls[this.panelList.Controls.Count - 1].Location.Y + this.panelList.Controls[this.panelList.Controls.Count - 1].Size.Height;
 			userControl.Location = new Point(5, ucTop + 2);
 			userControl.Width = this.panelList.ClientRectangle.Width - 30;
 			userControl.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -147,7 +149,12 @@ namespace KfzVerwaltung
 			if (!String.IsNullOrEmpty(userName)) this.securedFile.Owner = userName;
 			this.securedFile.Save(fileName, password);
 			toolStripStatusLabelSave.Text = "Speichern erfolgreich durchgeführt.";
+
+			this.t1.Enabled = true;  // timer for fade out
+
 			Properties.Settings.Default.LastFilePath = LastFilePath; // save new Usersettings
+			Properties.Settings.Default.WindowLocation = this.Location;
+			Properties.Settings.Default.WindowSize = this.Size;
 		}
 		private void menuItemGridLayout_Click(object sender, EventArgs e)
 		{
@@ -158,8 +165,21 @@ namespace KfzVerwaltung
 
 		private void menuItemQuit_Click(object sender, EventArgs e)
 		{
+
+			Properties.Settings.Default.WindowLocation = this.Location; //save Usersettings
+			Properties.Settings.Default.WindowSize = this.Size;
 			Application.Exit();
 		}
-	}
 
+		private void t1_Tick(object sender, EventArgs e)
+		{
+			for (int i = 0; i < 100; i++)
+			{
+				Opacity = i+1;
+				Thread.Sleep(20);
+			}
+			toolStripStatusLabelSave.Text = "";
+			this.t1.Enabled = false;
+		}
+	}
 }

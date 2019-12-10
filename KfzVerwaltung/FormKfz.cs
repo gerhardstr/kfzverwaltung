@@ -37,7 +37,7 @@ namespace KfzVerwaltung
 			this.textBoxKW.Text = Convert.ToString(car.LeistungKW);
 			this.textBoxPS.Text = Convert.ToString(car.LeistungPS);
 			this.textBoxFarbe.Text = car.Farbe;
-			//this.textBoxFarbe.BackColor = cars.Farbe; // todo
+			this.textBoxFarbe.BackColor = ColorTranslator.FromHtml(car.FarbeBackground); // todo
 			this.textBoxWartungsintervall.Text = Convert.ToString(car.Wartungsintervall);
 
 			UserControlCost uc = null;
@@ -84,7 +84,15 @@ namespace KfzVerwaltung
 
 				this.car.Gesamtkosten = total;
 				if (!String.IsNullOrEmpty(this.textBoxKW.Text)) this.car.LeistungKW = Convert.ToDouble(this.textBoxKW.Text);
-				if (!String.IsNullOrEmpty(this.textBoxFarbe.Text)) this.car.Farbe = this.textBoxFarbe.Text;
+				if (!String.IsNullOrEmpty(this.textBoxPS.Text)) this.car.LeistungPS = Convert.ToDouble(this.textBoxPS.Text);
+				if (!String.IsNullOrEmpty(this.textBoxFarbe.Text))
+				{
+					Color c = this.textBoxFarbe.BackColor;
+					string strColor = ColorTranslator.ToHtml(c);
+					this.car.Farbe = this.textBoxFarbe.Text;
+					this.car.FarbeBackground = strColor;
+				}
+		 
 				if (!String.IsNullOrEmpty(this.textBoxWartungsintervall.Text)) this.car.Wartungsintervall = Convert.ToDouble(this.textBoxWartungsintervall.Text);
 
 				this.car.Costs = new List<Cost>();

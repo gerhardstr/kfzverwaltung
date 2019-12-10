@@ -18,6 +18,7 @@ namespace KfzVerwaltung.Data
 		public DateTime DatumZulassung { get; set; } = DateTime.Now;
 		public double Gesamtkosten { get; set; } // todo
 		public string Farbe { get; set; }
+		public string FarbeBackground { get; set; }
 		public double LeistungKW { get; set; }
 		public double LeistungPS { get; set; }
 		public double Wartungsintervall { get; set; }

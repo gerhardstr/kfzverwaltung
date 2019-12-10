@@ -10,31 +10,33 @@ using System.Windows.Forms;
 
 namespace KfzVerwaltung
 {
-    public partial class FormLogin : Form
-    {
-        public FormLogin()
-        {
-            InitializeComponent();
-        }
+	public partial class FormLogin : Form
+	{
+		public FormLogin()
+		{
+			InitializeComponent();
+		}
 
-        public string Username 
-        {
-            get { return this.textBoxBenutzer.Text; }
-        }
+		public string Username
+		{
+			get { return this.textBoxBenutzer.Text; }
+		}
 
-        public string Password
-        {
-            get { return this.textBoxPasswort.Text; }
-        }
+		public string Password
+		{
+			get { return this.textBoxPasswort.Text; }
+		}
 
-        private void buttonLoginOk_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.OK;
-        }
+		private void buttonLoginOk_Click(object sender, EventArgs e)
+		{
+			this.DialogResult = DialogResult.OK;
+			this.Close();
+		}
 
-        private void buttonLoginCancel_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-        }
-    }
+		private void buttonLoginCancel_Click(object sender, EventArgs e)
+		{
+			this.DialogResult = DialogResult.Cancel;
+			this.Close();
+		}
+	}
 }

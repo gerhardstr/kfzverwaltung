@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="WindowLocation" Type="System.Drawing.Point" Scope="User">
-      <Value Profile="(Default)">0, 0</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="WindowSize" Type="System.Drawing.Size" Scope="User">
-      <Value Profile="(Default)">0, 0</Value>
+      <Value Profile="(Default)">816, 411</Value>
     </Setting>
     <Setting Name="LastFilePath" Type="System.String" Scope="User">
       <Value Profile="(Default)">Empty</Value>

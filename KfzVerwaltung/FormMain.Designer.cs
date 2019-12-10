@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
 			this.menuStrip = new System.Windows.Forms.MenuStrip();
 			this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,16 +40,16 @@
 			this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuItemGridLayout = new System.Windows.Forms.ToolStripMenuItem();
 			this.panelList = new System.Windows.Forms.Panel();
-			this.statusLabelInfo = new System.Windows.Forms.ToolStripStatusLabel();
-			this.statusStripUserInformation = new System.Windows.Forms.StatusStrip();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
-			this.toolStripStatusLabelSave = new System.Windows.Forms.ToolStripStatusLabel();
+			this.statusLabelInfo = new System.Windows.Forms.Label();
+			this.toolStripStatusLabelSave = new System.Windows.Forms.Label();
+			this.statusStripUserInformation = new System.Windows.Forms.Label();
+			this.t1 = new System.Windows.Forms.Timer(this.components);
 			this.menuStrip.SuspendLayout();
-			this.statusStripUserInformation.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// menuStrip
@@ -126,14 +127,16 @@
 			this.hilfeToolStripMenuItem.Name = "hilfeToolStripMenuItem";
 			this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
 			this.hilfeToolStripMenuItem.Text = "Hilfe";
+			this.hilfeToolStripMenuItem.Visible = false;
 			// 
 			// menuItemGridLayout
 			// 
 			this.menuItemGridLayout.Image = global::KfzVerwaltung.Properties.Resources.GridApplication_16x;
 			this.menuItemGridLayout.Name = "menuItemGridLayout";
 			this.menuItemGridLayout.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.G)));
-			this.menuItemGridLayout.Size = new System.Drawing.Size(177, 22);
+			this.menuItemGridLayout.Size = new System.Drawing.Size(180, 22);
 			this.menuItemGridLayout.Text = "Grid Layout";
+			this.menuItemGridLayout.Visible = false;
 			this.menuItemGridLayout.Click += new System.EventHandler(this.menuItemGridLayout_Click);
 			// 
 			// panelList
@@ -146,23 +149,6 @@
 			this.panelList.Name = "panelList";
 			this.panelList.Size = new System.Drawing.Size(797, 300);
 			this.panelList.TabIndex = 2;
-			// 
-			// statusLabelInfo
-			// 
-			this.statusLabelInfo.Name = "statusLabelInfo";
-			this.statusLabelInfo.Size = new System.Drawing.Size(0, 17);
-			// 
-			// statusStripUserInformation
-			// 
-			this.statusStripUserInformation.BackColor = System.Drawing.Color.LightGray;
-			this.statusStripUserInformation.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.statusLabelInfo,
-            this.toolStripStatusLabelSave});
-			this.statusStripUserInformation.Location = new System.Drawing.Point(0, 350);
-			this.statusStripUserInformation.Name = "statusStripUserInformation";
-			this.statusStripUserInformation.Size = new System.Drawing.Size(800, 22);
-			this.statusStripUserInformation.TabIndex = 1;
-			this.statusStripUserInformation.Text = "statusStripUserInformation";
 			// 
 			// label1
 			// 
@@ -219,12 +205,37 @@
 			this.label5.TabIndex = 7;
 			this.label5.Text = "Gesamtkosten";
 			// 
+			// statusLabelInfo
+			// 
+			this.statusLabelInfo.AutoSize = true;
+			this.statusLabelInfo.Location = new System.Drawing.Point(2, 354);
+			this.statusLabelInfo.Name = "statusLabelInfo";
+			this.statusLabelInfo.Size = new System.Drawing.Size(0, 13);
+			this.statusLabelInfo.TabIndex = 8;
+			// 
 			// toolStripStatusLabelSave
 			// 
-			this.toolStripStatusLabelSave.AutoToolTip = true;
+			this.toolStripStatusLabelSave.AutoSize = true;
+			this.toolStripStatusLabelSave.Location = new System.Drawing.Point(628, 354);
 			this.toolStripStatusLabelSave.Name = "toolStripStatusLabelSave";
-			this.toolStripStatusLabelSave.Size = new System.Drawing.Size(0, 17);
-			this.toolStripStatusLabelSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.toolStripStatusLabelSave.Size = new System.Drawing.Size(0, 13);
+			this.toolStripStatusLabelSave.TabIndex = 9;
+			this.toolStripStatusLabelSave.TextAlign = System.Drawing.ContentAlignment.TopRight;
+			// 
+			// statusStripUserInformation
+			// 
+			this.statusStripUserInformation.AutoSize = true;
+			this.statusStripUserInformation.Location = new System.Drawing.Point(332, 353);
+			this.statusStripUserInformation.Name = "statusStripUserInformation";
+			this.statusStripUserInformation.Size = new System.Drawing.Size(130, 13);
+			this.statusStripUserInformation.TabIndex = 10;
+			this.statusStripUserInformation.Text = "statusStripUserInformation";
+			this.statusStripUserInformation.Visible = false;
+			// 
+			// t1
+			// 
+			this.t1.Interval = 5000;
+			this.t1.Tick += new System.EventHandler(this.t1_Tick);
 			// 
 			// FormMain
 			// 
@@ -232,13 +243,15 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Gainsboro;
 			this.ClientSize = new System.Drawing.Size(800, 372);
+			this.Controls.Add(this.statusStripUserInformation);
+			this.Controls.Add(this.toolStripStatusLabelSave);
+			this.Controls.Add(this.statusLabelInfo);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.panelList);
-			this.Controls.Add(this.statusStripUserInformation);
 			this.Controls.Add(this.menuStrip);
 			this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -247,8 +260,6 @@
 			this.Text = "Kfz Verwaltung";
 			this.menuStrip.ResumeLayout(false);
 			this.menuStrip.PerformLayout();
-			this.statusStripUserInformation.ResumeLayout(false);
-			this.statusStripUserInformation.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -266,14 +277,15 @@
         private System.Windows.Forms.Panel panelList;
         private System.Windows.Forms.ToolStripMenuItem hilfeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuItemGridLayout;
-        private System.Windows.Forms.ToolStripStatusLabel statusLabelInfo;
-        private System.Windows.Forms.StatusStrip statusStripUserInformation;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelSave;
+		private System.Windows.Forms.Label statusLabelInfo;
+		private System.Windows.Forms.Label toolStripStatusLabelSave;
+		private System.Windows.Forms.Label statusStripUserInformation;
+		private System.Windows.Forms.Timer t1;
 	}
 }
 

@@ -8,15 +8,15 @@ namespace KfzVerwaltung
 {
 
 	// ToDo
-	// Settings zurückschreiben
-	// Fehler für andere Datei abfangen
-	// textboxfarbe ####### setzen
-	// Abfrage speichern beim Beenden
+	// Tankkosten berechnen!!!
 
 	// nicetohave
 	// Eingabevalidierung 
 	// Bilder anzeigen wenn VW, SEAT, etc.
-	// anzeige speichervorgang
+
+	// Testen
+	// Settings zurückschreiben
+	// Fehler für andere Datei abfangen
 
 	static class Program
     {
