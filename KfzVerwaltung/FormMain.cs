@@ -173,9 +173,11 @@ namespace KfzVerwaltung
 
 		private void t1_Tick(object sender, EventArgs e)
 		{
-			for (int i = 0; i < 100; i++)
+			Color myForeColor = this.toolStripStatusLabelSave.ForeColor;
+
+			for (int i = 255; i >= 0; i--)
 			{
-				Opacity = i+1;
+				this.toolStripStatusLabelSave.ForeColor = Color.FromArgb(i, myForeColor);
 				Thread.Sleep(20);
 			}
 			toolStripStatusLabelSave.Text = "";
