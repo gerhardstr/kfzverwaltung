@@ -13,7 +13,6 @@ F:\entw\KfzVerwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.UserControlKfz.resou
 F:\entw\KfzVerwaltung\KfzVerwaltung\bin\Debug\KfzVerwaltung.Data.dll
 F:\entw\KfzVerwaltung\KfzVerwaltung\bin\Debug\KfzVerwaltung.Data.pdb
 F:\entw\KfzVerwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.csproj.CopyComplete
-F:\entw\KfzVerwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.UserControlCosts.resources
 C:\Solutions\kfzverwaltung\KfzVerwaltung\bin\Debug\KfzVerwaltung.exe.config
 C:\Solutions\kfzverwaltung\KfzVerwaltung\bin\Debug\KfzVerwaltung.exe
 C:\Solutions\kfzverwaltung\KfzVerwaltung\bin\Debug\KfzVerwaltung.pdb
@@ -30,3 +29,4 @@ C:\Solutions\kfzverwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.csproj.CopyComp
 C:\Solutions\kfzverwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.exe
 C:\Solutions\kfzverwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.pdb
 C:\Solutions\kfzverwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.UserControlCost.resources
+F:\entw\kfzverwaltung\KfzVerwaltung\obj\Debug\KfzVerwaltung.UserControlCost.resources
