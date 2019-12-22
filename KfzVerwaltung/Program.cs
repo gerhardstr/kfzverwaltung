@@ -10,6 +10,8 @@ namespace KfzVerwaltung
 	// ToDo
 	// Tankkosten berechnen!!!
     // Loop bei Öffnen einer xml Datei und cancel drücken
+    // Speichern und Datei Fußzeile beim Vergrößern des Fensters
+    // Hauptfenster fixe Größe?
 
 	// nicetohave
 	// Eingabevalidierung 

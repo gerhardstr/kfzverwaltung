@@ -75,16 +75,12 @@ namespace KfzVerwaltung
 				this.car.Modell = this.textBoxModell.Text;
 				this.car.KfzKennzeichen = this.textBoxKennzeichen.Text;
 				this.car.DatumZulassung = DateTime.Parse(dateTimePickerZulassung.Text);
+                
+                this.car.Costs = new List<Cost>(); // start CostCalculation
+                foreach (UserControlCost uc in this.panelListCosts.Controls)
+                    if (uc.Cost != null) this.car.Costs.Add(uc.Cost);
+                this.car.Gesamtkosten = car.Costs.Sum(p => p.Kosten); // Costsummuary
 
-                /*double total = 0;
-				foreach (Cost cost in car.Costs)
-				{
-						total = total + cost.Kosten;  // sum all costs
-				}
-
-				this.car.Gesamtkosten = total;*/
-                //this.car.Gesamtkosten = Convert.ToDouble(this.car.Gesamtkosten);
-                this.car.Gesamtkosten = car.Costs.Sum(p => p.Kosten); //Gesamtkostenberechnung
 				if (!String.IsNullOrEmpty(this.textBoxKW.Text)) this.car.LeistungKW = Convert.ToDouble(this.textBoxKW.Text);
 				if (!String.IsNullOrEmpty(this.textBoxPS.Text)) this.car.LeistungPS = Convert.ToDouble(this.textBoxPS.Text);
 				if (!String.IsNullOrEmpty(this.textBoxFarbe.Text))
@@ -96,10 +92,6 @@ namespace KfzVerwaltung
 				}
 		 
 				if (!String.IsNullOrEmpty(this.textBoxWartungsintervall.Text)) this.car.Wartungsintervall = Convert.ToDouble(this.textBoxWartungsintervall.Text);
-
-				this.car.Costs = new List<Cost>();
-				foreach (UserControlCost uc in this.panelListCosts.Controls)
-					if (uc.Cost != null) this.car.Costs.Add(uc.Cost);
 
 				this.DialogResult = DialogResult.OK;
 				this.Close();
