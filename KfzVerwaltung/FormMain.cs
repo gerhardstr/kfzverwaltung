@@ -68,7 +68,7 @@ namespace KfzVerwaltung
 							return;
 						}
 					}
-					catch (Exception ex)
+					catch (Exception)
 					{
 						MessageBox.Show("Sie sind nicht berechtigt die Datei zu lesen!", "Berechtigung", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 						this.securedFile = null;
@@ -98,8 +98,8 @@ namespace KfzVerwaltung
 
 			int ucTop = 0;
 			if (this.panelList.Controls.Count > 0)
-				//Styling
-				ucTop = this.panelList.Controls[this.panelList.Controls.Count - 1].Location.Y + this.panelList.Controls[this.panelList.Controls.Count - 1].Size.Height;
+			//Styling
+			ucTop = this.panelList.Controls[this.panelList.Controls.Count - 1].Location.Y + this.panelList.Controls[this.panelList.Controls.Count - 1].Size.Height;
 			userControl.Location = new Point(5, ucTop + 2);
 			userControl.Width = this.panelList.ClientRectangle.Width - 30;
 			userControl.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;

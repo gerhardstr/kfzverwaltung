@@ -10,7 +10,7 @@ namespace KfzVerwaltung.Data
 	public class Cost
 	{
 
-		public double Wartungsintervall { get; set; }
+		//public double Wartungsintervall { get; set; }
 		public string Kategorie { get; set; }
 		public DateTime DatumKategorieXy { get; set; } = DateTime.Now;
 		public string Bemerkung { get; set; }
