@@ -12,42 +12,82 @@ using System.Globalization;
 
 namespace KfzVerwaltung
 {
-	public partial class UserControlCost : UserControl
-	{
-		private Cost cost = null;
+    public partial class UserControlCost : UserControl
+    {
+        private Cost cost = null;
 
-		public UserControlCost()
-		{
-			InitializeComponent();
-		}
+        public UserControlCost()
+        {
+            InitializeComponent();
+        }
 
-		public UserControlCost(Cost cost)
-		{
-			InitializeComponent();
-			this.cost = cost;
-			this.comboBoxKategorie.Text = cost.Kategorie;
-			this.dateTimePickerCosts.Text = cost.DatumKategorieXy.ToShortDateString();
-			this.textBoxCostsBemerkung.Text = cost.Bemerkung;
-			this.textBoxCostsKosten.Text = Convert.ToString(cost.Kosten);
-			this.textBoxCostsKm.Text = Convert.ToString(cost.Kilometerstand);
-		}
+        public UserControlCost(string mode)
+        {
+            InitializeComponent();
+            this.panelCosts.Visible = false;
+            this.panelFuelCosts.Visible = false;
+            this.panelCosts.Location = new Point(3, 1);
+            this.panelFuelCosts.Location = new Point(3, 1);
 
-		public Cost Cost
-		{
-			get
-			{
-				if (!String.IsNullOrEmpty(this.comboBoxKategorie.Text))
-				{
-					if (this.cost == null) this.cost = new Cost();
-					this.cost.Kategorie = this.comboBoxKategorie.Text;
-					this.cost.DatumKategorieXy = DateTime.Parse(dateTimePickerCosts.Text);
-					double tmp = 0;
-					if (double.TryParse(this.textBoxCostsKm.Text, out tmp)) this.cost.Kilometerstand = tmp;
-					if (double.TryParse(this.textBoxCostsKosten.Text, out tmp)) this.cost.Kosten = tmp;
-					this.cost.Bemerkung = this.textBoxCostsBemerkung.Text;
-				}
-				return this.cost;
-			}
-		}
-	}
+            switch (mode)
+            {
+                case "Costs":
+                    this.panelCosts.Visible = true;
+                    break;
+                case "FuelCosts":
+                    this.panelFuelCosts.Visible = true;
+                    break;
+                default:
+                    break;
+            }
+
+        }
+
+        public UserControlCost(Cost cost)
+        {
+            InitializeComponent();
+            this.cost = cost;
+            if (cost.Kategorie == "Tankkosten")
+            {
+                this.textBoxTankkostenKategorie.Text = cost.Kategorie;
+                this.textBoxTankkostenLiter.Text = Convert.ToString(cost.Liter);
+                this.dateTimePickerTankkosten.Text = cost.DatumKategorieXy.ToShortDateString();
+                this.textBoxTankkostenBemerkung.Text = cost.Bemerkung;
+                this.textBoxTankkostenKosten.Text = Convert.ToString(cost.Kosten);
+                this.textBoxTankkostenKm.Text = Convert.ToString(cost.Kilometerstand);
+            }
+            else
+            {
+                this.comboBoxKategorie.Text = cost.Kategorie;
+                this.dateTimePickerCosts.Text = cost.DatumKategorieXy.ToShortDateString();
+                this.textBoxCostsBemerkung.Text = cost.Bemerkung;
+                this.textBoxCostsKosten.Text = Convert.ToString(cost.Kosten);
+                this.textBoxCostsKm.Text = Convert.ToString(cost.Kilometerstand);
+            }
+        }
+
+        public Cost Cost
+        {
+            get
+            {
+                if (!String.IsNullOrEmpty(this.comboBoxKategorie.Text))
+                {
+                    if (this.cost == null) this.cost = new Cost();
+                    this.cost.Kategorie = this.comboBoxKategorie.Text;
+                    this.cost.DatumKategorieXy = DateTime.Parse(dateTimePickerCosts.Text);
+                    double tmp = 0;
+                    if (double.TryParse(this.textBoxCostsKm.Text, out tmp)) this.cost.Kilometerstand = tmp;
+                    if (double.TryParse(this.textBoxCostsKosten.Text, out tmp)) this.cost.Kosten = tmp;
+                    this.cost.Bemerkung = this.textBoxCostsBemerkung.Text;
+                }
+                return this.cost;
+            }
+        }
+
+        private void textBoxTankkostenLiter_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(this.textBoxTankkostenLiter.Text))
+                this.textBoxVerbrauch.Text = (int.Parse(this.textBoxTankkostenLiter.Text) / 100).ToString();
+        }
+    }
 }

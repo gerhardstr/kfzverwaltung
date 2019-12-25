@@ -112,8 +112,14 @@ namespace KfzVerwaltung
 
 		private void buttonAddUserControlCosts_Click(object sender, EventArgs e)
 		{
-			UserControlCost uc = new UserControlCost();
+			UserControlCost uc = new UserControlCost("Costs");
 			this.panelListCosts.Controls.Add(uc);
 		}
-	}
+
+        private void buttonAddUserControlTankkosten_Click(object sender, EventArgs e)
+        {
+            UserControlCost uc = new UserControlCost("FuelCosts");
+            this.panelListCosts.Controls.Add(uc);
+        }
+    }
 }
