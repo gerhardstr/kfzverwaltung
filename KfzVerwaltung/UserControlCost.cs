@@ -52,19 +52,27 @@ namespace KfzVerwaltung
                     this.cost.Kategorie = this.comboBoxKategorie.Text;
                     this.cost.DatumKategorieXy = DateTime.Parse(dateTimePickerCosts.Text);
                     this.cost.Bemerkung = this.textBoxCostsBemerkung.Text;
-
+                    MessageBox.Show("Vor dem Parsen: " + this.cost.KilometerGefahren.ToString());
                     double tmp = 0;
                     if (double.TryParse(this.textBoxCostsKm.Text, out tmp)) this.cost.Kilometerstand = tmp;
                     if (double.TryParse(this.textBoxCostsKosten.Text, out tmp)) this.cost.Kosten = tmp;
-                    if (double.TryParse(this.textBoxTankkostenLiter.Text, out tmp)) this.cost.Liter = tmp;
-                    if (double.TryParse(this.textBoxTankkostenKmGefahren.Text, out tmp)) this.cost.KilometerGefahren = tmp;
 
-                    int tmpI = 0;
-                    if (int.TryParse(this.textBoxTankkostenVerbrauch.Text, out tmpI)) this.cost.Verbrauch = tmpI;
+                    if (this.comboBoxKategorie.Text == "Tankkosten")
+                    {
+                        MessageBox.Show("Zweiten If - vor dem Parsen: " + this.cost.KilometerGefahren.ToString());
+                        double tmpD = 0;
+                        if (double.TryParse(this.textBoxTankkostenLiter.Text, out tmpD)) this.cost.Liter = tmpD;
+                        if (double.TryParse(this.textBoxCostsKm.Text, out tmpD)) this.cost.KilometerGefahren = tmpD - this.cost.KilometerGefahren;
+                        MessageBox.Show("Zweiten If - nach dem Parsen: " + this.cost.KilometerGefahren.ToString());
+                        this.cost.Verbrauch = (this.cost.Liter / this.cost.KilometerGefahren) * 100;
+                        //this.cost.KilometerGefahren = 1000;
+                        this.cost.Verbrauch = 150;
+                        MessageBox.Show("Ende: " + this.cost.KilometerGefahren.ToString());
+                    }
                 }
+                MessageBox.Show("Vor Return: " + this.cost.KilometerGefahren.ToString());
                 return this.cost;
             }
-
         }
 
         private void comboBoxKategorie_TextChanged(object sender, EventArgs e)

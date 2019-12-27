@@ -123,7 +123,7 @@
             this.textBoxTankkostenVerbrauch.MinimumSize = new System.Drawing.Size(4, 24);
             this.textBoxTankkostenVerbrauch.Name = "textBoxTankkostenVerbrauch";
             this.textBoxTankkostenVerbrauch.ReadOnly = true;
-            this.textBoxTankkostenVerbrauch.Size = new System.Drawing.Size(43, 22);
+            this.textBoxTankkostenVerbrauch.Size = new System.Drawing.Size(43, 24);
             this.textBoxTankkostenVerbrauch.TabIndex = 19;
             this.textBoxTankkostenVerbrauch.Visible = false;
             // 
