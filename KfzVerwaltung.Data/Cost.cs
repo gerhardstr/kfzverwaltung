@@ -9,8 +9,6 @@ namespace KfzVerwaltung.Data
 	[Serializable()]
 	public class Cost
 	{
-
-		//public double Wartungsintervall { get; set; }
 		public string Kategorie { get; set; }
 		public DateTime DatumKategorieXy { get; set; } = DateTime.Now;
 		public string Bemerkung { get; set; }
@@ -18,6 +16,6 @@ namespace KfzVerwaltung.Data
 		public double Liter { get; set; } 
 		public double Kilometerstand { get; set; }
         public double KilometerGefahren { get; set; }
-        public int Verbrauch { get; set; }
+        public double Verbrauch { get; set; }
     }
 }

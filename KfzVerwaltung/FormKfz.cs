@@ -62,7 +62,8 @@ namespace KfzVerwaltung
 		private void buttonKfzOK_Click(object sender, EventArgs e)
 		{
 			if (this.car == null) this.car = new Car();
-			if ((String.IsNullOrEmpty(this.textBoxMarke.Text)) || (String.IsNullOrEmpty(this.textBoxModell.Text)) || (String.IsNullOrEmpty(this.textBoxKennzeichen.Text)))
+			
+            if ((String.IsNullOrEmpty(this.textBoxMarke.Text)) || (String.IsNullOrEmpty(this.textBoxModell.Text)) || (String.IsNullOrEmpty(this.textBoxKennzeichen.Text)))
 			{
 				if (String.IsNullOrEmpty(this.textBoxMarke.Text)) this.textBoxMarke.BackColor = Color.Red;
 				if (String.IsNullOrEmpty(this.textBoxModell.Text)) this.textBoxModell.BackColor = Color.Red;
