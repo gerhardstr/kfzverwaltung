@@ -18,5 +18,6 @@ namespace KfzVerwaltung.Data
 		public double Liter { get; set; } 
 		public double Kilometerstand { get; set; }
         public double KilometerGefahren { get; set; }
-	}
+        public int Verbrauch { get; set; }
+    }
 }

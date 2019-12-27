@@ -21,28 +21,6 @@ namespace KfzVerwaltung
             InitializeComponent();
         }
 
-        /*public UserControlCost(string mode)
-        {
-            InitializeComponent();
-            this.panelCosts.Visible = false;
-            this.panelFuelCosts.Visible = false;
-            this.panelCosts.Location = new Point(3, 1);
-            this.panelFuelCosts.Location = new Point(3, 1);
-
-            switch (mode)
-            {
-                case "Costs":
-                    this.panelCosts.Visible = true;
-                    break;
-                case "FuelCosts":
-                    this.panelFuelCosts.Visible = true;
-                    break;
-                default:
-                    break;
-            }
-
-        }*/
-
         public UserControlCost(Cost cost)
         {
             InitializeComponent();
@@ -52,7 +30,16 @@ namespace KfzVerwaltung
             this.textBoxCostsBemerkung.Text = cost.Bemerkung;
             this.textBoxCostsKosten.Text = Convert.ToString(cost.Kosten);
             this.textBoxCostsKm.Text = Convert.ToString(cost.Kilometerstand);
-            this.textBoxTankkostenLiter.Text = Convert.ToString(cost.Liter);
+            
+            if (this.comboBoxKategorie.Text == "Tankkosten")
+            {
+                this.textBoxTankkostenLiter.Visible = true;
+                this.textBoxTankkostenLiter.Text = Convert.ToString(cost.Liter);
+                this.textBoxTankkostenKmGefahren.Visible = true;
+                this.textBoxTankkostenKmGefahren.Text = Convert.ToString(cost.KilometerGefahren);
+                this.textBoxTankkostenVerbrauch.Visible = true;
+                this.textBoxTankkostenVerbrauch.Text = Convert.ToString(cost.Verbrauch);
+            }
         }
 
         public Cost Cost
@@ -64,26 +51,30 @@ namespace KfzVerwaltung
                     if (this.cost == null) this.cost = new Cost();
                     this.cost.Kategorie = this.comboBoxKategorie.Text;
                     this.cost.DatumKategorieXy = DateTime.Parse(dateTimePickerCosts.Text);
+                    this.cost.Bemerkung = this.textBoxCostsBemerkung.Text;
+
                     double tmp = 0;
                     if (double.TryParse(this.textBoxCostsKm.Text, out tmp)) this.cost.Kilometerstand = tmp;
                     if (double.TryParse(this.textBoxCostsKosten.Text, out tmp)) this.cost.Kosten = tmp;
-                    this.cost.Bemerkung = this.textBoxCostsBemerkung.Text;
+                    if (double.TryParse(this.textBoxTankkostenLiter.Text, out tmp)) this.cost.Liter = tmp;
+                    if (double.TryParse(this.textBoxTankkostenKmGefahren.Text, out tmp)) this.cost.KilometerGefahren = tmp;
+
+                    int tmpI = 0;
+                    if (int.TryParse(this.textBoxTankkostenVerbrauch.Text, out tmpI)) this.cost.Verbrauch = tmpI;
                 }
-                /*else if (!String.IsNullOrEmpty(this.textBoxTankkostenKosten.Text))
-                {
-                    if (this.cost == null) this.cost = new Cost();
-                    this.cost.Kategorie = this.textBoxTankkostenKategorie.Text;
-                    this.cost.DatumKategorieXy = DateTime.Parse(dateTimePickerTankkosten.Text);
-                    double tmpE = 0;
-                    if (double.TryParse(this.textBoxTankkostenKm.Text, out tmpE)) this.cost.Kilometerstand = tmpE;
-                    if (double.TryParse(this.textBoxTankkostenKosten.Text, out tmpE)) this.cost.Kosten = tmpE;
-                    if (double.TryParse(this.textBoxTankkostenLiter.Text, out tmpE)) this.cost.Liter = tmpE;
-                    this.cost.Bemerkung = this.textBoxCostsBemerkung.Text;
-                    this.cost.KilometerGefahren = Convert.ToDouble(this.textBoxTankkostenKm.Text) - this.cost.KilometerGefahren;
-                }*/
                 return this.cost;
             }
 
+        }
+
+        private void comboBoxKategorie_TextChanged(object sender, EventArgs e)
+        {
+            if (this.comboBoxKategorie.Text == "Tankkosten")
+            {
+                this.textBoxTankkostenLiter.Visible = true;
+                this.textBoxTankkostenKmGefahren.Visible = true;
+                this.textBoxTankkostenVerbrauch.Visible = true;
+            }
         }
     }
 

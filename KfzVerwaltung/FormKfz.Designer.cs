@@ -280,7 +280,7 @@
             this.buttonAddUserControlCosts.Name = "buttonAddUserControlCosts";
             this.buttonAddUserControlCosts.Size = new System.Drawing.Size(160, 24);
             this.buttonAddUserControlCosts.TabIndex = 21;
-            this.buttonAddUserControlCosts.Text = "Andere Kosten erfassen";
+            this.buttonAddUserControlCosts.Text = "Kosten hinzufügen";
             this.buttonAddUserControlCosts.UseVisualStyleBackColor = false;
             this.buttonAddUserControlCosts.Click += new System.EventHandler(this.buttonAddUserControlCosts_Click);
             // 

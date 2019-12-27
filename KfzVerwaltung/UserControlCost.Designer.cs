@@ -34,9 +34,9 @@
             this.comboBoxKategorie = new System.Windows.Forms.ComboBox();
             this.dateTimePickerCosts = new System.Windows.Forms.DateTimePicker();
             this.panelCosts = new System.Windows.Forms.Panel();
-            this.textBoxVerbrauch = new System.Windows.Forms.TextBox();
+            this.textBoxTankkostenVerbrauch = new System.Windows.Forms.TextBox();
             this.textBoxTankkostenLiter = new System.Windows.Forms.TextBox();
-            this.textBoxKmGefahren = new System.Windows.Forms.TextBox();
+            this.textBoxTankkostenKmGefahren = new System.Windows.Forms.TextBox();
             this.panelCosts.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,6 +86,7 @@
             this.comboBoxKategorie.Name = "comboBoxKategorie";
             this.comboBoxKategorie.Size = new System.Drawing.Size(141, 24);
             this.comboBoxKategorie.TabIndex = 8;
+            this.comboBoxKategorie.TextChanged += new System.EventHandler(this.comboBoxKategorie_TextChanged);
             // 
             // dateTimePickerCosts
             // 
@@ -101,10 +102,10 @@
             // panelCosts
             // 
             this.panelCosts.Controls.Add(this.dateTimePickerCosts);
-            this.panelCosts.Controls.Add(this.textBoxVerbrauch);
+            this.panelCosts.Controls.Add(this.textBoxTankkostenVerbrauch);
             this.panelCosts.Controls.Add(this.textBoxCostsKosten);
             this.panelCosts.Controls.Add(this.textBoxTankkostenLiter);
-            this.panelCosts.Controls.Add(this.textBoxKmGefahren);
+            this.panelCosts.Controls.Add(this.textBoxTankkostenKmGefahren);
             this.panelCosts.Controls.Add(this.comboBoxKategorie);
             this.panelCosts.Controls.Add(this.textBoxCostsBemerkung);
             this.panelCosts.Controls.Add(this.textBoxCostsKm);
@@ -113,17 +114,18 @@
             this.panelCosts.Size = new System.Drawing.Size(937, 28);
             this.panelCosts.TabIndex = 13;
             // 
-            // textBoxVerbrauch
+            // textBoxTankkostenVerbrauch
             // 
-            this.textBoxVerbrauch.Enabled = false;
-            this.textBoxVerbrauch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxVerbrauch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxVerbrauch.Location = new System.Drawing.Point(891, 3);
-            this.textBoxVerbrauch.MinimumSize = new System.Drawing.Size(4, 24);
-            this.textBoxVerbrauch.Name = "textBoxVerbrauch";
-            this.textBoxVerbrauch.ReadOnly = true;
-            this.textBoxVerbrauch.Size = new System.Drawing.Size(43, 22);
-            this.textBoxVerbrauch.TabIndex = 19;
+            this.textBoxTankkostenVerbrauch.Enabled = false;
+            this.textBoxTankkostenVerbrauch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTankkostenVerbrauch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxTankkostenVerbrauch.Location = new System.Drawing.Point(891, 3);
+            this.textBoxTankkostenVerbrauch.MinimumSize = new System.Drawing.Size(4, 24);
+            this.textBoxTankkostenVerbrauch.Name = "textBoxTankkostenVerbrauch";
+            this.textBoxTankkostenVerbrauch.ReadOnly = true;
+            this.textBoxTankkostenVerbrauch.Size = new System.Drawing.Size(43, 22);
+            this.textBoxTankkostenVerbrauch.TabIndex = 19;
+            this.textBoxTankkostenVerbrauch.Visible = false;
             // 
             // textBoxTankkostenLiter
             // 
@@ -134,18 +136,20 @@
             this.textBoxTankkostenLiter.Name = "textBoxTankkostenLiter";
             this.textBoxTankkostenLiter.Size = new System.Drawing.Size(43, 22);
             this.textBoxTankkostenLiter.TabIndex = 17;
+            this.textBoxTankkostenLiter.Visible = false;
             // 
-            // textBoxKmGefahren
+            // textBoxTankkostenKmGefahren
             // 
-            this.textBoxKmGefahren.Enabled = false;
-            this.textBoxKmGefahren.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxKmGefahren.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxKmGefahren.Location = new System.Drawing.Point(843, 3);
-            this.textBoxKmGefahren.MinimumSize = new System.Drawing.Size(4, 24);
-            this.textBoxKmGefahren.Name = "textBoxKmGefahren";
-            this.textBoxKmGefahren.ReadOnly = true;
-            this.textBoxKmGefahren.Size = new System.Drawing.Size(43, 22);
-            this.textBoxKmGefahren.TabIndex = 18;
+            this.textBoxTankkostenKmGefahren.Enabled = false;
+            this.textBoxTankkostenKmGefahren.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTankkostenKmGefahren.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxTankkostenKmGefahren.Location = new System.Drawing.Point(843, 3);
+            this.textBoxTankkostenKmGefahren.MinimumSize = new System.Drawing.Size(4, 24);
+            this.textBoxTankkostenKmGefahren.Name = "textBoxTankkostenKmGefahren";
+            this.textBoxTankkostenKmGefahren.ReadOnly = true;
+            this.textBoxTankkostenKmGefahren.Size = new System.Drawing.Size(43, 22);
+            this.textBoxTankkostenKmGefahren.TabIndex = 18;
+            this.textBoxTankkostenKmGefahren.Visible = false;
             // 
             // UserControlCost
             // 
@@ -167,8 +171,8 @@
         private System.Windows.Forms.ComboBox comboBoxKategorie;
 		private System.Windows.Forms.DateTimePicker dateTimePickerCosts;
         private System.Windows.Forms.Panel panelCosts;
-        private System.Windows.Forms.TextBox textBoxVerbrauch;
+        private System.Windows.Forms.TextBox textBoxTankkostenVerbrauch;
         private System.Windows.Forms.TextBox textBoxTankkostenLiter;
-        private System.Windows.Forms.TextBox textBoxKmGefahren;
+        private System.Windows.Forms.TextBox textBoxTankkostenKmGefahren;
     }
 }
