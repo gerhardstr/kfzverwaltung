@@ -64,9 +64,9 @@ namespace KfzVerwaltung
 			if (this.car == null) this.car = new Car();
 			if ((String.IsNullOrEmpty(this.textBoxMarke.Text)) || (String.IsNullOrEmpty(this.textBoxModell.Text)) || (String.IsNullOrEmpty(this.textBoxKennzeichen.Text)))
 			{
-				this.textBoxMarke.BackColor = Color.Red;
-				this.textBoxModell.BackColor = Color.Red;
-				this.textBoxKennzeichen.BackColor = Color.Red;
+				if (String.IsNullOrEmpty(this.textBoxMarke.Text)) this.textBoxMarke.BackColor = Color.Red;
+				if (String.IsNullOrEmpty(this.textBoxModell.Text)) this.textBoxModell.BackColor = Color.Red;
+				if (String.IsNullOrEmpty(this.textBoxKennzeichen.Text)) this.textBoxKennzeichen.BackColor = Color.Red;
 				MessageBox.Show("Die rot markierten Felder sind Pflichtfelder. Für die Anlage eines neuen Kfz füllen Sie diese bitte aus.", "Validierung", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 			else
@@ -112,14 +112,14 @@ namespace KfzVerwaltung
 
 		private void buttonAddUserControlCosts_Click(object sender, EventArgs e)
 		{
-			UserControlCost uc = new UserControlCost("Costs");
+			UserControlCost uc = new UserControlCost();
 			this.panelListCosts.Controls.Add(uc);
 		}
 
-        private void buttonAddUserControlTankkosten_Click(object sender, EventArgs e)
+        /*private void buttonAddUserControlTankkosten_Click(object sender, EventArgs e)
         {
             UserControlCost uc = new UserControlCost("FuelCosts");
             this.panelListCosts.Controls.Add(uc);
-        }
+        }*/
     }
 }

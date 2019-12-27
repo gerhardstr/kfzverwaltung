@@ -60,7 +60,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.dateTimePickerZulassung = new System.Windows.Forms.DateTimePicker();
-            this.buttonAddUserControlTankkosten = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -405,18 +404,6 @@
             this.dateTimePickerZulassung.TabIndex = 31;
             this.dateTimePickerZulassung.Value = new System.DateTime(2019, 12, 3, 20, 29, 54, 0);
             // 
-            // buttonAddUserControlTankkosten
-            // 
-            this.buttonAddUserControlTankkosten.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAddUserControlTankkosten.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddUserControlTankkosten.Location = new System.Drawing.Point(181, 425);
-            this.buttonAddUserControlTankkosten.Name = "buttonAddUserControlTankkosten";
-            this.buttonAddUserControlTankkosten.Size = new System.Drawing.Size(148, 24);
-            this.buttonAddUserControlTankkosten.TabIndex = 32;
-            this.buttonAddUserControlTankkosten.Text = "Tankkosten erfassen";
-            this.buttonAddUserControlTankkosten.UseVisualStyleBackColor = false;
-            this.buttonAddUserControlTankkosten.Click += new System.EventHandler(this.buttonAddUserControlTankkosten_Click);
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -459,7 +446,6 @@
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.buttonAddUserControlTankkosten);
             this.Controls.Add(this.dateTimePickerZulassung);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.pictureBox2);
@@ -536,7 +522,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label15;
 		private System.Windows.Forms.DateTimePicker dateTimePickerZulassung;
-        private System.Windows.Forms.Button buttonAddUserControlTankkosten;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;

@@ -21,7 +21,7 @@ namespace KfzVerwaltung
             InitializeComponent();
         }
 
-        public UserControlCost(string mode)
+        /*public UserControlCost(string mode)
         {
             InitializeComponent();
             this.panelCosts.Visible = false;
@@ -41,29 +41,18 @@ namespace KfzVerwaltung
                     break;
             }
 
-        }
+        }*/
 
         public UserControlCost(Cost cost)
         {
             InitializeComponent();
-            this.cost = cost;
-            if (cost.Kategorie == "Tankkosten")
-            {
-                this.textBoxTankkostenKategorie.Text = cost.Kategorie;
-                this.textBoxTankkostenLiter.Text = Convert.ToString(cost.Liter);
-                this.dateTimePickerTankkosten.Text = cost.DatumKategorieXy.ToShortDateString();
-                this.textBoxTankkostenBemerkung.Text = cost.Bemerkung;
-                this.textBoxTankkostenKosten.Text = Convert.ToString(cost.Kosten);
-                this.textBoxTankkostenKm.Text = Convert.ToString(cost.Kilometerstand);
-            }
-            else
-            {
-                this.comboBoxKategorie.Text = cost.Kategorie;
-                this.dateTimePickerCosts.Text = cost.DatumKategorieXy.ToShortDateString();
-                this.textBoxCostsBemerkung.Text = cost.Bemerkung;
-                this.textBoxCostsKosten.Text = Convert.ToString(cost.Kosten);
-                this.textBoxCostsKm.Text = Convert.ToString(cost.Kilometerstand);
-            }
+            this.cost = cost;  
+            this.comboBoxKategorie.Text = cost.Kategorie;
+            this.dateTimePickerCosts.Text = cost.DatumKategorieXy.ToShortDateString();
+            this.textBoxCostsBemerkung.Text = cost.Bemerkung;
+            this.textBoxCostsKosten.Text = Convert.ToString(cost.Kosten);
+            this.textBoxCostsKm.Text = Convert.ToString(cost.Kilometerstand);
+            this.textBoxTankkostenLiter.Text = Convert.ToString(cost.Liter);
         }
 
         public Cost Cost
@@ -80,7 +69,7 @@ namespace KfzVerwaltung
                     if (double.TryParse(this.textBoxCostsKosten.Text, out tmp)) this.cost.Kosten = tmp;
                     this.cost.Bemerkung = this.textBoxCostsBemerkung.Text;
                 }
-                else if (!String.IsNullOrEmpty(this.textBoxTankkostenKosten.Text))
+                /*else if (!String.IsNullOrEmpty(this.textBoxTankkostenKosten.Text))
                 {
                     if (this.cost == null) this.cost = new Cost();
                     this.cost.Kategorie = this.textBoxTankkostenKategorie.Text;
@@ -91,24 +80,12 @@ namespace KfzVerwaltung
                     if (double.TryParse(this.textBoxTankkostenLiter.Text, out tmpE)) this.cost.Liter = tmpE;
                     this.cost.Bemerkung = this.textBoxCostsBemerkung.Text;
                     this.cost.KilometerGefahren = Convert.ToDouble(this.textBoxTankkostenKm.Text) - this.cost.KilometerGefahren;
-                }
+                }*/
                 return this.cost;
             }
-            
+
         }
     }
 
-    /*private void textBoxTankkostenLiter_TextChanged(object sender, EventArgs e)
-    {
-        //int index = car.Costs.FindLastIndex(cost => cost.Kategorie.Equals("Tankkosten", StringComparison.Ordinal));
-        //MessageBox.Show(Convert.ToString(index));
-        //double mileage = car.Costs.
-        //MessageBox.Show(this.Parent.AccessibilityObject.Name.ToString());
-        //MessageBox.Show(this.panelFuelCosts.pAccessibilityObject.ToString());
-
-
-        //if (!string.IsNullOrEmpty(this.textBoxTankkostenLiter.Text))
-        //    this.textBoxVerbrauch.Text = (int.Parse(this.textBoxTankkostenLiter.Text) / 100).ToString();
-    }*/
 }
 
