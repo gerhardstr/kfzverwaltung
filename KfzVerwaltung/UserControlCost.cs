@@ -80,14 +80,35 @@ namespace KfzVerwaltung
                     if (double.TryParse(this.textBoxCostsKosten.Text, out tmp)) this.cost.Kosten = tmp;
                     this.cost.Bemerkung = this.textBoxCostsBemerkung.Text;
                 }
+                else if (!String.IsNullOrEmpty(this.textBoxTankkostenKosten.Text))
+                {
+                    if (this.cost == null) this.cost = new Cost();
+                    this.cost.Kategorie = this.textBoxTankkostenKategorie.Text;
+                    this.cost.DatumKategorieXy = DateTime.Parse(dateTimePickerTankkosten.Text);
+                    double tmpE = 0;
+                    if (double.TryParse(this.textBoxTankkostenKm.Text, out tmpE)) this.cost.Kilometerstand = tmpE;
+                    if (double.TryParse(this.textBoxTankkostenKosten.Text, out tmpE)) this.cost.Kosten = tmpE;
+                    if (double.TryParse(this.textBoxTankkostenLiter.Text, out tmpE)) this.cost.Liter = tmpE;
+                    this.cost.Bemerkung = this.textBoxCostsBemerkung.Text;
+                    this.cost.KilometerGefahren = Convert.ToDouble(this.textBoxTankkostenKm.Text) - this.cost.KilometerGefahren;
+                }
                 return this.cost;
             }
-        }
-
-        private void textBoxTankkostenLiter_TextChanged(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(this.textBoxTankkostenLiter.Text))
-                this.textBoxVerbrauch.Text = (int.Parse(this.textBoxTankkostenLiter.Text) / 100).ToString();
+            
         }
     }
+
+    /*private void textBoxTankkostenLiter_TextChanged(object sender, EventArgs e)
+    {
+        //int index = car.Costs.FindLastIndex(cost => cost.Kategorie.Equals("Tankkosten", StringComparison.Ordinal));
+        //MessageBox.Show(Convert.ToString(index));
+        //double mileage = car.Costs.
+        //MessageBox.Show(this.Parent.AccessibilityObject.Name.ToString());
+        //MessageBox.Show(this.panelFuelCosts.pAccessibilityObject.ToString());
+
+
+        //if (!string.IsNullOrEmpty(this.textBoxTankkostenLiter.Text))
+        //    this.textBoxVerbrauch.Text = (int.Parse(this.textBoxTankkostenLiter.Text) / 100).ToString();
+    }*/
 }
+

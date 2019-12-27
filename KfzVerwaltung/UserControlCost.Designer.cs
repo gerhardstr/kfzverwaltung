@@ -166,7 +166,6 @@
             this.textBoxTankkostenLiter.Name = "textBoxTankkostenLiter";
             this.textBoxTankkostenLiter.Size = new System.Drawing.Size(43, 22);
             this.textBoxTankkostenLiter.TabIndex = 17;
-            this.textBoxTankkostenLiter.TextChanged += new System.EventHandler(this.textBoxTankkostenLiter_TextChanged);
             // 
             // textBoxKmGefahren
             // 
@@ -228,7 +227,7 @@
             this.Controls.Add(this.panelFuelCosts);
             this.Controls.Add(this.panelCosts);
             this.Name = "UserControlCost";
-            this.Size = new System.Drawing.Size(939, 139);
+            this.Size = new System.Drawing.Size(939, 27);
             this.panelCosts.ResumeLayout(false);
             this.panelCosts.PerformLayout();
             this.panelFuelCosts.ResumeLayout(false);

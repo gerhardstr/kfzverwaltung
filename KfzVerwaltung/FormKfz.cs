@@ -37,7 +37,7 @@ namespace KfzVerwaltung
 			this.textBoxKW.Text = Convert.ToString(car.LeistungKW);
 			this.textBoxPS.Text = Convert.ToString(car.LeistungPS);
 			this.textBoxFarbe.Text = car.Farbe;
-			this.textBoxFarbe.BackColor = ColorTranslator.FromHtml(car.FarbeBackground); // todo
+			this.textBoxFarbe.BackColor = ColorTranslator.FromHtml(car.FarbeBackground); 
 			this.textBoxWartungsintervall.Text = Convert.ToString(car.Wartungsintervall);
 
 			UserControlCost uc = null;

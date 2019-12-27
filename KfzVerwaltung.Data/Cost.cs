@@ -17,6 +17,6 @@ namespace KfzVerwaltung.Data
 		public double Kosten { get; set; } 
 		public double Liter { get; set; } 
 		public double Kilometerstand { get; set; }
-
+        public double KilometerGefahren { get; set; }
 	}
 }
