@@ -59,6 +59,7 @@ namespace KfzVerwaltung
 
                     if (this.comboBoxKategorie.Text == "Tankkosten")
                     {
+<<<<<<< HEAD
                         MessageBox.Show("Zweiten If - vor dem Parsen: " + this.cost.KilometerGefahren.ToString());
                         double tmpD = 0;
                         if (double.TryParse(this.textBoxTankkostenLiter.Text, out tmpD)) this.cost.Liter = tmpD;
@@ -68,6 +69,14 @@ namespace KfzVerwaltung
                         //this.cost.KilometerGefahren = 1000;
                         this.cost.Verbrauch = 150;
                         MessageBox.Show("Ende: " + this.cost.KilometerGefahren.ToString());
+=======
+                        double tmpD = 0;
+                        if (double.TryParse(this.textBoxTankkostenLiter.Text, out tmpD)) this.cost.Liter = tmpD;
+                        if (double.TryParse(this.textBoxCostsKm.Text, out tmpD)) this.cost.KilometerGefahren = tmpD - this.cost.KilometerGefahren;
+                        this.cost.Verbrauch = (this.cost.Liter / this.cost.KilometerGefahren) * 100;
+                        //this.cost.KilometerGefahren = 1000;
+                        this.cost.Verbrauch = 150;
+>>>>>>> 12a464e20eec389628f4ecf084a1f3c042270fbe
                     }
                 }
                 MessageBox.Show("Vor Return: " + this.cost.KilometerGefahren.ToString());

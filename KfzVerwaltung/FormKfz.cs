@@ -11,6 +11,7 @@ using KfzVerwaltung.Data;
 
 namespace KfzVerwaltung
 {
+<<<<<<< HEAD
     public partial class FormKfz : Form
     {
         private Car car = null;
@@ -77,6 +78,74 @@ namespace KfzVerwaltung
                 this.car.KfzKennzeichen = this.textBoxKennzeichen.Text;
                 this.car.DatumZulassung = DateTime.Parse(dateTimePickerZulassung.Text);
 
+=======
+	public partial class FormKfz : Form
+	{
+		private Car car = null;
+
+		public Car Car
+		{
+			get { return car; }
+			set { car = value; }
+		}
+
+		public FormKfz()
+		{
+			InitializeComponent();
+		}
+
+		public FormKfz(Car car)
+		{
+			InitializeComponent();
+			this.car = car;
+			this.textBoxMarke.Text = car.Marke;
+			this.textBoxModell.Text = car.Modell;
+			this.textBoxKennzeichen.Text = car.KfzKennzeichen;
+			this.dateTimePickerZulassung.Text = car.DatumZulassung.ToShortDateString();
+			this.textBoxKW.Text = Convert.ToString(car.LeistungKW);
+			this.textBoxPS.Text = Convert.ToString(car.LeistungPS);
+			this.textBoxFarbe.Text = car.Farbe;
+			this.textBoxFarbe.BackColor = ColorTranslator.FromHtml(car.FarbeBackground); 
+			this.textBoxWartungsintervall.Text = Convert.ToString(car.Wartungsintervall);
+
+			UserControlCost uc = null;
+			foreach (Cost cost in car.Costs)
+			{
+				uc = new UserControlCost(cost);
+				this.panelListCosts.Controls.Add(uc);
+			}
+		}
+
+		private void buttonKfzColor_Click(object sender, EventArgs e)
+		{
+			ColorDialog dlgColor = new ColorDialog();
+			dlgColor.AllowFullOpen = false; // user is not allowed to pick custom color
+			dlgColor.Color = textBoxFarbe.ForeColor;
+
+			if (dlgColor.ShowDialog() == DialogResult.OK)
+				textBoxFarbe.BackColor = dlgColor.Color;
+			textBoxFarbe.Text = (dlgColor.Color.ToArgb() & 0x00FFFFFF).ToString("X6"); // Alpha, red, green, blue; filter out Alpha (& 0x00FFFFFF); format as hex
+		}
+
+		private void buttonKfzOK_Click(object sender, EventArgs e)
+		{
+			if (this.car == null) this.car = new Car();
+			
+            if ((String.IsNullOrEmpty(this.textBoxMarke.Text)) || (String.IsNullOrEmpty(this.textBoxModell.Text)) || (String.IsNullOrEmpty(this.textBoxKennzeichen.Text)))
+			{
+				if (String.IsNullOrEmpty(this.textBoxMarke.Text)) this.textBoxMarke.BackColor = Color.Red;
+				if (String.IsNullOrEmpty(this.textBoxModell.Text)) this.textBoxModell.BackColor = Color.Red;
+				if (String.IsNullOrEmpty(this.textBoxKennzeichen.Text)) this.textBoxKennzeichen.BackColor = Color.Red;
+				MessageBox.Show("Die rot markierten Felder sind Pflichtfelder. Für die Anlage eines neuen Kfz füllen Sie diese bitte aus.", "Validierung", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+			else
+			{
+				this.car.Marke = this.textBoxMarke.Text;
+				this.car.Modell = this.textBoxModell.Text;
+				this.car.KfzKennzeichen = this.textBoxKennzeichen.Text;
+				this.car.DatumZulassung = DateTime.Parse(dateTimePickerZulassung.Text);
+                
+>>>>>>> 12a464e20eec389628f4ecf084a1f3c042270fbe
                 this.car.Costs = new List<Cost>(); // start CostCalculation
                 int forCounter = 0;
                 foreach (UserControlCost uc in this.panelListCosts.Controls)
