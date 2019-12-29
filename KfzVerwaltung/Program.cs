@@ -10,9 +10,8 @@ namespace KfzVerwaltung
 	// ToDo
 	// Tankkosten berechnen!!!
     // zurückschreiben in Objekt ausständig
-    // Loop bei Öffnen einer xml Datei und cancel drücken
     // Delete muss Ansicht neu laden
-   
+    // beim erstellen einer Liste schon userdaten anzeigen  
 
 	// nicetohave
 	// Eingabevalidierung 
@@ -20,7 +19,6 @@ namespace KfzVerwaltung
 
 	// Testen
 	// Settings zurückschreiben
-	// Fehler für andere Datei abfangen
 
 	static class Program
     {
@@ -34,7 +32,7 @@ namespace KfzVerwaltung
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-								Application.Run(new FormMain());
+				Application.Run(new FormMain());
                 
             }
             catch (Exception ex)

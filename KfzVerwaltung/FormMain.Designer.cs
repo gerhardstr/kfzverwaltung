@@ -45,15 +45,29 @@
             this.panelNavigationBottom = new System.Windows.Forms.Panel();
             this.panelBottom = new System.Windows.Forms.Panel();
             this.panelTop = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelUser = new System.Windows.Forms.Panel();
             this.pictureBoxAvatar = new System.Windows.Forms.PictureBox();
             this.panelList = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panelMotd = new System.Windows.Forms.Panel();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxIntro = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.pictureBoxHere = new System.Windows.Forms.PictureBox();
             this.panelNavigation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBorder)).BeginInit();
             this.panelBottom.SuspendLayout();
             this.panelTop.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panelUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).BeginInit();
+            this.panelList.SuspendLayout();
+            this.panelMotd.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHere)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -261,7 +275,7 @@
             // panelTop
             // 
             this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            this.panelTop.Controls.Add(this.panel1);
+            this.panelTop.Controls.Add(this.panelUser);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(140, 0);
             this.panelTop.Margin = new System.Windows.Forms.Padding(4);
@@ -269,15 +283,15 @@
             this.panelTop.Size = new System.Drawing.Size(844, 40);
             this.panelTop.TabIndex = 12;
             // 
-            // panel1
+            // panelUser
             // 
-            this.panel1.Controls.Add(this.statusLabelUser);
-            this.panel1.Controls.Add(this.pictureBoxAvatar);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(644, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 40);
-            this.panel1.TabIndex = 0;
+            this.panelUser.Controls.Add(this.statusLabelUser);
+            this.panelUser.Controls.Add(this.pictureBoxAvatar);
+            this.panelUser.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelUser.Location = new System.Drawing.Point(644, 0);
+            this.panelUser.Name = "panelUser";
+            this.panelUser.Size = new System.Drawing.Size(200, 40);
+            this.panelUser.TabIndex = 0;
             // 
             // pictureBoxAvatar
             // 
@@ -294,12 +308,162 @@
             // panelList
             // 
             this.panelList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.panelList.BackgroundImage = global::KfzVerwaltung.Properties.Resources.background;
+            this.panelList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelList.Controls.Add(this.pictureBoxHere);
+            this.panelList.Controls.Add(this.button3);
+            this.panelList.Controls.Add(this.button2);
+            this.panelList.Controls.Add(this.button1);
+            this.panelList.Controls.Add(this.panelMotd);
             this.panelList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelList.Location = new System.Drawing.Point(140, 40);
             this.panelList.Margin = new System.Windows.Forms.Padding(4);
             this.panelList.Name = "panelList";
             this.panelList.Size = new System.Drawing.Size(844, 371);
             this.panelList.TabIndex = 13;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(193)))), ((int)(((byte)(204)))));
+            this.button3.Location = new System.Drawing.Point(167, 186);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(25, 25);
+            this.button3.TabIndex = 300;
+            this.button3.TabStop = false;
+            this.button3.Text = "3";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(193)))), ((int)(((byte)(204)))));
+            this.button2.Location = new System.Drawing.Point(167, 127);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(25, 25);
+            this.button2.TabIndex = 300;
+            this.button2.TabStop = false;
+            this.button2.Text = "2";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(193)))), ((int)(((byte)(204)))));
+            this.button1.Location = new System.Drawing.Point(167, 77);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(25, 25);
+            this.button1.TabIndex = 300;
+            this.button1.TabStop = false;
+            this.button1.Text = "1";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // panelMotd
+            // 
+            this.panelMotd.Controls.Add(this.textBox3);
+            this.panelMotd.Controls.Add(this.textBox5);
+            this.panelMotd.Controls.Add(this.textBoxIntro);
+            this.panelMotd.Controls.Add(this.textBox7);
+            this.panelMotd.Controls.Add(this.textBox6);
+            this.panelMotd.Controls.Add(this.textBox4);
+            this.panelMotd.Location = new System.Drawing.Point(179, 61);
+            this.panelMotd.Name = "panelMotd";
+            this.panelMotd.Size = new System.Drawing.Size(339, 217);
+            this.panelMotd.TabIndex = 14;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Enabled = false;
+            this.textBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox3.Location = new System.Drawing.Point(19, 16);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(303, 22);
+            this.textBox3.TabIndex = 0;
+            this.textBox3.Text = "Beginnen Sie eine neue Liste";
+            // 
+            // textBox5
+            // 
+            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox5.Enabled = false;
+            this.textBox5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox5.Location = new System.Drawing.Point(19, 128);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(303, 22);
+            this.textBox5.TabIndex = 0;
+            this.textBox5.Text = "Wussten Sie schon...";
+            // 
+            // textBoxIntro
+            // 
+            this.textBoxIntro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.textBoxIntro.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxIntro.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxIntro.Location = new System.Drawing.Point(19, 146);
+            this.textBoxIntro.Multiline = true;
+            this.textBoxIntro.Name = "textBoxIntro";
+            this.textBoxIntro.Size = new System.Drawing.Size(303, 68);
+            this.textBoxIntro.TabIndex = 1;
+            this.textBoxIntro.Text = "Beim Speichern Ihrer Fahrzeuge wird eine Liste mit Ihren Logindaten gespeichert. " +
+    "So haben nur Sie Zugriff auf diese Liste. \r\n";
+            // 
+            // textBox7
+            // 
+            this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox7.Location = new System.Drawing.Point(19, 91);
+            this.textBox7.Multiline = true;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(303, 20);
+            this.textBox7.TabIndex = 1;
+            this.textBox7.Text = "Sie können eine Liste ihrer Fahrzeuge öffnen. \r\n";
+            // 
+            // textBox6
+            // 
+            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox6.Location = new System.Drawing.Point(19, 35);
+            this.textBox6.Multiline = true;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(315, 27);
+            this.textBox6.TabIndex = 1;
+            this.textBox6.Text = "Sie können eine neue Liste mit Fahrzeugen anlegen.\r\n";
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.Enabled = false;
+            this.textBox4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox4.Location = new System.Drawing.Point(19, 69);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(303, 22);
+            this.textBox4.TabIndex = 0;
+            this.textBox4.Text = "Verwalten Sie Ihre Fahrzeuge";
+            // 
+            // pictureBoxHere
+            // 
+            this.pictureBoxHere.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxHere.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBoxHere.Image = global::KfzVerwaltung.Properties.Resources.StartHere2;
+            this.pictureBoxHere.Location = new System.Drawing.Point(524, 189);
+            this.pictureBoxHere.Name = "pictureBoxHere";
+            this.pictureBoxHere.Size = new System.Drawing.Size(208, 126);
+            this.pictureBoxHere.TabIndex = 301;
+            this.pictureBoxHere.TabStop = false;
             // 
             // FormMain
             // 
@@ -325,8 +489,12 @@
             this.panelBottom.ResumeLayout(false);
             this.panelBottom.PerformLayout();
             this.panelTop.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.panelUser.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).EndInit();
+            this.panelList.ResumeLayout(false);
+            this.panelMotd.ResumeLayout(false);
+            this.panelMotd.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHere)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,8 +517,19 @@
         private System.Windows.Forms.Button menuItemFileSave;
         private System.Windows.Forms.Button menuItemNewKfz;
         private System.Windows.Forms.Button buttonLogo;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelUser;
         private System.Windows.Forms.PictureBox pictureBoxAvatar;
+        private System.Windows.Forms.Panel panelMotd;
+        private System.Windows.Forms.TextBox textBoxIntro;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PictureBox pictureBoxHere;
     }
 }
 

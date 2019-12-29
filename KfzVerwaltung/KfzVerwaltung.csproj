@@ -240,5 +240,17 @@
   <ItemGroup>
     <None Include="Resources\name_225px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shutterstock_1254070234-zugeschn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StartHere.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StartHere2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

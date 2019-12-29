@@ -63,6 +63,16 @@ namespace KfzVerwaltung.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap background {
+            get {
+                object obj = ResourceManager.GetObject("background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap car_20px {
             get {
                 object obj = ResourceManager.GetObject("car_20px", resourceCulture);
@@ -446,6 +456,36 @@ namespace KfzVerwaltung.Properties {
         internal static System.Drawing.Bitmap save_25px {
             get {
                 object obj = ResourceManager.GetObject("save_25px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shutterstock_1254070234_zugeschn {
+            get {
+                object obj = ResourceManager.GetObject("shutterstock_1254070234-zugeschn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StartHere {
+            get {
+                object obj = ResourceManager.GetObject("StartHere", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StartHere2 {
+            get {
+                object obj = ResourceManager.GetObject("StartHere2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
