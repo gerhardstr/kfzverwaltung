@@ -27,16 +27,23 @@ namespace KfzVerwaltung
             this.cost = cost;  
             this.comboBoxKategorie.Text = cost.Kategorie;
             this.dateTimePickerCosts.Text = cost.DatumKategorieXy.ToShortDateString();
+            this.textBoxCostsBemerkung.AutoSize = false; // weird stuff for deactivate autosize
             this.textBoxCostsBemerkung.Text = cost.Bemerkung;
+            this.textBoxCostsKosten.AutoSize = false;
             this.textBoxCostsKosten.Text = Convert.ToString(cost.Kosten);
+            this.textBoxCostsKm.AutoSize = false;
             this.textBoxCostsKm.Text = Convert.ToString(cost.Kilometerstand);
             
             if (this.comboBoxKategorie.Text == "Tankkosten")
             {
+                this.pictureBoxLiter.Visible = true;
                 this.textBoxTankkostenLiter.Visible = true;
+                this.textBoxTankkostenLiter.AutoSize = false;
                 this.textBoxTankkostenLiter.Text = Convert.ToString(cost.Liter);
+                this.textBoxTankkostenKmGefahren.AutoSize = false;
                 this.textBoxTankkostenKmGefahren.Visible = true;
                 this.textBoxTankkostenKmGefahren.Text = Convert.ToString(cost.KilometerGefahren);
+                this.textBoxTankkostenVerbrauch.AutoSize = false;
                 this.textBoxTankkostenVerbrauch.Visible = true;
                 this.textBoxTankkostenVerbrauch.Text = Convert.ToString(cost.Verbrauch);
             }

@@ -37,7 +37,7 @@ namespace KfzVerwaltung.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("816, 411")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1000, 500")]
         public global::System.Drawing.Size WindowSize {
             get {
                 return ((global::System.Drawing.Size)(this["WindowSize"]));

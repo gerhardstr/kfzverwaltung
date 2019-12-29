@@ -35,7 +35,19 @@ namespace KfzVerwaltung
 			dialog.Filter = "Kfz XML Datei|*.xml";
 
 			if (Properties.Settings.Default.LastFilePath != string.Empty) dialog.InitialDirectory = Properties.Settings.Default.LastFilePath; // open last file path
-			if (Properties.Settings.Default.WindowLocation != null) this.Location = Properties.Settings.Default.WindowLocation;
+			if (Properties.Settings.Default.WindowLocation != null)
+            {
+                if (Properties.Settings.Default.WindowLocation.X == 0 || Properties.Settings.Default.WindowLocation.Y == 0)
+                {
+                    // first start
+                    // optional: add default values
+                }
+                else
+                {
+                    this.Location = Properties.Settings.Default.WindowLocation;
+                }
+            }    
+
 			if (Properties.Settings.Default.WindowSize != null) this.Size = Properties.Settings.Default.WindowSize;
 
 			while (!dialog.FileName.ToLower().EndsWith(".xml"))
@@ -58,8 +70,12 @@ namespace KfzVerwaltung
 						{
 							this.masterPassword = loginForm.Password;
 							foreach (Car car in this.securedFile.Cars) LoadUserControl(car);
-							this.statusLabelInfo.Text = "Benutzer: " + loginForm.Username.ToString() + " | Dateipfad: " + dialog.FileName.ToString(); // statusstrip is required
-							this.statusStripUserInformation.Text = dialog.FileName; // required for menuItemFileSave_Click
+                            this.pictureBoxAvatar.Visible = true;
+                            this.statusLabelUser.Visible = true;
+                            this.statusLabelUser.Text = loginForm.Username.ToString();
+                            this.StatusLabelSave.Visible = true;
+                            this.StatusLabelSave.Text = dialog.FileName.ToString();
+							this.statusLabelInformation.Text = dialog.FileName; // required for menuItemFileSave_Click
 						}
 						else
 						{
@@ -96,16 +112,17 @@ namespace KfzVerwaltung
 			UserControl userControl = null;
 			userControl = new UserControlKfz(car);
 
-			int ucTop = 0;
+            // Styling & Positioning
+            int ucTop = 0;
 			if (this.panelList.Controls.Count > 0)
-			//Styling
 			ucTop = this.panelList.Controls[this.panelList.Controls.Count - 1].Location.Y + this.panelList.Controls[this.panelList.Controls.Count - 1].Size.Height;
-			userControl.Location = new Point(5, ucTop + 2);
-			userControl.Width = this.panelList.ClientRectangle.Width - 30;
+			userControl.Location = new Point(5, ucTop + 5);
+			userControl.Width = this.panelList.ClientRectangle.Width - 10;
 			userControl.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
 
-			if (this.panelList.Controls.Count % 2 == 0) userControl.BackColor = Color.DarkGray;
-			else userControl.BackColor = Color.LightGray;
+            //if (this.panelList.Controls.Count % 2 == 0) userControl.BackColor = Color.DarkGray;
+            //else userControl.BackColor = Color.LightGray;
+            userControl.BackColor = Color.FromArgb(180, 193, 204);
 
 			this.panelList.Controls.Add(userControl);
 		}
@@ -129,7 +146,7 @@ namespace KfzVerwaltung
 				}
 				else
 				{
-					Save(this.statusStripUserInformation.Text, string.Empty, this.masterPassword, this.statusStripUserInformation.Text);
+					Save(this.statusLabelInformation.Text, string.Empty, this.masterPassword, this.statusLabelInformation.Text);
 				}
 			}
 		}
@@ -148,19 +165,13 @@ namespace KfzVerwaltung
 			this.securedFile.LastUpdate = DateTime.Now;
 			if (!String.IsNullOrEmpty(userName)) this.securedFile.Owner = userName;
 			this.securedFile.Save(fileName, password);
-			toolStripStatusLabelSave.Text = "Speichern erfolgreich durchgeführt.";
+			StatusLabelSave.Text = "Speichern erfolgreich durchgeführt.";
 
 			this.t1.Enabled = true;  // timer for fade out
 
 			Properties.Settings.Default.LastFilePath = LastFilePath; // save new Usersettings
 			Properties.Settings.Default.WindowLocation = this.Location;
 			Properties.Settings.Default.WindowSize = this.Size;
-		}
-		private void menuItemGridLayout_Click(object sender, EventArgs e)
-		{
-			//if (this.pictureBox1.Visible == false) this.pictureBox1.Visible = true;
-			//else this.pictureBox1.Visible = false;
-			//PictureBox einbauen
 		}
 
 		private void menuItemQuit_Click(object sender, EventArgs e)
@@ -173,14 +184,14 @@ namespace KfzVerwaltung
 
 		private void t1_Tick(object sender, EventArgs e)
 		{
-			Color myForeColor = this.toolStripStatusLabelSave.ForeColor;
+			Color myForeColor = this.StatusLabelSave.ForeColor;
 
 			for (int i = 255; i >= 0; i--)
 			{
-				this.toolStripStatusLabelSave.ForeColor = Color.FromArgb(i, myForeColor);
+				this.StatusLabelSave.ForeColor = Color.FromArgb(i, myForeColor);
 				Thread.Sleep(20);
 			}
-			toolStripStatusLabelSave.Text = "";
+			StatusLabelSave.Text = Properties.Settings.Default.LastFilePath;
 			this.t1.Enabled = false;
 		}
     }
