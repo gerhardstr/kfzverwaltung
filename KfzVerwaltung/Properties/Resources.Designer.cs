@@ -153,6 +153,26 @@ namespace KfzVerwaltung.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap delete_25px1 {
+            get {
+                object obj = ResourceManager.GetObject("delete_25px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap delete_25px2 {
+            get {
+                object obj = ResourceManager.GetObject("delete_25px2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DeleteListItem_16x {
             get {
                 object obj = ResourceManager.GetObject("DeleteListItem_16x", resourceCulture);

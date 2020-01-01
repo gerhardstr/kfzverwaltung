@@ -26,10 +26,10 @@ namespace KfzVerwaltung
 
         private void menuItemFileOpen_Click(object sender, EventArgs e)
         {
-
-            OpenFileDialog dialog = new OpenFileDialog(); 
+            OpenFileDialog dialog = new OpenFileDialog();
             dialog.Filter = "Kfz XML Datei|*.xml";
-            GetPropertiesSettings(dialog);     
+            GetPropertiesSettings(dialog);
+            PositioningNavigationPanel(this.menuItemFileOpen);
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
@@ -76,6 +76,7 @@ namespace KfzVerwaltung
         }
         private void menuItemNewKfz_Click(object sender, EventArgs e)
         {
+            PositioningNavigationPanel(this.menuItemNewKfz);
             if (this.securedFile == null)
             {
                 this.securedFile = new FileManager();
@@ -118,12 +119,13 @@ namespace KfzVerwaltung
                 {
                     this.Location = Properties.Settings.Default.WindowLocation;
                 }
-}
+            }
             if (Properties.Settings.Default.WindowSize != null) this.Size = Properties.Settings.Default.WindowSize;
         }
 
         private void menuItemFileSave_Click(object sender, EventArgs e)
         {
+            PositioningNavigationPanel(this.menuItemFileSave);
             if (this.securedFile != null)
             {
                 if (String.IsNullOrEmpty(this.masterPassword))
@@ -163,7 +165,7 @@ namespace KfzVerwaltung
             this.securedFile.Save(fileName, password);
             StatusLabelSave.Text = "Speichern erfolgreich durchgeführt.";
 
-            this.t1.Enabled = true;  // timer for fade out
+            this.timerSave.Enabled = true;  // timer for fade out
 
             Properties.Settings.Default.LastFilePath = LastFilePath; // save new Usersettings
             Properties.Settings.Default.WindowLocation = this.Location;
@@ -172,6 +174,7 @@ namespace KfzVerwaltung
 
         private void menuItemQuit_Click(object sender, EventArgs e)
         {
+            PositioningNavigationPanel(this.menuItemQuit);
             Properties.Settings.Default.WindowLocation = this.Location; //save Usersettings
             Properties.Settings.Default.WindowSize = this.Size;
             Application.Exit();
@@ -187,7 +190,13 @@ namespace KfzVerwaltung
                 Thread.Sleep(20);
             }
             StatusLabelSave.Text = Properties.Settings.Default.LastFilePath;
-            this.t1.Enabled = false;
+            this.timerSave.Enabled = false;
+        }
+
+        private void PositioningNavigationPanel(Button btn)
+        {
+            pictureBoxNavigation.Top = btn.Top;
+            pictureBoxNavigation.Visible = true;
         }
     }
 }

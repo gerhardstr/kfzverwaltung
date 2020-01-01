@@ -34,7 +34,7 @@
             this.statusLabelUser = new System.Windows.Forms.Label();
             this.StatusLabelSave = new System.Windows.Forms.Label();
             this.statusLabelInformation = new System.Windows.Forms.Label();
-            this.t1 = new System.Windows.Forms.Timer(this.components);
+            this.timerSave = new System.Windows.Forms.Timer(this.components);
             this.panelNavigation = new System.Windows.Forms.Panel();
             this.pictureBoxBorder = new System.Windows.Forms.PictureBox();
             this.menuItemQuit = new System.Windows.Forms.Button();
@@ -48,6 +48,7 @@
             this.panelUser = new System.Windows.Forms.Panel();
             this.pictureBoxAvatar = new System.Windows.Forms.PictureBox();
             this.panelList = new System.Windows.Forms.Panel();
+            this.pictureBoxHere = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -58,7 +59,7 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.pictureBoxHere = new System.Windows.Forms.PictureBox();
+            this.pictureBoxNavigation = new System.Windows.Forms.PictureBox();
             this.panelNavigation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBorder)).BeginInit();
             this.panelBottom.SuspendLayout();
@@ -66,8 +67,9 @@
             this.panelUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).BeginInit();
             this.panelList.SuspendLayout();
-            this.panelMotd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHere)).BeginInit();
+            this.panelMotd.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNavigation)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -122,14 +124,15 @@
             this.statusLabelInformation.Text = "StatusLabelInformation";
             this.statusLabelInformation.Visible = false;
             // 
-            // t1
+            // timerSave
             // 
-            this.t1.Interval = 5000;
-            this.t1.Tick += new System.EventHandler(this.t1_Tick);
+            this.timerSave.Interval = 5000;
+            this.timerSave.Tick += new System.EventHandler(this.t1_Tick);
             // 
             // panelNavigation
             // 
             this.panelNavigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.panelNavigation.Controls.Add(this.pictureBoxNavigation);
             this.panelNavigation.Controls.Add(this.pictureBoxBorder);
             this.panelNavigation.Controls.Add(this.menuItemQuit);
             this.panelNavigation.Controls.Add(this.menuItemFileSave);
@@ -234,7 +237,7 @@
             // 
             this.menuItemFileOpen.FlatAppearance.BorderSize = 0;
             this.menuItemFileOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.menuItemFileOpen.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuItemFileOpen.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuItemFileOpen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(193)))), ((int)(((byte)(204)))));
             this.menuItemFileOpen.Image = global::KfzVerwaltung.Properties.Resources.opened_folder_20px;
             this.menuItemFileOpen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -321,6 +324,17 @@
             this.panelList.Name = "panelList";
             this.panelList.Size = new System.Drawing.Size(844, 371);
             this.panelList.TabIndex = 13;
+            // 
+            // pictureBoxHere
+            // 
+            this.pictureBoxHere.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxHere.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBoxHere.Image = global::KfzVerwaltung.Properties.Resources.StartHere2;
+            this.pictureBoxHere.Location = new System.Drawing.Point(524, 189);
+            this.pictureBoxHere.Name = "pictureBoxHere";
+            this.pictureBoxHere.Size = new System.Drawing.Size(208, 126);
+            this.pictureBoxHere.TabIndex = 301;
+            this.pictureBoxHere.TabStop = false;
             // 
             // button3
             // 
@@ -454,16 +468,15 @@
             this.textBox4.TabIndex = 0;
             this.textBox4.Text = "Verwalten Sie Ihre Fahrzeuge";
             // 
-            // pictureBoxHere
+            // pictureBoxNavigation
             // 
-            this.pictureBoxHere.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxHere.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBoxHere.Image = global::KfzVerwaltung.Properties.Resources.StartHere2;
-            this.pictureBoxHere.Location = new System.Drawing.Point(524, 189);
-            this.pictureBoxHere.Name = "pictureBoxHere";
-            this.pictureBoxHere.Size = new System.Drawing.Size(208, 126);
-            this.pictureBoxHere.TabIndex = 301;
-            this.pictureBoxHere.TabStop = false;
+            this.pictureBoxNavigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(170)))), ((int)(((byte)(51)))));
+            this.pictureBoxNavigation.Location = new System.Drawing.Point(0, 138);
+            this.pictureBoxNavigation.Name = "pictureBoxNavigation";
+            this.pictureBoxNavigation.Size = new System.Drawing.Size(7, 50);
+            this.pictureBoxNavigation.TabIndex = 7;
+            this.pictureBoxNavigation.TabStop = false;
+            this.pictureBoxNavigation.Visible = false;
             // 
             // FormMain
             // 
@@ -492,9 +505,10 @@
             this.panelUser.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).EndInit();
             this.panelList.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHere)).EndInit();
             this.panelMotd.ResumeLayout(false);
             this.panelMotd.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHere)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNavigation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -505,7 +519,7 @@
 		private System.Windows.Forms.Label statusLabelUser;
 		private System.Windows.Forms.Label StatusLabelSave;
 		private System.Windows.Forms.Label statusLabelInformation;
-		private System.Windows.Forms.Timer t1;
+		private System.Windows.Forms.Timer timerSave;
         private System.Windows.Forms.Panel panelNavigation;
         private System.Windows.Forms.Panel panelNavigationBottom;
         private System.Windows.Forms.Panel panelBottom;
@@ -530,6 +544,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBoxHere;
+        private System.Windows.Forms.PictureBox pictureBoxNavigation;
     }
 }
 

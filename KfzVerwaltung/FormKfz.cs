@@ -116,5 +116,10 @@ namespace KfzVerwaltung
             UserControlCost uc = new UserControlCost();
             this.panelListCosts.Controls.Add(uc);
         }
+
+        private void pictureBoxKfzQuit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
