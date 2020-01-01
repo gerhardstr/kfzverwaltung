@@ -60,6 +60,12 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.menuStrip4KeyControl = new System.Windows.Forms.MenuStrip();
+            this.neuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.neuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.öffnenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.speichernToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelNavigation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNavigation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBorder)).BeginInit();
@@ -70,6 +76,7 @@
             this.panelList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHere)).BeginInit();
             this.panelMotd.SuspendLayout();
+            this.menuStrip4KeyControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
@@ -402,7 +409,7 @@
             this.panelMotd.Controls.Add(this.textBox4);
             this.panelMotd.Location = new System.Drawing.Point(229, 61);
             this.panelMotd.Name = "panelMotd";
-            this.panelMotd.Size = new System.Drawing.Size(339, 217);
+            this.panelMotd.Size = new System.Drawing.Size(339, 225);
             this.panelMotd.TabIndex = 14;
             // 
             // textBox3
@@ -479,6 +486,60 @@
             this.textBox4.TabIndex = 0;
             this.textBox4.Text = "Verwalten Sie Ihre Fahrzeuge";
             // 
+            // menuStrip4KeyControl
+            // 
+            this.menuStrip4KeyControl.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.neuToolStripMenuItem});
+            this.menuStrip4KeyControl.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip4KeyControl.Name = "menuStrip4KeyControl";
+            this.menuStrip4KeyControl.Size = new System.Drawing.Size(984, 24);
+            this.menuStrip4KeyControl.TabIndex = 14;
+            this.menuStrip4KeyControl.Text = "menuStrip1";
+            this.menuStrip4KeyControl.Visible = false;
+            // 
+            // neuToolStripMenuItem
+            // 
+            this.neuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.neuToolStripMenuItem1,
+            this.öffnenToolStripMenuItem,
+            this.speichernToolStripMenuItem,
+            this.beendenToolStripMenuItem});
+            this.neuToolStripMenuItem.Name = "neuToolStripMenuItem";
+            this.neuToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
+            this.neuToolStripMenuItem.Text = "KeyControl";
+            // 
+            // neuToolStripMenuItem1
+            // 
+            this.neuToolStripMenuItem1.Name = "neuToolStripMenuItem1";
+            this.neuToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.neuToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.neuToolStripMenuItem1.Text = "Neu";
+            this.neuToolStripMenuItem1.Click += new System.EventHandler(this.menuItemNewKfz_Click);
+            // 
+            // öffnenToolStripMenuItem
+            // 
+            this.öffnenToolStripMenuItem.Name = "öffnenToolStripMenuItem";
+            this.öffnenToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.öffnenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.öffnenToolStripMenuItem.Text = "Öffnen";
+            this.öffnenToolStripMenuItem.Click += new System.EventHandler(this.menuItemFileOpen_Click);
+            // 
+            // speichernToolStripMenuItem
+            // 
+            this.speichernToolStripMenuItem.Name = "speichernToolStripMenuItem";
+            this.speichernToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.speichernToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.speichernToolStripMenuItem.Text = "Speichern";
+            this.speichernToolStripMenuItem.Click += new System.EventHandler(this.menuItemFileSave_Click);
+            // 
+            // beendenToolStripMenuItem
+            // 
+            this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
+            this.beendenToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.beendenToolStripMenuItem.Text = "Beenden";
+            this.beendenToolStripMenuItem.Click += new System.EventHandler(this.menuItemQuit_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -490,10 +551,13 @@
             this.Controls.Add(this.panelBottom);
             this.Controls.Add(this.panelNavigation);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.menuStrip4KeyControl);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
+            this.MainMenuStrip = this.menuStrip4KeyControl;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -510,6 +574,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHere)).EndInit();
             this.panelMotd.ResumeLayout(false);
             this.panelMotd.PerformLayout();
+            this.menuStrip4KeyControl.ResumeLayout(false);
+            this.menuStrip4KeyControl.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -546,6 +612,12 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBoxHere;
         private System.Windows.Forms.PictureBox pictureBoxNavigation;
+        private System.Windows.Forms.MenuStrip menuStrip4KeyControl;
+        private System.Windows.Forms.ToolStripMenuItem neuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem neuToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem öffnenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem speichernToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem beendenToolStripMenuItem;
     }
 }
 

@@ -209,5 +209,15 @@ namespace KfzVerwaltung
         {
             Properties.Settings.Default.Reset();
         }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Control & Keys.N))
+            {
+                MessageBox.Show("What the Ctrl+N?");
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
     }
 }

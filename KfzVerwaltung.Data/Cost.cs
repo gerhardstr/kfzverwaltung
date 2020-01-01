@@ -9,7 +9,8 @@ namespace KfzVerwaltung.Data
 	[Serializable()]
 	public class Cost
 	{
-		public string Kategorie { get; set; }
+        #region Properties
+        public string Kategorie { get; set; }
 		public DateTime DatumKategorieXy { get; set; } = DateTime.Now;
 		public string Bemerkung { get; set; }
 		public double Kosten { get; set; } 
@@ -17,5 +18,6 @@ namespace KfzVerwaltung.Data
 		public double Kilometerstand { get; set; }
         public double KilometerGefahren { get; set; }
         public double Verbrauch { get; set; }
+        #endregion
     }
 }

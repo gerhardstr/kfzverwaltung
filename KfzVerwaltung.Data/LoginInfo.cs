@@ -19,7 +19,6 @@ namespace KfzVerwaltung.Data
 		public string Password { get; set; }
 		[XmlElement(ElementName = "Password")]
 		public string PasswordEncrypted { get; set; }
-
 		#endregion
 
 	}

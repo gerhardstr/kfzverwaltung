@@ -12,8 +12,21 @@ namespace KfzVerwaltung.Data
 	[Serializable()]
 	public class FileManager
 	{
-
-		public static FileManager Read(string fileName, string password)
+        #region Properties
+        [XmlIgnore()]
+        public string Owner { get; set; }
+        [XmlIgnore()]
+        public string MasterKey { get; set; }
+        public string OwnerEncrypted { get; set; }
+        public DateTime CreationDate { get; set; }
+        public DateTime LastUpdate { get; set; }
+        public List<LoginInfo> LoginInfos { get; set; } = new List<LoginInfo>();
+        public List<Car> Cars { get; set; } = new List<Car>();
+        public List<String> Categories { get; set; }
+        #endregion
+               
+        #region Methods
+        public static FileManager Read(string fileName, string password)
 		{
 			StreamReader reader = new StreamReader(fileName, Encoding.UTF8);
 			XmlSerializer serializer = new XmlSerializer(typeof(FileManager));
@@ -29,18 +42,7 @@ namespace KfzVerwaltung.Data
 
 			return securedFile;
 		}
-
-		[XmlIgnore()]
-		public string Owner { get; set; }
-		[XmlIgnore()]
-		public string MasterKey { get; set; }
-		public string OwnerEncrypted { get; set; }
-		public DateTime CreationDate { get; set; }
-		public DateTime LastUpdate { get; set; }
-		public List<LoginInfo> LoginInfos { get; set; } = new List<LoginInfo>();
-		public List<Car> Cars { get; set; } = new List<Car>();
-		public List<String> Categories  { get; set; }
-
+      
 		public void Save(string fileName, string password)
 		{
 			this.OwnerEncrypted = Encrypt(this.Owner, password);
@@ -128,7 +130,7 @@ namespace KfzVerwaltung.Data
 
 			return result;
 		}
-
-	}
+        #endregion
+    }
 }
 
