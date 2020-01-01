@@ -106,7 +106,7 @@
             // pictureBoxKfzDelete
             // 
             this.pictureBoxKfzDelete.Image = global::KfzVerwaltung.Properties.Resources.close2_window_20px;
-            this.pictureBoxKfzDelete.Location = new System.Drawing.Point(816, 9);
+            this.pictureBoxKfzDelete.Location = new System.Drawing.Point(796, 9);
             this.pictureBoxKfzDelete.Name = "pictureBoxKfzDelete";
             this.pictureBoxKfzDelete.Size = new System.Drawing.Size(20, 20);
             this.pictureBoxKfzDelete.TabIndex = 6;
@@ -126,7 +126,7 @@
             this.Controls.Add(this.labelDatumZulassung);
             this.Controls.Add(this.labelKennzeichen);
             this.Name = "UserControlKfz";
-            this.Size = new System.Drawing.Size(844, 40);
+            this.Size = new System.Drawing.Size(830, 40);
             this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.UserControlKfz_MouseDoubleClick);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKfzDelete)).EndInit();

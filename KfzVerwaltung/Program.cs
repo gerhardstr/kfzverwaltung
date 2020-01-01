@@ -10,8 +10,6 @@ namespace KfzVerwaltung
 	// ToDo
 	// Tankkosten berechnen!!!
     // zurückschreiben in Objekt ausständig
-    // Delete muss Ansicht neu laden
-    // beim erstellen einer Liste schon userdaten anzeigen  
 
 	// nicetohave
 	// Eingabevalidierung 

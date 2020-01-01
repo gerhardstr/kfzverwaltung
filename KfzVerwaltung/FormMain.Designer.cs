@@ -30,12 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            this.label3 = new System.Windows.Forms.Label();
             this.statusLabelUser = new System.Windows.Forms.Label();
             this.StatusLabelSave = new System.Windows.Forms.Label();
             this.statusLabelInformation = new System.Windows.Forms.Label();
             this.timerSave = new System.Windows.Forms.Timer(this.components);
             this.panelNavigation = new System.Windows.Forms.Panel();
+            this.panelNavigationBottom = new System.Windows.Forms.Panel();
+            this.panelBottom = new System.Windows.Forms.Panel();
+            this.panelTop = new System.Windows.Forms.Panel();
+            this.panelUser = new System.Windows.Forms.Panel();
+            this.menuStrip4KeyControl = new System.Windows.Forms.MenuStrip();
+            this.neuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.neuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.öffnenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.speichernToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBoxAvatar = new System.Windows.Forms.PictureBox();
             this.pictureBoxNavigation = new System.Windows.Forms.PictureBox();
             this.pictureBoxBorder = new System.Windows.Forms.PictureBox();
             this.menuItemQuit = new System.Windows.Forms.Button();
@@ -43,53 +53,30 @@
             this.menuItemNewKfz = new System.Windows.Forms.Button();
             this.buttonLogo = new System.Windows.Forms.Button();
             this.menuItemFileOpen = new System.Windows.Forms.Button();
-            this.panelNavigationBottom = new System.Windows.Forms.Panel();
-            this.panelBottom = new System.Windows.Forms.Panel();
-            this.panelTop = new System.Windows.Forms.Panel();
-            this.panelUser = new System.Windows.Forms.Panel();
-            this.pictureBoxAvatar = new System.Windows.Forms.PictureBox();
-            this.panelList = new System.Windows.Forms.Panel();
-            this.pictureBoxHere = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panelMotd = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBoxIntro = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.panelList = new System.Windows.Forms.FlowLayoutPanel();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.menuStrip4KeyControl = new System.Windows.Forms.MenuStrip();
-            this.neuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.neuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.öffnenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.speichernToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBoxIntro = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.panelMotd = new System.Windows.Forms.Panel();
+            this.buttonMotd2 = new System.Windows.Forms.Button();
+            this.pictureBoxHere = new System.Windows.Forms.PictureBox();
+            this.buttonMotd3 = new System.Windows.Forms.Button();
+            this.buttonMotd1 = new System.Windows.Forms.Button();
             this.panelNavigation.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNavigation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBorder)).BeginInit();
             this.panelBottom.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.panelUser.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).BeginInit();
-            this.panelList.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHere)).BeginInit();
-            this.panelMotd.SuspendLayout();
             this.menuStrip4KeyControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNavigation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBorder)).BeginInit();
+            this.panelList.SuspendLayout();
+            this.panelMotd.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHere)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(764, 71);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 15);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Datum Zulassung";
             // 
             // statusLabelUser
             // 
@@ -153,6 +140,117 @@
             this.panelNavigation.Name = "panelNavigation";
             this.panelNavigation.Size = new System.Drawing.Size(140, 461);
             this.panelNavigation.TabIndex = 0;
+            // 
+            // panelNavigationBottom
+            // 
+            this.panelNavigationBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.panelNavigationBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelNavigationBottom.Location = new System.Drawing.Point(0, 411);
+            this.panelNavigationBottom.Margin = new System.Windows.Forms.Padding(4);
+            this.panelNavigationBottom.Name = "panelNavigationBottom";
+            this.panelNavigationBottom.Size = new System.Drawing.Size(140, 50);
+            this.panelNavigationBottom.TabIndex = 0;
+            // 
+            // panelBottom
+            // 
+            this.panelBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(253)))));
+            this.panelBottom.Controls.Add(this.statusLabelInformation);
+            this.panelBottom.Controls.Add(this.StatusLabelSave);
+            this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelBottom.Location = new System.Drawing.Point(140, 411);
+            this.panelBottom.Margin = new System.Windows.Forms.Padding(4);
+            this.panelBottom.Name = "panelBottom";
+            this.panelBottom.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.panelBottom.Size = new System.Drawing.Size(844, 50);
+            this.panelBottom.TabIndex = 11;
+            // 
+            // panelTop
+            // 
+            this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.panelTop.Controls.Add(this.panelUser);
+            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTop.Location = new System.Drawing.Point(140, 0);
+            this.panelTop.Margin = new System.Windows.Forms.Padding(4);
+            this.panelTop.Name = "panelTop";
+            this.panelTop.Size = new System.Drawing.Size(844, 40);
+            this.panelTop.TabIndex = 12;
+            // 
+            // panelUser
+            // 
+            this.panelUser.Controls.Add(this.statusLabelUser);
+            this.panelUser.Controls.Add(this.pictureBoxAvatar);
+            this.panelUser.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelUser.Location = new System.Drawing.Point(644, 0);
+            this.panelUser.Name = "panelUser";
+            this.panelUser.Size = new System.Drawing.Size(200, 40);
+            this.panelUser.TabIndex = 0;
+            // 
+            // menuStrip4KeyControl
+            // 
+            this.menuStrip4KeyControl.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.neuToolStripMenuItem});
+            this.menuStrip4KeyControl.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip4KeyControl.Name = "menuStrip4KeyControl";
+            this.menuStrip4KeyControl.Size = new System.Drawing.Size(984, 24);
+            this.menuStrip4KeyControl.TabIndex = 14;
+            this.menuStrip4KeyControl.Text = "menuStrip1";
+            this.menuStrip4KeyControl.Visible = false;
+            // 
+            // neuToolStripMenuItem
+            // 
+            this.neuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.neuToolStripMenuItem1,
+            this.öffnenToolStripMenuItem,
+            this.speichernToolStripMenuItem,
+            this.beendenToolStripMenuItem});
+            this.neuToolStripMenuItem.Name = "neuToolStripMenuItem";
+            this.neuToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
+            this.neuToolStripMenuItem.Text = "KeyControl";
+            // 
+            // neuToolStripMenuItem1
+            // 
+            this.neuToolStripMenuItem1.Name = "neuToolStripMenuItem1";
+            this.neuToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.neuToolStripMenuItem1.Size = new System.Drawing.Size(166, 22);
+            this.neuToolStripMenuItem1.Text = "Neu";
+            this.neuToolStripMenuItem1.Click += new System.EventHandler(this.menuItemNewKfz_Click);
+            // 
+            // öffnenToolStripMenuItem
+            // 
+            this.öffnenToolStripMenuItem.Name = "öffnenToolStripMenuItem";
+            this.öffnenToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.öffnenToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.öffnenToolStripMenuItem.Text = "Öffnen";
+            this.öffnenToolStripMenuItem.Click += new System.EventHandler(this.menuItemFileOpen_Click);
+            // 
+            // speichernToolStripMenuItem
+            // 
+            this.speichernToolStripMenuItem.Name = "speichernToolStripMenuItem";
+            this.speichernToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.speichernToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.speichernToolStripMenuItem.Text = "Speichern";
+            this.speichernToolStripMenuItem.Click += new System.EventHandler(this.menuItemFileSave_Click);
+            // 
+            // beendenToolStripMenuItem
+            // 
+            this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
+            this.beendenToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.beendenToolStripMenuItem.Text = "Beenden";
+            this.beendenToolStripMenuItem.Click += new System.EventHandler(this.menuItemQuit_Click);
+            // 
+            // pictureBoxAvatar
+            // 
+            this.pictureBoxAvatar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBoxAvatar.Image = global::KfzVerwaltung.Properties.Resources.male_user_225px;
+            this.pictureBoxAvatar.Location = new System.Drawing.Point(156, 0);
+            this.pictureBoxAvatar.Name = "pictureBoxAvatar";
+            this.pictureBoxAvatar.Size = new System.Drawing.Size(44, 40);
+            this.pictureBoxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxAvatar.TabIndex = 1;
+            this.pictureBoxAvatar.TabStop = false;
+            this.pictureBoxAvatar.Visible = false;
+            this.pictureBoxAvatar.Click += new System.EventHandler(this.pictureBoxAvatar_Click);
             // 
             // pictureBoxNavigation
             // 
@@ -269,209 +367,20 @@
             this.menuItemFileOpen.UseVisualStyleBackColor = true;
             this.menuItemFileOpen.Click += new System.EventHandler(this.menuItemFileOpen_Click);
             // 
-            // panelNavigationBottom
-            // 
-            this.panelNavigationBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
-            this.panelNavigationBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelNavigationBottom.Location = new System.Drawing.Point(0, 411);
-            this.panelNavigationBottom.Margin = new System.Windows.Forms.Padding(4);
-            this.panelNavigationBottom.Name = "panelNavigationBottom";
-            this.panelNavigationBottom.Size = new System.Drawing.Size(140, 50);
-            this.panelNavigationBottom.TabIndex = 0;
-            // 
-            // panelBottom
-            // 
-            this.panelBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(253)))));
-            this.panelBottom.Controls.Add(this.statusLabelInformation);
-            this.panelBottom.Controls.Add(this.StatusLabelSave);
-            this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottom.Location = new System.Drawing.Point(140, 411);
-            this.panelBottom.Margin = new System.Windows.Forms.Padding(4);
-            this.panelBottom.Name = "panelBottom";
-            this.panelBottom.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.panelBottom.Size = new System.Drawing.Size(844, 50);
-            this.panelBottom.TabIndex = 11;
-            // 
-            // panelTop
-            // 
-            this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            this.panelTop.Controls.Add(this.panelUser);
-            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.Location = new System.Drawing.Point(140, 0);
-            this.panelTop.Margin = new System.Windows.Forms.Padding(4);
-            this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(844, 40);
-            this.panelTop.TabIndex = 12;
-            // 
-            // panelUser
-            // 
-            this.panelUser.Controls.Add(this.statusLabelUser);
-            this.panelUser.Controls.Add(this.pictureBoxAvatar);
-            this.panelUser.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelUser.Location = new System.Drawing.Point(644, 0);
-            this.panelUser.Name = "panelUser";
-            this.panelUser.Size = new System.Drawing.Size(200, 40);
-            this.panelUser.TabIndex = 0;
-            // 
-            // pictureBoxAvatar
-            // 
-            this.pictureBoxAvatar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBoxAvatar.Image = global::KfzVerwaltung.Properties.Resources.male_user_225px;
-            this.pictureBoxAvatar.Location = new System.Drawing.Point(156, 0);
-            this.pictureBoxAvatar.Name = "pictureBoxAvatar";
-            this.pictureBoxAvatar.Size = new System.Drawing.Size(44, 40);
-            this.pictureBoxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxAvatar.TabIndex = 1;
-            this.pictureBoxAvatar.TabStop = false;
-            this.pictureBoxAvatar.Visible = false;
-            this.pictureBoxAvatar.Click += new System.EventHandler(this.pictureBoxAvatar_Click);
-            // 
             // panelList
             // 
+            this.panelList.AutoScroll = true;
+            this.panelList.AutoSize = true;
             this.panelList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.panelList.BackgroundImage = global::KfzVerwaltung.Properties.Resources.background;
             this.panelList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelList.Controls.Add(this.pictureBoxHere);
-            this.panelList.Controls.Add(this.button3);
-            this.panelList.Controls.Add(this.button2);
-            this.panelList.Controls.Add(this.button1);
             this.panelList.Controls.Add(this.panelMotd);
             this.panelList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelList.Location = new System.Drawing.Point(140, 40);
-            this.panelList.Margin = new System.Windows.Forms.Padding(4);
             this.panelList.Name = "panelList";
             this.panelList.Size = new System.Drawing.Size(844, 371);
-            this.panelList.TabIndex = 13;
-            // 
-            // pictureBoxHere
-            // 
-            this.pictureBoxHere.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxHere.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBoxHere.Image = global::KfzVerwaltung.Properties.Resources.StartHere2;
-            this.pictureBoxHere.Location = new System.Drawing.Point(7, 105);
-            this.pictureBoxHere.Name = "pictureBoxHere";
-            this.pictureBoxHere.Size = new System.Drawing.Size(208, 126);
-            this.pictureBoxHere.TabIndex = 301;
-            this.pictureBoxHere.TabStop = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(193)))), ((int)(((byte)(204)))));
-            this.button3.Location = new System.Drawing.Point(217, 186);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(25, 25);
-            this.button3.TabIndex = 300;
-            this.button3.TabStop = false;
-            this.button3.Text = "3";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(193)))), ((int)(((byte)(204)))));
-            this.button2.Location = new System.Drawing.Point(217, 127);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(25, 25);
-            this.button2.TabIndex = 300;
-            this.button2.TabStop = false;
-            this.button2.Text = "2";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(193)))), ((int)(((byte)(204)))));
-            this.button1.Location = new System.Drawing.Point(217, 77);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(25, 25);
-            this.button1.TabIndex = 300;
-            this.button1.TabStop = false;
-            this.button1.Text = "1";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // panelMotd
-            // 
-            this.panelMotd.Controls.Add(this.textBox3);
-            this.panelMotd.Controls.Add(this.textBox5);
-            this.panelMotd.Controls.Add(this.textBoxIntro);
-            this.panelMotd.Controls.Add(this.textBox7);
-            this.panelMotd.Controls.Add(this.textBox6);
-            this.panelMotd.Controls.Add(this.textBox4);
-            this.panelMotd.Location = new System.Drawing.Point(229, 61);
-            this.panelMotd.Name = "panelMotd";
-            this.panelMotd.Size = new System.Drawing.Size(339, 225);
-            this.panelMotd.TabIndex = 14;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Enabled = false;
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox3.Location = new System.Drawing.Point(19, 16);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(303, 22);
-            this.textBox3.TabIndex = 0;
-            this.textBox3.Text = "Beginnen Sie eine neue Liste";
-            // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Enabled = false;
-            this.textBox5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox5.Location = new System.Drawing.Point(19, 128);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(303, 22);
-            this.textBox5.TabIndex = 0;
-            this.textBox5.Text = "Wussten Sie schon...";
-            // 
-            // textBoxIntro
-            // 
-            this.textBoxIntro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            this.textBoxIntro.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxIntro.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxIntro.Location = new System.Drawing.Point(19, 146);
-            this.textBoxIntro.Multiline = true;
-            this.textBoxIntro.Name = "textBoxIntro";
-            this.textBoxIntro.Size = new System.Drawing.Size(303, 68);
-            this.textBoxIntro.TabIndex = 1;
-            this.textBoxIntro.Text = "Beim Speichern Ihrer Fahrzeuge wird auch die Größe und Position des Anwendungsfen" +
-    "sters gespeichert. So können Sie die Position der Anwendung personalisieren.\r\n";
-            // 
-            // textBox7
-            // 
-            this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Location = new System.Drawing.Point(19, 91);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(303, 20);
-            this.textBox7.TabIndex = 1;
-            this.textBox7.Text = "Sie können eine Liste ihrer Fahrzeuge öffnen. \r\n";
-            // 
-            // textBox6
-            // 
-            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Location = new System.Drawing.Point(19, 35);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(315, 27);
-            this.textBox6.TabIndex = 1;
-            this.textBox6.Text = "Sie können eine neue Liste mit Fahrzeugen anlegen.\r\n";
+            this.panelList.TabIndex = 15;
             // 
             // textBox4
             // 
@@ -480,65 +389,149 @@
             this.textBox4.Enabled = false;
             this.textBox4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox4.Location = new System.Drawing.Point(19, 69);
+            this.textBox4.Location = new System.Drawing.Point(38, 69);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(303, 22);
             this.textBox4.TabIndex = 0;
             this.textBox4.Text = "Verwalten Sie Ihre Fahrzeuge";
             // 
-            // menuStrip4KeyControl
+            // textBox6
             // 
-            this.menuStrip4KeyControl.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.neuToolStripMenuItem});
-            this.menuStrip4KeyControl.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip4KeyControl.Name = "menuStrip4KeyControl";
-            this.menuStrip4KeyControl.Size = new System.Drawing.Size(984, 24);
-            this.menuStrip4KeyControl.TabIndex = 14;
-            this.menuStrip4KeyControl.Text = "menuStrip1";
-            this.menuStrip4KeyControl.Visible = false;
+            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox6.Location = new System.Drawing.Point(38, 35);
+            this.textBox6.Multiline = true;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(315, 27);
+            this.textBox6.TabIndex = 1;
+            this.textBox6.Text = "Sie können eine neue Liste mit Fahrzeugen anlegen.\r\n";
             // 
-            // neuToolStripMenuItem
+            // textBox7
             // 
-            this.neuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.neuToolStripMenuItem1,
-            this.öffnenToolStripMenuItem,
-            this.speichernToolStripMenuItem,
-            this.beendenToolStripMenuItem});
-            this.neuToolStripMenuItem.Name = "neuToolStripMenuItem";
-            this.neuToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
-            this.neuToolStripMenuItem.Text = "KeyControl";
+            this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox7.Location = new System.Drawing.Point(38, 91);
+            this.textBox7.Multiline = true;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(303, 20);
+            this.textBox7.TabIndex = 1;
+            this.textBox7.Text = "Sie können eine Liste ihrer Fahrzeuge öffnen. \r\n";
             // 
-            // neuToolStripMenuItem1
+            // textBoxIntro
             // 
-            this.neuToolStripMenuItem1.Name = "neuToolStripMenuItem1";
-            this.neuToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.neuToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.neuToolStripMenuItem1.Text = "Neu";
-            this.neuToolStripMenuItem1.Click += new System.EventHandler(this.menuItemNewKfz_Click);
+            this.textBoxIntro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.textBoxIntro.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxIntro.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxIntro.Location = new System.Drawing.Point(38, 146);
+            this.textBoxIntro.Multiline = true;
+            this.textBoxIntro.Name = "textBoxIntro";
+            this.textBoxIntro.Size = new System.Drawing.Size(303, 68);
+            this.textBoxIntro.TabIndex = 1;
+            this.textBoxIntro.Text = "Beim Speichern Ihrer Fahrzeuge wird auch die Größe und Position des Anwendungsfen" +
+    "sters gespeichert. So können Sie die Position der Anwendung personalisieren.\r\n";
             // 
-            // öffnenToolStripMenuItem
+            // textBox5
             // 
-            this.öffnenToolStripMenuItem.Name = "öffnenToolStripMenuItem";
-            this.öffnenToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.öffnenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.öffnenToolStripMenuItem.Text = "Öffnen";
-            this.öffnenToolStripMenuItem.Click += new System.EventHandler(this.menuItemFileOpen_Click);
+            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox5.Enabled = false;
+            this.textBox5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox5.Location = new System.Drawing.Point(38, 128);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(303, 22);
+            this.textBox5.TabIndex = 0;
+            this.textBox5.Text = "Wussten Sie schon...";
             // 
-            // speichernToolStripMenuItem
+            // textBox3
             // 
-            this.speichernToolStripMenuItem.Name = "speichernToolStripMenuItem";
-            this.speichernToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.speichernToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.speichernToolStripMenuItem.Text = "Speichern";
-            this.speichernToolStripMenuItem.Click += new System.EventHandler(this.menuItemFileSave_Click);
+            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Enabled = false;
+            this.textBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox3.Location = new System.Drawing.Point(38, 16);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(303, 22);
+            this.textBox3.TabIndex = 0;
+            this.textBox3.Text = "Beginnen Sie eine neue Liste";
             // 
-            // beendenToolStripMenuItem
+            // panelMotd
             // 
-            this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.beendenToolStripMenuItem.Text = "Beenden";
-            this.beendenToolStripMenuItem.Click += new System.EventHandler(this.menuItemQuit_Click);
+            this.panelMotd.Controls.Add(this.buttonMotd2);
+            this.panelMotd.Controls.Add(this.buttonMotd1);
+            this.panelMotd.Controls.Add(this.buttonMotd3);
+            this.panelMotd.Controls.Add(this.textBox3);
+            this.panelMotd.Controls.Add(this.textBox5);
+            this.panelMotd.Controls.Add(this.textBoxIntro);
+            this.panelMotd.Controls.Add(this.textBox7);
+            this.panelMotd.Controls.Add(this.textBox6);
+            this.panelMotd.Controls.Add(this.textBox4);
+            this.panelList.SetFlowBreak(this.panelMotd, true);
+            this.panelMotd.Location = new System.Drawing.Point(234, 60);
+            this.panelMotd.Margin = new System.Windows.Forms.Padding(20, 60, 20, 20);
+            this.panelMotd.Name = "panelMotd";
+            this.panelMotd.Padding = new System.Windows.Forms.Padding(0, 100, 0, 0);
+            this.panelMotd.Size = new System.Drawing.Size(354, 225);
+            this.panelMotd.TabIndex = 307;
+            // 
+            // buttonMotd2
+            // 
+            this.buttonMotd2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.buttonMotd2.FlatAppearance.BorderSize = 0;
+            this.buttonMotd2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMotd2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMotd2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(193)))), ((int)(((byte)(204)))));
+            this.buttonMotd2.Location = new System.Drawing.Point(7, 66);
+            this.buttonMotd2.Name = "buttonMotd2";
+            this.buttonMotd2.Size = new System.Drawing.Size(25, 25);
+            this.buttonMotd2.TabIndex = 310;
+            this.buttonMotd2.TabStop = false;
+            this.buttonMotd2.Text = "2";
+            this.buttonMotd2.UseVisualStyleBackColor = false;
+            // 
+            // pictureBoxHere
+            // 
+            this.pictureBoxHere.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxHere.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBoxHere.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBoxHere.Image = global::KfzVerwaltung.Properties.Resources.StartHere2;
+            this.pictureBoxHere.Location = new System.Drawing.Point(3, 100);
+            this.pictureBoxHere.Margin = new System.Windows.Forms.Padding(3, 100, 3, 3);
+            this.pictureBoxHere.Name = "pictureBoxHere";
+            this.pictureBoxHere.Size = new System.Drawing.Size(208, 202);
+            this.pictureBoxHere.TabIndex = 311;
+            this.pictureBoxHere.TabStop = false;
+            // 
+            // buttonMotd3
+            // 
+            this.buttonMotd3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.buttonMotd3.FlatAppearance.BorderSize = 0;
+            this.buttonMotd3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMotd3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMotd3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(193)))), ((int)(((byte)(204)))));
+            this.buttonMotd3.Location = new System.Drawing.Point(7, 127);
+            this.buttonMotd3.Name = "buttonMotd3";
+            this.buttonMotd3.Size = new System.Drawing.Size(25, 25);
+            this.buttonMotd3.TabIndex = 309;
+            this.buttonMotd3.TabStop = false;
+            this.buttonMotd3.Text = "3";
+            this.buttonMotd3.UseVisualStyleBackColor = false;
+            // 
+            // buttonMotd1
+            // 
+            this.buttonMotd1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.buttonMotd1.FlatAppearance.BorderSize = 0;
+            this.buttonMotd1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMotd1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMotd1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(193)))), ((int)(((byte)(204)))));
+            this.buttonMotd1.Location = new System.Drawing.Point(7, 16);
+            this.buttonMotd1.Name = "buttonMotd1";
+            this.buttonMotd1.Size = new System.Drawing.Size(25, 25);
+            this.buttonMotd1.TabIndex = 308;
+            this.buttonMotd1.TabStop = false;
+            this.buttonMotd1.Text = "1";
+            this.buttonMotd1.UseVisualStyleBackColor = false;
             // 
             // FormMain
             // 
@@ -550,7 +543,6 @@
             this.Controls.Add(this.panelTop);
             this.Controls.Add(this.panelBottom);
             this.Controls.Add(this.panelNavigation);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.menuStrip4KeyControl);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -563,26 +555,25 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kfz Verwaltung";
             this.panelNavigation.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNavigation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBorder)).EndInit();
             this.panelBottom.ResumeLayout(false);
             this.panelBottom.PerformLayout();
             this.panelTop.ResumeLayout(false);
             this.panelUser.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).EndInit();
-            this.panelList.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHere)).EndInit();
-            this.panelMotd.ResumeLayout(false);
-            this.panelMotd.PerformLayout();
             this.menuStrip4KeyControl.ResumeLayout(false);
             this.menuStrip4KeyControl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNavigation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBorder)).EndInit();
+            this.panelList.ResumeLayout(false);
+            this.panelMotd.ResumeLayout(false);
+            this.panelMotd.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHere)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label statusLabelUser;
 		private System.Windows.Forms.Label StatusLabelSave;
 		private System.Windows.Forms.Label statusLabelInformation;
@@ -591,7 +582,6 @@
         private System.Windows.Forms.Panel panelNavigationBottom;
         private System.Windows.Forms.Panel panelBottom;
         private System.Windows.Forms.Panel panelTop;
-        private System.Windows.Forms.Panel panelList;
         private System.Windows.Forms.Button menuItemFileOpen;
         private System.Windows.Forms.PictureBox pictureBoxBorder;
         private System.Windows.Forms.Button menuItemQuit;
@@ -600,17 +590,6 @@
         private System.Windows.Forms.Button buttonLogo;
         private System.Windows.Forms.Panel panelUser;
         private System.Windows.Forms.PictureBox pictureBoxAvatar;
-        private System.Windows.Forms.Panel panelMotd;
-        private System.Windows.Forms.TextBox textBoxIntro;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.PictureBox pictureBoxHere;
         private System.Windows.Forms.PictureBox pictureBoxNavigation;
         private System.Windows.Forms.MenuStrip menuStrip4KeyControl;
         private System.Windows.Forms.ToolStripMenuItem neuToolStripMenuItem;
@@ -618,6 +597,18 @@
         private System.Windows.Forms.ToolStripMenuItem öffnenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem speichernToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem beendenToolStripMenuItem;
+        private System.Windows.Forms.FlowLayoutPanel panelList;
+        private System.Windows.Forms.PictureBox pictureBoxHere;
+        private System.Windows.Forms.Panel panelMotd;
+        private System.Windows.Forms.Button buttonMotd2;
+        private System.Windows.Forms.Button buttonMotd1;
+        private System.Windows.Forms.Button buttonMotd3;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBoxIntro;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }
 

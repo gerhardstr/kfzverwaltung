@@ -15,16 +15,21 @@ namespace KfzVerwaltung
 {
     public partial class FormMain : Form
     {
+        #region fields
         private FileManager securedFile = null;
         private string masterPassword = string.Empty;
         private string userPath = string.Empty;
+        #endregion
 
+        #region contructors
         public FormMain()
         {
             InitializeComponent();
             GetPropertiesSettings();
         }
+        #endregion
 
+        #region methods
         private void menuItemFileOpen_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -78,6 +83,8 @@ namespace KfzVerwaltung
         private void menuItemNewKfz_Click(object sender, EventArgs e)
         {
             PositioningNavigationPanel(this.menuItemNewKfz);
+            if (panelList.Controls.Contains(pictureBoxHere)) panelList.Controls.Clear();                
+
             if (this.securedFile == null)
             {
                 this.securedFile = new FileManager();
@@ -122,7 +129,6 @@ namespace KfzVerwaltung
             Properties.Settings.Default.WindowSize = this.Size;
             Application.Exit();
         }
-
         private void LoadUserControl(Car car)
         {
             UserControl userControl = null;
@@ -139,7 +145,6 @@ namespace KfzVerwaltung
 
             this.panelList.Controls.Add(userControl);
         }
-
         private void GetPropertiesSettings()
         { 
             if (Properties.Settings.Default.WindowLocation != null)
@@ -156,7 +161,6 @@ namespace KfzVerwaltung
             }
             if (Properties.Settings.Default.WindowSize != null) this.Size = Properties.Settings.Default.WindowSize;
         }
-
         private void SetPropertiesSettings(string LastFilePath)
         {
             Properties.Settings.Default.LastFilePath = LastFilePath; 
@@ -164,7 +168,6 @@ namespace KfzVerwaltung
             Properties.Settings.Default.WindowSize = this.Size;
             Properties.Settings.Default.Save();
         }
-
         private void Save(string fileName, string userName, string password, string LastFilePath)
         {
             this.securedFile.Cars.Clear();
@@ -180,12 +183,16 @@ namespace KfzVerwaltung
             this.securedFile.LastUpdate = DateTime.Now;
             if (!String.IsNullOrEmpty(userName)) this.securedFile.Owner = userName;
             this.securedFile.Save(fileName, password);
+            StatusLabelSave.Visible = true;
             StatusLabelSave.Text = "Speichern erfolgreich durchgeführt.";
+            pictureBoxAvatar.Visible = true;
+            statusLabelUser.Visible = true;
+            statusLabelUser.Text = this.securedFile.Owner;
+            
 
             this.timerSave.Enabled = true;  // timer for fade out
             SetPropertiesSettings(LastFilePath); // save new Usersettings
         }
-
         private void t1_Tick(object sender, EventArgs e)
         {
             Color myForeColor = this.StatusLabelSave.ForeColor;
@@ -198,26 +205,15 @@ namespace KfzVerwaltung
             StatusLabelSave.Text = Properties.Settings.Default.LastFilePath;
             this.timerSave.Enabled = false;
         }
-
         private void PositioningNavigationPanel(Button btn)
         {
             pictureBoxNavigation.Top = btn.Top;
             pictureBoxNavigation.Visible = true;
         }
-
         private void pictureBoxAvatar_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.Reset();
         }
-
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        {
-            if (keyData == (Keys.Control & Keys.N))
-            {
-                MessageBox.Show("What the Ctrl+N?");
-                return true;
-            }
-            return base.ProcessCmdKey(ref msg, keyData);
-        }
+        #endregion
     }
 }

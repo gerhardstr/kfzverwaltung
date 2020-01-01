@@ -49,7 +49,7 @@ namespace KfzVerwaltung
 
             if (result == DialogResult.Yes)
             {
-                this.Dispose();
+                    this.Dispose();
             }
         }
     }
