@@ -36,6 +36,7 @@
             this.statusLabelInformation = new System.Windows.Forms.Label();
             this.timerSave = new System.Windows.Forms.Timer(this.components);
             this.panelNavigation = new System.Windows.Forms.Panel();
+            this.pictureBoxNavigation = new System.Windows.Forms.PictureBox();
             this.pictureBoxBorder = new System.Windows.Forms.PictureBox();
             this.menuItemQuit = new System.Windows.Forms.Button();
             this.menuItemFileSave = new System.Windows.Forms.Button();
@@ -59,8 +60,8 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.pictureBoxNavigation = new System.Windows.Forms.PictureBox();
             this.panelNavigation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNavigation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBorder)).BeginInit();
             this.panelBottom.SuspendLayout();
             this.panelTop.SuspendLayout();
@@ -69,7 +70,6 @@
             this.panelList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHere)).BeginInit();
             this.panelMotd.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNavigation)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -146,6 +146,16 @@
             this.panelNavigation.Name = "panelNavigation";
             this.panelNavigation.Size = new System.Drawing.Size(140, 461);
             this.panelNavigation.TabIndex = 0;
+            // 
+            // pictureBoxNavigation
+            // 
+            this.pictureBoxNavigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(170)))), ((int)(((byte)(51)))));
+            this.pictureBoxNavigation.Location = new System.Drawing.Point(0, 138);
+            this.pictureBoxNavigation.Name = "pictureBoxNavigation";
+            this.pictureBoxNavigation.Size = new System.Drawing.Size(7, 50);
+            this.pictureBoxNavigation.TabIndex = 7;
+            this.pictureBoxNavigation.TabStop = false;
+            this.pictureBoxNavigation.Visible = false;
             // 
             // pictureBoxBorder
             // 
@@ -307,6 +317,7 @@
             this.pictureBoxAvatar.TabIndex = 1;
             this.pictureBoxAvatar.TabStop = false;
             this.pictureBoxAvatar.Visible = false;
+            this.pictureBoxAvatar.Click += new System.EventHandler(this.pictureBoxAvatar_Click);
             // 
             // panelList
             // 
@@ -330,7 +341,7 @@
             this.pictureBoxHere.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxHere.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBoxHere.Image = global::KfzVerwaltung.Properties.Resources.StartHere2;
-            this.pictureBoxHere.Location = new System.Drawing.Point(524, 189);
+            this.pictureBoxHere.Location = new System.Drawing.Point(7, 105);
             this.pictureBoxHere.Name = "pictureBoxHere";
             this.pictureBoxHere.Size = new System.Drawing.Size(208, 126);
             this.pictureBoxHere.TabIndex = 301;
@@ -343,7 +354,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(193)))), ((int)(((byte)(204)))));
-            this.button3.Location = new System.Drawing.Point(167, 186);
+            this.button3.Location = new System.Drawing.Point(217, 186);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(25, 25);
             this.button3.TabIndex = 300;
@@ -358,7 +369,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(193)))), ((int)(((byte)(204)))));
-            this.button2.Location = new System.Drawing.Point(167, 127);
+            this.button2.Location = new System.Drawing.Point(217, 127);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(25, 25);
             this.button2.TabIndex = 300;
@@ -373,7 +384,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(193)))), ((int)(((byte)(204)))));
-            this.button1.Location = new System.Drawing.Point(167, 77);
+            this.button1.Location = new System.Drawing.Point(217, 77);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(25, 25);
             this.button1.TabIndex = 300;
@@ -389,7 +400,7 @@
             this.panelMotd.Controls.Add(this.textBox7);
             this.panelMotd.Controls.Add(this.textBox6);
             this.panelMotd.Controls.Add(this.textBox4);
-            this.panelMotd.Location = new System.Drawing.Point(179, 61);
+            this.panelMotd.Location = new System.Drawing.Point(229, 61);
             this.panelMotd.Name = "panelMotd";
             this.panelMotd.Size = new System.Drawing.Size(339, 217);
             this.panelMotd.TabIndex = 14;
@@ -430,8 +441,8 @@
             this.textBoxIntro.Name = "textBoxIntro";
             this.textBoxIntro.Size = new System.Drawing.Size(303, 68);
             this.textBoxIntro.TabIndex = 1;
-            this.textBoxIntro.Text = "Beim Speichern Ihrer Fahrzeuge wird eine Liste mit Ihren Logindaten gespeichert. " +
-    "So haben nur Sie Zugriff auf diese Liste. \r\n";
+            this.textBoxIntro.Text = "Beim Speichern Ihrer Fahrzeuge wird auch die Größe und Position des Anwendungsfen" +
+    "sters gespeichert. So können Sie die Position der Anwendung personalisieren.\r\n";
             // 
             // textBox7
             // 
@@ -468,16 +479,6 @@
             this.textBox4.TabIndex = 0;
             this.textBox4.Text = "Verwalten Sie Ihre Fahrzeuge";
             // 
-            // pictureBoxNavigation
-            // 
-            this.pictureBoxNavigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(170)))), ((int)(((byte)(51)))));
-            this.pictureBoxNavigation.Location = new System.Drawing.Point(0, 138);
-            this.pictureBoxNavigation.Name = "pictureBoxNavigation";
-            this.pictureBoxNavigation.Size = new System.Drawing.Size(7, 50);
-            this.pictureBoxNavigation.TabIndex = 7;
-            this.pictureBoxNavigation.TabStop = false;
-            this.pictureBoxNavigation.Visible = false;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -498,6 +499,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kfz Verwaltung";
             this.panelNavigation.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNavigation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBorder)).EndInit();
             this.panelBottom.ResumeLayout(false);
             this.panelBottom.PerformLayout();
@@ -508,7 +510,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHere)).EndInit();
             this.panelMotd.ResumeLayout(false);
             this.panelMotd.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNavigation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

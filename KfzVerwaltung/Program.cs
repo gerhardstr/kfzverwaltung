@@ -16,10 +16,8 @@ namespace KfzVerwaltung
 	// nicetohave
 	// Eingabevalidierung 
 	// Bilder anzeigen wenn VW, SEAT, etc.
-    // Positionierung kfz Form
 
 	// Testen
-	// Settings zurückschreiben
 
 	static class Program
     {

@@ -22,13 +22,14 @@ namespace KfzVerwaltung
         public FormMain()
         {
             InitializeComponent();
+            GetPropertiesSettings();
         }
 
         private void menuItemFileOpen_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
             dialog.Filter = "Kfz XML Datei|*.xml";
-            GetPropertiesSettings(dialog);
+            if (Properties.Settings.Default.LastFilePath != string.Empty) dialog.InitialDirectory = Properties.Settings.Default.LastFilePath; // open last file path
             PositioningNavigationPanel(this.menuItemFileOpen);
 
             if (dialog.ShowDialog() == DialogResult.OK)
@@ -89,40 +90,6 @@ namespace KfzVerwaltung
                 LoadUserControl(kfzForm.Car);
             }
         }
-        private void LoadUserControl(Car car)
-        {
-            UserControl userControl = null;
-            userControl = new UserControlKfz(car);
-
-            // Styling & Positioning
-            int ucTop = 0;
-            if (this.panelList.Controls.Count > 0)
-                ucTop = this.panelList.Controls[this.panelList.Controls.Count - 1].Location.Y + this.panelList.Controls[this.panelList.Controls.Count - 1].Size.Height;
-            userControl.Location = new Point(5, ucTop + 5);
-            userControl.Width = this.panelList.ClientRectangle.Width - 10;
-            userControl.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            userControl.BackColor = Color.FromArgb(180, 193, 204);
-
-            this.panelList.Controls.Add(userControl);
-        }
-
-        private void GetPropertiesSettings(OpenFileDialog dialog)
-        { if (Properties.Settings.Default.LastFilePath != string.Empty) dialog.InitialDirectory = Properties.Settings.Default.LastFilePath; // open last file path
-            if (Properties.Settings.Default.WindowLocation != null)
-            {
-                if (Properties.Settings.Default.WindowLocation.X == 0 || Properties.Settings.Default.WindowLocation.Y == 0)
-                {
-                    // first start
-                    // optional: add default values
-                }
-                else
-                {
-                    this.Location = Properties.Settings.Default.WindowLocation;
-                }
-            }
-            if (Properties.Settings.Default.WindowSize != null) this.Size = Properties.Settings.Default.WindowSize;
-        }
-
         private void menuItemFileSave_Click(object sender, EventArgs e)
         {
             PositioningNavigationPanel(this.menuItemFileSave);
@@ -148,6 +115,56 @@ namespace KfzVerwaltung
                 }
             }
         }
+        private void menuItemQuit_Click(object sender, EventArgs e)
+        {
+            PositioningNavigationPanel(this.menuItemQuit);
+            Properties.Settings.Default.WindowLocation = this.Location; //save Usersettings
+            Properties.Settings.Default.WindowSize = this.Size;
+            Application.Exit();
+        }
+
+        private void LoadUserControl(Car car)
+        {
+            UserControl userControl = null;
+            userControl = new UserControlKfz(car);
+
+            // Styling & Positioning
+            int ucTop = 0;
+            if (this.panelList.Controls.Count > 0)
+                ucTop = this.panelList.Controls[this.panelList.Controls.Count - 1].Location.Y + this.panelList.Controls[this.panelList.Controls.Count - 1].Size.Height;
+            userControl.Location = new Point(5, ucTop + 5);
+            userControl.Width = this.panelList.ClientRectangle.Width - 10;
+            userControl.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            userControl.BackColor = Color.FromArgb(180, 193, 204);
+
+            this.panelList.Controls.Add(userControl);
+        }
+
+        private void GetPropertiesSettings()
+        { 
+            if (Properties.Settings.Default.WindowLocation != null)
+            {
+                if (Properties.Settings.Default.WindowLocation.X == 0 || Properties.Settings.Default.WindowLocation.Y == 0)
+                {
+                    // first start
+                    // optional: add default values
+                }
+                else
+                {
+                    this.Location = Properties.Settings.Default.WindowLocation;
+                }
+            }
+            if (Properties.Settings.Default.WindowSize != null) this.Size = Properties.Settings.Default.WindowSize;
+        }
+
+        private void SetPropertiesSettings(string LastFilePath)
+        {
+            Properties.Settings.Default.LastFilePath = LastFilePath; 
+            Properties.Settings.Default.WindowLocation = this.Location;
+            Properties.Settings.Default.WindowSize = this.Size;
+            Properties.Settings.Default.Save();
+        }
+
         private void Save(string fileName, string userName, string password, string LastFilePath)
         {
             this.securedFile.Cars.Clear();
@@ -166,18 +183,7 @@ namespace KfzVerwaltung
             StatusLabelSave.Text = "Speichern erfolgreich durchgeführt.";
 
             this.timerSave.Enabled = true;  // timer for fade out
-
-            Properties.Settings.Default.LastFilePath = LastFilePath; // save new Usersettings
-            Properties.Settings.Default.WindowLocation = this.Location;
-            Properties.Settings.Default.WindowSize = this.Size;
-        }
-
-        private void menuItemQuit_Click(object sender, EventArgs e)
-        {
-            PositioningNavigationPanel(this.menuItemQuit);
-            Properties.Settings.Default.WindowLocation = this.Location; //save Usersettings
-            Properties.Settings.Default.WindowSize = this.Size;
-            Application.Exit();
+            SetPropertiesSettings(LastFilePath); // save new Usersettings
         }
 
         private void t1_Tick(object sender, EventArgs e)
@@ -197,6 +203,11 @@ namespace KfzVerwaltung
         {
             pictureBoxNavigation.Top = btn.Top;
             pictureBoxNavigation.Visible = true;
+        }
+
+        private void pictureBoxAvatar_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.Reset();
         }
     }
 }
