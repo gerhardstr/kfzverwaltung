@@ -171,7 +171,7 @@
             this.textBoxKW.Name = "textBoxKW";
             this.textBoxKW.Size = new System.Drawing.Size(124, 20);
             this.textBoxKW.TabIndex = 5;
-            this.textBoxKW.TextChanged += new System.EventHandler(this.textBoxKW_TextChanged);
+            this.textBoxKW.Leave += new System.EventHandler(this.textBoxKW_Leave);
             // 
             // label5
             // 

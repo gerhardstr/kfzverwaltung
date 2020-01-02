@@ -82,7 +82,7 @@ namespace KfzVerwaltung
                     if (uc.Cost != null) this.car.Costs.Add(uc.Cost);
                 this.car.Gesamtkosten = car.Costs.Sum(p => p.Kosten); // Costsummuary
 
-                if (!String.IsNullOrEmpty(this.textBoxKW.Text)) this.car.LeistungKW = Convert.ToDouble(this.textBoxKW.Text);
+                if (!String.IsNullOrEmpty(this.textBoxKW.Text) && IsNumeric(this.textBoxKW.Text)) this.car.LeistungKW = Convert.ToDouble(this.textBoxKW.Text);
                 if (!String.IsNullOrEmpty(this.textBoxPS.Text)) this.car.LeistungPS = Convert.ToDouble(this.textBoxPS.Text);
                 if (!String.IsNullOrEmpty(this.textBoxFarbe.Text))
                 {
@@ -92,7 +92,17 @@ namespace KfzVerwaltung
                     this.car.FarbeBackground = strColor;
                 }
 
-                if (!String.IsNullOrEmpty(this.textBoxWartungsintervall.Text)) this.car.Wartungsintervall = Convert.ToDouble(this.textBoxWartungsintervall.Text);
+                if (!String.IsNullOrEmpty(this.textBoxWartungsintervall.Text))
+                {
+                    if (IsNumeric(this.textBoxWartungsintervall.Text))
+                    {
+                        this.car.Wartungsintervall = Convert.ToDouble(this.textBoxWartungsintervall.Text);
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();
@@ -105,12 +115,6 @@ namespace KfzVerwaltung
             this.Close();
         }
 
-        private void textBoxKW_TextChanged(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(this.textBoxKW.Text))
-                this.textBoxPS.Text = (int.Parse(this.textBoxKW.Text) * 1.35962).ToString();
-        }
-
         private void buttonAddUserControlCosts_Click(object sender, EventArgs e)
         {
             UserControlCost uc = new UserControlCost();
@@ -120,6 +124,25 @@ namespace KfzVerwaltung
         private void pictureBoxKfzQuit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private bool IsNumeric(string text)
+        {
+            if (text.All(Char.IsDigit))
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show($"{text} ist kein nummerischer Wert. Bitte geben sie eine Zahl ein.", "Validierung", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+        }
+
+        private void textBoxKW_Leave(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(this.textBoxKW.Text) && IsNumeric(this.textBoxKW.Text))
+                this.textBoxPS.Text = (int.Parse(this.textBoxKW.Text) * 1.35962).ToString("0.##");
         }
     }
 }
