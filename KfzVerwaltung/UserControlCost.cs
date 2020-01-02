@@ -81,8 +81,16 @@ namespace KfzVerwaltung
             if (this.comboBoxKategorie.Text == "Tankkosten")
             {
                 this.textBoxTankkostenLiter.Visible = true;
+                this.pictureBoxLiter.Visible = true;
                 this.textBoxTankkostenKmGefahren.Visible = true;
                 this.textBoxTankkostenVerbrauch.Visible = true;
+            }
+            else
+            {
+                this.textBoxTankkostenLiter.Visible = false;
+                this.pictureBoxLiter.Visible = false;
+                this.textBoxTankkostenKmGefahren.Visible = false;
+                this.textBoxTankkostenVerbrauch.Visible = false;
             }
         }
     }
