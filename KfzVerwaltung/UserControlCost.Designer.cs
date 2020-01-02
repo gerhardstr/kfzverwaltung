@@ -37,15 +37,15 @@
             this.textBoxTankkostenVerbrauch = new System.Windows.Forms.TextBox();
             this.dateTimePickerCosts = new System.Windows.Forms.DateTimePicker();
             this.panelUcCost = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBoxLiter = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelUcCost.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLiter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxCostsKm
@@ -58,6 +58,7 @@
             this.textBoxCostsKm.Name = "textBoxCostsKm";
             this.textBoxCostsKm.Size = new System.Drawing.Size(108, 18);
             this.textBoxCostsKm.TabIndex = 11;
+            this.textBoxCostsKm.Leave += new System.EventHandler(this.ValidationKm);
             // 
             // textBoxCostsBemerkung
             // 
@@ -115,6 +116,7 @@
             this.textBoxTankkostenLiter.Size = new System.Drawing.Size(43, 18);
             this.textBoxTankkostenLiter.TabIndex = 17;
             this.textBoxTankkostenLiter.Visible = false;
+            this.textBoxTankkostenLiter.Leave += new System.EventHandler(this.ValidationLiter);
             // 
             // textBoxCostsKosten
             // 
@@ -128,6 +130,7 @@
             this.textBoxCostsKosten.Name = "textBoxCostsKosten";
             this.textBoxCostsKosten.Size = new System.Drawing.Size(83, 18);
             this.textBoxCostsKosten.TabIndex = 10;
+            this.textBoxCostsKosten.Leave += new System.EventHandler(this.ValidationKosten);
             // 
             // textBoxTankkostenVerbrauch
             // 
@@ -176,33 +179,6 @@
             this.panelUcCost.Size = new System.Drawing.Size(769, 25);
             this.panelUcCost.TabIndex = 20;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(101)))), ((int)(((byte)(114)))));
-            this.pictureBox2.Location = new System.Drawing.Point(215, 22);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(83, 1);
-            this.pictureBox2.TabIndex = 20;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(101)))), ((int)(((byte)(114)))));
-            this.pictureBox1.Location = new System.Drawing.Point(418, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 1);
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(101)))), ((int)(((byte)(114)))));
-            this.pictureBox3.Location = new System.Drawing.Point(304, 22);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(108, 1);
-            this.pictureBox3.TabIndex = 22;
-            this.pictureBox3.TabStop = false;
-            // 
             // pictureBoxLiter
             // 
             this.pictureBoxLiter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(101)))), ((int)(((byte)(114)))));
@@ -213,6 +189,33 @@
             this.pictureBoxLiter.TabStop = false;
             this.pictureBoxLiter.Visible = false;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(101)))), ((int)(((byte)(114)))));
+            this.pictureBox3.Location = new System.Drawing.Point(304, 22);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(108, 1);
+            this.pictureBox3.TabIndex = 22;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(101)))), ((int)(((byte)(114)))));
+            this.pictureBox1.Location = new System.Drawing.Point(418, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 1);
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(101)))), ((int)(((byte)(114)))));
+            this.pictureBox2.Location = new System.Drawing.Point(215, 22);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(83, 1);
+            this.pictureBox2.TabIndex = 20;
+            this.pictureBox2.TabStop = false;
+            // 
             // UserControlCost
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -220,13 +223,13 @@
             this.AutoSize = true;
             this.Controls.Add(this.panelUcCost);
             this.Name = "UserControlCost";
-            this.Size = new System.Drawing.Size(776, 25);
+            this.Size = new System.Drawing.Size(776, 28);
             this.panelUcCost.ResumeLayout(false);
             this.panelUcCost.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLiter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

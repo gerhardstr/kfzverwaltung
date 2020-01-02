@@ -68,7 +68,7 @@ namespace KfzVerwaltung
                 if (String.IsNullOrEmpty(this.textBoxMarke.Text)) this.textBoxMarke.BackColor = Color.Red;
                 if (String.IsNullOrEmpty(this.textBoxModell.Text)) this.textBoxModell.BackColor = Color.Red;
                 if (String.IsNullOrEmpty(this.textBoxKennzeichen.Text)) this.textBoxKennzeichen.BackColor = Color.Red;
-                MessageBox.Show("Die rot markierten Felder sind Pflichtfelder. Für die Anlage eines neuen Kfz füllen Sie diese bitte aus.", "Validierung", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Die rot markierten Felder sind Pflichtfelder. Für die Anlage eines neuen Kfz füllen Sie diese bitte aus.", "Eingabeprüfung", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -134,7 +134,7 @@ namespace KfzVerwaltung
             }
             else
             {
-                MessageBox.Show($"{text} ist kein nummerischer Wert. Bitte geben sie eine Zahl ein.", "Validierung", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"{text} ist kein nummerischer Wert. Bitte geben sie eine Zahl ein.", "Eingabeprüfung", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
         }
