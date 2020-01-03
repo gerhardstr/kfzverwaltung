@@ -89,6 +89,7 @@
             this.textBoxPasswort.PasswordChar = '*';
             this.textBoxPasswort.Size = new System.Drawing.Size(215, 18);
             this.textBoxPasswort.TabIndex = 2;
+            this.textBoxPasswort.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxPasswort_KeyDown);
             // 
             // buttonLoginCancel
             // 

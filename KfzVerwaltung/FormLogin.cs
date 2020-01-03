@@ -38,5 +38,10 @@ namespace KfzVerwaltung
 			this.DialogResult = DialogResult.Cancel;
 			this.Close();
 		}
-	}
+
+        private void textBoxPasswort_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) buttonLoginOk_Click(this, new EventArgs());
+        }
+    }
 }

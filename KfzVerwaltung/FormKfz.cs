@@ -54,8 +54,7 @@ namespace KfzVerwaltung
             dlgColor.AllowFullOpen = false; // user is not allowed to pick custom color
             dlgColor.Color = textBoxFarbe.ForeColor;
 
-            if (dlgColor.ShowDialog() == DialogResult.OK)
-                textBoxFarbe.BackColor = dlgColor.Color;
+            if (dlgColor.ShowDialog() == DialogResult.OK) textBoxFarbe.BackColor = dlgColor.Color;
             textBoxFarbe.Text = (dlgColor.Color.ToArgb() & 0x00FFFFFF).ToString("X6"); // Alpha, red, green, blue; filter out Alpha (& 0x00FFFFFF); format as hex
         }
 
