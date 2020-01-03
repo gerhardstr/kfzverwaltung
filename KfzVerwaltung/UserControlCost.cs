@@ -60,10 +60,13 @@ namespace KfzVerwaltung
 
                     if (this.comboBoxKategorie.Text == "Tankkosten")
                     {
-                        double tmpD = 0;
-                        if (double.TryParse(this.textBoxTankkostenLiter.Text, out tmpD)) this.cost.Liter = tmpD;
-                        this.cost.KilometerGefahren = Convert.ToDouble(this.textBoxCostsKm.Text) - this.cost.KilometerGefahren;
-                        this.cost.Verbrauch = (this.cost.Liter / this.cost.KilometerGefahren) * 100;
+                        if (!String.IsNullOrEmpty(this.textBoxCostsKosten.Text))
+                        {
+                            double tmpD = 0;
+                            if (double.TryParse(this.textBoxTankkostenLiter.Text, out tmpD)) this.cost.Liter = tmpD;
+                            this.cost.KilometerGefahren = Convert.ToDouble(this.textBoxCostsKm.Text) - this.cost.KilometerGefahren;
+                            this.cost.Verbrauch = (this.cost.Liter / this.cost.KilometerGefahren) * 100;
+                        }
                     }
                 }
                 return this.cost;

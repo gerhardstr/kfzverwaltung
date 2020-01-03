@@ -60,23 +60,23 @@
             this.label18 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBoxKfzQuit = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLineWartungsintervall = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLineKw = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLineKennzeichen = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLineModell = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLineMarke = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBigLine = new System.Windows.Forms.PictureBox();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.textBoxKennzeichen = new System.Windows.Forms.MaskedTextBox();
             this.comboBoxMarke = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKfzQuit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLineWartungsintervall)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLineKw)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLineKennzeichen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLineModell)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLineMarke)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBigLine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,17 +90,6 @@
             this.label1.Size = new System.Drawing.Size(60, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Marke*";
-            // 
-            // comboBoxMarke
-            // 
-            this.comboBoxMarke.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            this.comboBoxMarke.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxMarke.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.comboBoxMarke.Location = new System.Drawing.Point(491, 512);
-            this.comboBoxMarke.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBoxMarke.Name = "comboBoxMarke";
-            this.comboBoxMarke.Size = new System.Drawing.Size(124, 20);
-            this.comboBoxMarke.TabIndex = 1;
             // 
             // textBoxModell
             // 
@@ -472,63 +461,64 @@
             this.pictureBoxKfzQuit.Size = new System.Drawing.Size(50, 38);
             this.pictureBoxKfzQuit.TabIndex = 43;
             this.pictureBoxKfzQuit.TabStop = false;
+            this.pictureBoxKfzQuit.Visible = false;
             this.pictureBoxKfzQuit.Click += new System.EventHandler(this.pictureBoxKfzQuit_Click);
             // 
-            // pictureBox9
+            // pictureBoxLineWartungsintervall
             // 
-            this.pictureBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(101)))), ((int)(((byte)(114)))));
-            this.pictureBox9.Location = new System.Drawing.Point(699, 161);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(124, 1);
-            this.pictureBox9.TabIndex = 41;
-            this.pictureBox9.TabStop = false;
+            this.pictureBoxLineWartungsintervall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(101)))), ((int)(((byte)(114)))));
+            this.pictureBoxLineWartungsintervall.Location = new System.Drawing.Point(699, 161);
+            this.pictureBoxLineWartungsintervall.Name = "pictureBoxLineWartungsintervall";
+            this.pictureBoxLineWartungsintervall.Size = new System.Drawing.Size(124, 1);
+            this.pictureBoxLineWartungsintervall.TabIndex = 41;
+            this.pictureBoxLineWartungsintervall.TabStop = false;
             // 
-            // pictureBox6
+            // pictureBoxLineKw
             // 
-            this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(101)))), ((int)(((byte)(114)))));
-            this.pictureBox6.Location = new System.Drawing.Point(699, 74);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(124, 1);
-            this.pictureBox6.TabIndex = 37;
-            this.pictureBox6.TabStop = false;
+            this.pictureBoxLineKw.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(101)))), ((int)(((byte)(114)))));
+            this.pictureBoxLineKw.Location = new System.Drawing.Point(699, 74);
+            this.pictureBoxLineKw.Name = "pictureBoxLineKw";
+            this.pictureBoxLineKw.Size = new System.Drawing.Size(124, 1);
+            this.pictureBoxLineKw.TabIndex = 37;
+            this.pictureBoxLineKw.TabStop = false;
             // 
-            // pictureBox5
+            // pictureBoxLineKennzeichen
             // 
-            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(101)))), ((int)(((byte)(114)))));
-            this.pictureBox5.Location = new System.Drawing.Point(323, 132);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(124, 1);
-            this.pictureBox5.TabIndex = 38;
-            this.pictureBox5.TabStop = false;
+            this.pictureBoxLineKennzeichen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(101)))), ((int)(((byte)(114)))));
+            this.pictureBoxLineKennzeichen.Location = new System.Drawing.Point(323, 132);
+            this.pictureBoxLineKennzeichen.Name = "pictureBoxLineKennzeichen";
+            this.pictureBoxLineKennzeichen.Size = new System.Drawing.Size(124, 1);
+            this.pictureBoxLineKennzeichen.TabIndex = 38;
+            this.pictureBoxLineKennzeichen.TabStop = false;
             // 
-            // pictureBox4
+            // pictureBoxLineModell
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(101)))), ((int)(((byte)(114)))));
-            this.pictureBox4.Location = new System.Drawing.Point(323, 102);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(124, 1);
-            this.pictureBox4.TabIndex = 37;
-            this.pictureBox4.TabStop = false;
+            this.pictureBoxLineModell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(101)))), ((int)(((byte)(114)))));
+            this.pictureBoxLineModell.Location = new System.Drawing.Point(323, 102);
+            this.pictureBoxLineModell.Name = "pictureBoxLineModell";
+            this.pictureBoxLineModell.Size = new System.Drawing.Size(124, 1);
+            this.pictureBoxLineModell.TabIndex = 37;
+            this.pictureBoxLineModell.TabStop = false;
             // 
-            // pictureBox3
+            // pictureBoxLineMarke
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(101)))), ((int)(((byte)(114)))));
-            this.pictureBox3.Location = new System.Drawing.Point(323, 73);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(124, 1);
-            this.pictureBox3.TabIndex = 36;
-            this.pictureBox3.TabStop = false;
+            this.pictureBoxLineMarke.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(101)))), ((int)(((byte)(114)))));
+            this.pictureBoxLineMarke.Location = new System.Drawing.Point(323, 75);
+            this.pictureBoxLineMarke.Name = "pictureBoxLineMarke";
+            this.pictureBoxLineMarke.Size = new System.Drawing.Size(124, 1);
+            this.pictureBoxLineMarke.TabIndex = 36;
+            this.pictureBoxLineMarke.TabStop = false;
             // 
-            // pictureBox2
+            // pictureBoxBigLine
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
-            this.pictureBox2.Location = new System.Drawing.Point(18, 205);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(916, 2);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 29;
-            this.pictureBox2.TabStop = false;
+            this.pictureBoxBigLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.pictureBoxBigLine.Location = new System.Drawing.Point(18, 205);
+            this.pictureBoxBigLine.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBoxBigLine.Name = "pictureBoxBigLine";
+            this.pictureBoxBigLine.Size = new System.Drawing.Size(916, 2);
+            this.pictureBoxBigLine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxBigLine.TabIndex = 29;
+            this.pictureBoxBigLine.TabStop = false;
             // 
             // pictureBoxLogo
             // 
@@ -556,8 +546,11 @@
             // 
             // comboBoxMarke
             // 
+            this.comboBoxMarke.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxMarke.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxMarke.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.comboBoxMarke.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxMarke.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxMarke.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.comboBoxMarke.FormattingEnabled = true;
             this.comboBoxMarke.Items.AddRange(new object[] {
@@ -593,9 +586,10 @@
             "Volkswagen",
             "Peugeot"});
             this.comboBoxMarke.Location = new System.Drawing.Point(323, 48);
+            this.comboBoxMarke.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxMarke.Name = "comboBoxMarke";
-            this.comboBoxMarke.Size = new System.Drawing.Size(124, 25);
-            this.comboBoxMarke.TabIndex = 43;
+            this.comboBoxMarke.Size = new System.Drawing.Size(124, 28);
+            this.comboBoxMarke.TabIndex = 1;
             this.comboBoxMarke.TextChanged += new System.EventHandler(this.comboBoxMarke_TextChanged);
             // 
             // FormKfz
@@ -604,18 +598,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(947, 555);
-            this.Controls.Add(this.comboBoxMarke);
+            this.Controls.Add(this.pictureBoxLineMarke);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox9);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBoxLineWartungsintervall);
+            this.Controls.Add(this.pictureBoxLineKw);
+            this.Controls.Add(this.pictureBoxLineKennzeichen);
+            this.Controls.Add(this.pictureBoxLineModell);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.dateTimePickerZulassung);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBoxBigLine);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label12);
@@ -654,12 +647,12 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKfzQuit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLineWartungsintervall)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLineKw)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLineKennzeichen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLineModell)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLineMarke)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBigLine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -693,17 +686,17 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBoxBigLine;
         private System.Windows.Forms.Label label15;
 		private System.Windows.Forms.DateTimePicker dateTimePickerZulassung;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox pictureBoxLineMarke;
+        private System.Windows.Forms.PictureBox pictureBoxLineModell;
+        private System.Windows.Forms.PictureBox pictureBoxLineKennzeichen;
+        private System.Windows.Forms.PictureBox pictureBoxLineKw;
+        private System.Windows.Forms.PictureBox pictureBoxLineWartungsintervall;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBoxKfzQuit;
         private System.Windows.Forms.MaskedTextBox textBoxKennzeichen;

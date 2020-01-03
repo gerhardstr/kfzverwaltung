@@ -553,6 +553,7 @@
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kfz Verwaltung";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.panelNavigation.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNavigation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBorder)).EndInit();

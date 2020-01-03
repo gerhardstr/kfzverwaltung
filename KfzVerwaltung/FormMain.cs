@@ -215,5 +215,13 @@ namespace KfzVerwaltung
             Properties.Settings.Default.Reset();
         }
         #endregion
+
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Möchten Sie die Anwendung wirklich schließen? " + Environment.NewLine + "Nicht gespeicherte Daten gehen verloren.", "Anwendung schließen", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }
