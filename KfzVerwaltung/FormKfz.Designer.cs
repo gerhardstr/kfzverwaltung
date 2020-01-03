@@ -30,10 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormKfz));
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxMarke = new System.Windows.Forms.TextBox();
             this.textBoxModell = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxKennzeichen = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxKW = new System.Windows.Forms.TextBox();
@@ -69,6 +67,8 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.textBoxKennzeichen = new System.Windows.Forms.MaskedTextBox();
+            this.comboBoxMarke = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKfzQuit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -91,17 +91,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Marke*";
             // 
-            // textBoxMarke
+            // comboBoxMarke
             // 
-            this.textBoxMarke.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            this.textBoxMarke.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxMarke.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMarke.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxMarke.Location = new System.Drawing.Point(323, 52);
-            this.textBoxMarke.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxMarke.Name = "textBoxMarke";
-            this.textBoxMarke.Size = new System.Drawing.Size(124, 20);
-            this.textBoxMarke.TabIndex = 1;
+            this.comboBoxMarke.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.comboBoxMarke.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxMarke.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.comboBoxMarke.Location = new System.Drawing.Point(491, 512);
+            this.comboBoxMarke.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBoxMarke.Name = "comboBoxMarke";
+            this.comboBoxMarke.Size = new System.Drawing.Size(124, 20);
+            this.comboBoxMarke.TabIndex = 1;
             // 
             // textBoxModell
             // 
@@ -125,18 +124,6 @@
             this.label2.Size = new System.Drawing.Size(64, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Modell*";
-            // 
-            // textBoxKennzeichen
-            // 
-            this.textBoxKennzeichen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            this.textBoxKennzeichen.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxKennzeichen.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxKennzeichen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxKennzeichen.Location = new System.Drawing.Point(323, 111);
-            this.textBoxKennzeichen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxKennzeichen.Name = "textBoxKennzeichen";
-            this.textBoxKennzeichen.Size = new System.Drawing.Size(124, 20);
-            this.textBoxKennzeichen.TabIndex = 3;
             // 
             // label3
             // 
@@ -554,12 +541,70 @@
             this.pictureBoxLogo.TabIndex = 17;
             this.pictureBoxLogo.TabStop = false;
             // 
+            // textBoxKennzeichen
+            // 
+            this.textBoxKennzeichen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.textBoxKennzeichen.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxKennzeichen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxKennzeichen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxKennzeichen.Location = new System.Drawing.Point(323, 111);
+            this.textBoxKennzeichen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxKennzeichen.Mask = "AA-AAA-AA";
+            this.textBoxKennzeichen.Name = "textBoxKennzeichen";
+            this.textBoxKennzeichen.Size = new System.Drawing.Size(124, 22);
+            this.textBoxKennzeichen.TabIndex = 3;
+            // 
+            // comboBoxMarke
+            // 
+            this.comboBoxMarke.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.comboBoxMarke.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxMarke.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.comboBoxMarke.FormattingEnabled = true;
+            this.comboBoxMarke.Items.AddRange(new object[] {
+            "Abarth",
+            "Alfa Romeo",
+            "Aston Martin",
+            "Audi",
+            "Bugatti",
+            "Cadillac",
+            "Chevrolet",
+            "Citroen",
+            "Dacia",
+            "Daewoo",
+            "Daihatsu",
+            "Ferrari",
+            "Fiat",
+            "Honda",
+            "Hyundai",
+            "Jaguar",
+            "Lamborghini",
+            "Lancia",
+            "Maserati",
+            "Maybach",
+            "Mazda",
+            "Mercedes Benz",
+            "Mini",
+            "Opel",
+            "Porsche",
+            "Saab",
+            "Seat",
+            "Skoda",
+            "Volvo",
+            "Volkswagen",
+            "Peugeot"});
+            this.comboBoxMarke.Location = new System.Drawing.Point(323, 48);
+            this.comboBoxMarke.Name = "comboBoxMarke";
+            this.comboBoxMarke.Size = new System.Drawing.Size(124, 25);
+            this.comboBoxMarke.TabIndex = 43;
+            this.comboBoxMarke.TextChanged += new System.EventHandler(this.comboBoxMarke_TextChanged);
+            // 
             // FormKfz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(947, 555);
+            this.Controls.Add(this.comboBoxMarke);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.pictureBox6);
@@ -596,7 +641,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxModell);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBoxMarke);
+            this.Controls.Add(this.comboBoxMarke);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -624,10 +669,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxMarke;
         private System.Windows.Forms.TextBox textBoxModell;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxKennzeichen;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxKW;
@@ -663,5 +706,7 @@
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBoxKfzQuit;
+        private System.Windows.Forms.MaskedTextBox textBoxKennzeichen;
+        private System.Windows.Forms.ComboBox comboBoxMarke;
     }
 }

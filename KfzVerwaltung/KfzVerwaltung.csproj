@@ -66,6 +66,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UserControlCost.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -90,14 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="UserControlCost.resx">
       <DependentUpon>UserControlCost.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,6 +257,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\delete_25px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vw.png" />
+    <None Include="Resources\volvo.png" />
+    <None Include="Resources\skoda.png" />
+    <None Include="Resources\seat.png" />
+    <None Include="Resources\saab.png" />
+    <None Include="Resources\porsche.png" />
+    <None Include="Resources\peugeot.png" />
+    <None Include="Resources\opel.png" />
+    <None Include="Resources\mini.png" />
+    <None Include="Resources\mercedes-benz.png" />
+    <None Include="Resources\mazda.png" />
+    <None Include="Resources\maybach.png" />
+    <None Include="Resources\maserati.png" />
+    <None Include="Resources\lancia.png" />
+    <None Include="Resources\lamborghini.png" />
+    <None Include="Resources\jaguar.png" />
+    <None Include="Resources\hyundai.png" />
+    <None Include="Resources\honda.png" />
+    <None Include="Resources\fiat.png" />
+    <None Include="Resources\ferrari.png" />
+    <None Include="Resources\daihatsu.png" />
+    <None Include="Resources\daewoo.png" />
+    <None Include="Resources\dacia.png" />
+    <None Include="Resources\citroen.png" />
+    <None Include="Resources\chevrolet.png" />
+    <None Include="Resources\cadillac.png" />
+    <None Include="Resources\bugatti.png" />
+    <None Include="Resources\audi.png" />
+    <None Include="Resources\aston-martin.png" />
+    <None Include="Resources\alfa-romeo.png" />
+    <None Include="Resources\abarth.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

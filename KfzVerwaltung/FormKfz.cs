@@ -30,7 +30,7 @@ namespace KfzVerwaltung
         {
             InitializeComponent();
             this.car = car;
-            this.textBoxMarke.Text = car.Marke;
+            this.comboBoxMarke.Text = car.Marke;
             this.textBoxModell.Text = car.Modell;
             this.textBoxKennzeichen.Text = car.KfzKennzeichen;
             this.dateTimePickerZulassung.Text = car.DatumZulassung.ToShortDateString();
@@ -39,6 +39,8 @@ namespace KfzVerwaltung
             this.textBoxFarbe.Text = car.Farbe;
             this.textBoxFarbe.BackColor = ColorTranslator.FromHtml(car.FarbeBackground);
             this.textBoxWartungsintervall.Text = Convert.ToString(car.Wartungsintervall);
+
+            GetLogo(this.comboBoxMarke.Text);
 
             UserControlCost uc = null;
             foreach (Cost cost in car.Costs)
@@ -62,16 +64,16 @@ namespace KfzVerwaltung
         {
             if (this.car == null) this.car = new Car();
 
-            if ((String.IsNullOrEmpty(this.textBoxMarke.Text)) || (String.IsNullOrEmpty(this.textBoxModell.Text)) || (String.IsNullOrEmpty(this.textBoxKennzeichen.Text)))
+            if ((String.IsNullOrEmpty(this.comboBoxMarke.Text)) || (String.IsNullOrEmpty(this.textBoxModell.Text)) || (String.IsNullOrEmpty(this.textBoxKennzeichen.Text)))
             {
-                if (String.IsNullOrEmpty(this.textBoxMarke.Text)) this.textBoxMarke.BackColor = Color.Red;
+                if (String.IsNullOrEmpty(this.comboBoxMarke.Text)) this.comboBoxMarke.BackColor = Color.Red;
                 if (String.IsNullOrEmpty(this.textBoxModell.Text)) this.textBoxModell.BackColor = Color.Red;
                 if (String.IsNullOrEmpty(this.textBoxKennzeichen.Text)) this.textBoxKennzeichen.BackColor = Color.Red;
                 MessageBox.Show("Die rot markierten Felder sind Pflichtfelder. Für die Anlage eines neuen Kfz füllen Sie diese bitte aus.", "Eingabeprüfung", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                this.car.Marke = this.textBoxMarke.Text;
+                this.car.Marke = this.comboBoxMarke.Text;
                 this.car.Modell = this.textBoxModell.Text;
                 this.car.KfzKennzeichen = this.textBoxKennzeichen.Text;
                 this.car.DatumZulassung = DateTime.Parse(dateTimePickerZulassung.Text);
@@ -138,10 +140,149 @@ namespace KfzVerwaltung
             }
         }
 
+        private void GetLogo(string marke)
+        {
+            switch (marke)
+            {
+                case "Abarth":
+                    this.pictureBoxLogo.Image = Properties.Resources.abarth;
+                    break;
+
+                case "Alfa Romeo":
+                    this.pictureBoxLogo.Image = Properties.Resources.alfa_romeo;
+                    break;
+
+                case "Aston Martin":
+                    this.pictureBoxLogo.Image = Properties.Resources.aston_martin;
+                    break;
+
+                case "Audi":
+                    this.pictureBoxLogo.Image = Properties.Resources.audi;
+                    break;
+
+                case "Bugatti":
+                    this.pictureBoxLogo.Image = Properties.Resources.bugatti;
+                    break;
+
+                case "Cadillac":
+                    this.pictureBoxLogo.Image = Properties.Resources.cadillac;
+                    break;
+
+                case "Chevrolet":
+                    this.pictureBoxLogo.Image = Properties.Resources.chevrolet;
+                    break;
+
+                case "Citroen":
+                    this.pictureBoxLogo.Image = Properties.Resources.citroen;
+                    break;
+
+                case "Dacia":
+                    this.pictureBoxLogo.Image = Properties.Resources.dacia;
+                    break;
+
+                case "Daewoo":
+                    this.pictureBoxLogo.Image = Properties.Resources.daewoo;
+                    break;
+
+                case "Daihatsu":
+                    this.pictureBoxLogo.Image = Properties.Resources.daihatsu;
+                    break;
+
+                case "Ferrari":
+                    this.pictureBoxLogo.Image = Properties.Resources.ferrari;
+                    break;
+
+                case "Fiat":
+                    this.pictureBoxLogo.Image = Properties.Resources.fiat;
+                    break;
+
+                case "Honda":
+                    this.pictureBoxLogo.Image = Properties.Resources.honda;
+                    break;
+
+                case "Hyundai":
+                    this.pictureBoxLogo.Image = Properties.Resources.hyundai;
+                    break;
+
+                case "Jaguar":
+                    this.pictureBoxLogo.Image = Properties.Resources.jaguar;
+                    break;
+
+                case "Lamborghini":
+                    this.pictureBoxLogo.Image = Properties.Resources.lamborghini;
+                    break;
+
+                case "Lancia":
+                    this.pictureBoxLogo.Image = Properties.Resources.lancia;
+                    break;
+
+                case "Maserati":
+                    this.pictureBoxLogo.Image = Properties.Resources.maserati;
+                    break;
+
+                case "Maybach":
+                    this.pictureBoxLogo.Image = Properties.Resources.maybach;
+                    break;
+
+                case "Mazda":
+                    this.pictureBoxLogo.Image = Properties.Resources.mazda;
+                    break;
+
+                case "Mercedes Benz":
+                    this.pictureBoxLogo.Image = Properties.Resources.mercedes_benz;
+                    break;
+
+                case "Mini":
+                    this.pictureBoxLogo.Image = Properties.Resources.mini;
+                    break;
+
+                case "Opel":
+                    this.pictureBoxLogo.Image = Properties.Resources.opel;
+                    break;
+
+                case "Peugeot":
+                    this.pictureBoxLogo.Image = Properties.Resources.peugeot;
+                    break;
+
+                case "Porsche":
+                    this.pictureBoxLogo.Image = Properties.Resources.porsche;
+                    break;
+
+                case "Saab":
+                    this.pictureBoxLogo.Image = Properties.Resources.saab;
+                    break;
+
+                case "Seat":
+                    this.pictureBoxLogo.Image = Properties.Resources.seat;
+                    break;
+
+                case "Skoda":
+                    this.pictureBoxLogo.Image = Properties.Resources.skoda;
+                    break;
+
+                case "Volvo":
+                    this.pictureBoxLogo.Image = Properties.Resources.volvo;
+                    break;
+
+                case "Volkswagen":
+                    this.pictureBoxLogo.Image = Properties.Resources.vw;
+                    break;
+
+                default:
+                    this.pictureBoxLogo.Image = Properties.Resources.logo_auto_single_dark;
+                    break;
+            }
+        }
+
         private void textBoxKW_Leave(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(this.textBoxKW.Text) && IsNumeric(this.textBoxKW.Text))
                 this.textBoxPS.Text = (int.Parse(this.textBoxKW.Text) * 1.35962).ToString("0.##");
+        }
+
+        private void comboBoxMarke_TextChanged(object sender, EventArgs e)
+        {
+            GetLogo(this.comboBoxMarke.Text);
         }
     }
 }

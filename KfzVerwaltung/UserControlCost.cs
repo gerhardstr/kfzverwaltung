@@ -87,7 +87,6 @@ namespace KfzVerwaltung
                 this.textBoxTankkostenVerbrauch.Visible = false;
             }
         }
-
         private bool IsNumeric(string text)
         {
             if (text.All(Char.IsDigit))
@@ -100,7 +99,6 @@ namespace KfzVerwaltung
                 return false;
             }
         }
-
         private void ValidationKosten(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(this.textBoxCostsKosten.Text))

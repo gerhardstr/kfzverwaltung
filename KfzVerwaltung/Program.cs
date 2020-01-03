@@ -12,7 +12,6 @@ namespace KfzVerwaltung
     // zurückschreiben in Objekt ausständig
 
 	// nicetohave
-	// Bilder anzeigen wenn VW, SEAT, etc.
 
 	// Testen
 

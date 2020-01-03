@@ -121,9 +121,6 @@
   <data name="name_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\name_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="StartHere" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\StartHere.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="DeleteListItem_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DeleteListItem_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -193,14 +190,17 @@
   <data name="StartHere2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\StartHere2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="male_user_25px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\male_user_25px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="car_25px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\car_25px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="delete_25px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\delete_25px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="close_window2_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close_window2_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="opened_folder_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\opened_folder_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="car_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\car_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,6 +214,9 @@
   <data name="name_225px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\name_225px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="delete_25px2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete_25px2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="close_window_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close_window_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -226,17 +229,17 @@
   <data name="exit_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exit_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="NewFile_16x_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NewFile_16x_32.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="StartHere" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StartHere.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="opened_folder_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\opened_folder_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="male_user_25px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\male_user_25px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="delete_25px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete_25px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NewFile_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewFile_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="horizontal_line" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\horizontal_line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DeleteListItem_16x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DeleteListItem_16x1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -244,13 +247,103 @@
   <data name="logo auto single dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo auto single dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="horizontal_line" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\horizontal_line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="NewFile_16x_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewFile_16x_32.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="opened_folder_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\opened_folder_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="delete_25px2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\delete_25px2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="abarth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\abarth.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alfa-romeo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alfa-romeo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aston-martin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\aston-martin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="audi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\audi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bugatti" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bugatti.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cadillac" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cadillac.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chevrolet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chevrolet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="citroen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\citroen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dacia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dacia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="daewoo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\daewoo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="daihatsu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\daihatsu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ferrari" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ferrari.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fiat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fiat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="honda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\honda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hyundai" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hyundai.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jaguar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jaguar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lamborghini" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lamborghini.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lancia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lancia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="maserati" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\maserati.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="maybach" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\maybach.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mazda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mazda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mercedes-benz" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mercedes-benz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mini" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mini.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="opel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\opel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="peugeot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\peugeot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="porsche" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\porsche.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="saab" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\saab.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="seat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\seat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="skoda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\skoda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="volvo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\volvo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
