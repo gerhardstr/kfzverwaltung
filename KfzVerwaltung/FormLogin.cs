@@ -12,12 +12,15 @@ namespace KfzVerwaltung
 {
 	public partial class FormLogin : Form
 	{
-		public FormLogin()
+        #region constructor
+        public FormLogin()
 		{
 			InitializeComponent();
 		}
+        #endregion
 
-		public string Username
+        #region properties
+        public string Username
 		{
 			get { return this.textBoxBenutzer.Text; }
 		}
@@ -26,22 +29,23 @@ namespace KfzVerwaltung
 		{
 			get { return this.textBoxPasswort.Text; }
 		}
+        #endregion
 
-		private void buttonLoginOk_Click(object sender, EventArgs e)
+        #region methods
+        private void buttonLoginOk_Click(object sender, EventArgs e)
 		{
 			this.DialogResult = DialogResult.OK;
 			this.Close();
 		}
-
 		private void buttonLoginCancel_Click(object sender, EventArgs e)
 		{
 			this.DialogResult = DialogResult.Cancel;
 			this.Close();
 		}
-
         private void textBoxPasswort_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter) buttonLoginOk_Click(this, new EventArgs());
         }
+        #endregion
     }
 }

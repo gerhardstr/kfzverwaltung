@@ -42,7 +42,6 @@ namespace KfzVerwaltung.Data
 
 			return securedFile;
 		}
-      
 		public void Save(string fileName, string password)
 		{
 			this.OwnerEncrypted = Encrypt(this.Owner, password);
@@ -91,7 +90,6 @@ namespace KfzVerwaltung.Data
 
 			return result;
 		}
-
 		public string Decrypt(string cipherText, string password)
 		{
 			string result = string.Empty;

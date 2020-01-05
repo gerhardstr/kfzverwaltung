@@ -13,7 +13,9 @@ namespace KfzVerwaltung
 {
     public partial class FormKfz : Form
     {
+        #region fields
         private Car car = null;
+        #endregion
 
         public Car Car
         {
@@ -21,6 +23,7 @@ namespace KfzVerwaltung
             set { car = value; }
         }
 
+        #region constructor
         public FormKfz()
         {
             InitializeComponent();
@@ -49,7 +52,9 @@ namespace KfzVerwaltung
                 this.panelListCosts.Controls.Add(uc);
             }
         }
+        #endregion
 
+        #region methods
         private void buttonKfzColor_Click(object sender, EventArgs e)
         {
             ColorDialog dlgColor = new ColorDialog();
@@ -284,5 +289,6 @@ namespace KfzVerwaltung
         {
             GetLogo(this.comboBoxMarke.Text);
         }
+        #endregion
     }
 }

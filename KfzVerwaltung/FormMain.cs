@@ -18,7 +18,7 @@ namespace KfzVerwaltung
         #region fields
         private FileManager securedFile = null;
         private string masterPassword = string.Empty;
-        private string userPath = string.Empty;
+        // private string userPath = string.Empty;
         #endregion
 
         #region contructors
@@ -32,6 +32,7 @@ namespace KfzVerwaltung
         #region methods
         private void menuItemFileOpen_Click(object sender, EventArgs e)
         {
+            menuItemFileOpen.FlatAppearance.BorderColor = Color.FromArgb(0, 39, 50, 56); // get rid of border when unfocused
             OpenFileDialog dialog = new OpenFileDialog();
             dialog.Filter = "Kfz XML Datei|*.xml";
             if (Properties.Settings.Default.LastFilePath != string.Empty) dialog.InitialDirectory = Properties.Settings.Default.LastFilePath; // open last file path
@@ -82,6 +83,7 @@ namespace KfzVerwaltung
         }
         private void menuItemNewKfz_Click(object sender, EventArgs e)
         {
+            menuItemNewKfz.FlatAppearance.BorderColor = Color.FromArgb(0, 39, 50, 56); // get rid of border when unfocused
             PositioningNavigationPanel(this.menuItemNewKfz);
             if (panelList.Controls.Contains(pictureBoxHere)) panelList.Controls.Clear();                
 
@@ -99,6 +101,7 @@ namespace KfzVerwaltung
         }
         private void menuItemFileSave_Click(object sender, EventArgs e)
         {
+            menuItemFileSave.FlatAppearance.BorderColor = Color.FromArgb(0, 39, 50, 56); // get rid of border when unfocused
             PositioningNavigationPanel(this.menuItemFileSave);
             if (this.securedFile != null)
             {
@@ -124,6 +127,7 @@ namespace KfzVerwaltung
         }
         private void menuItemQuit_Click(object sender, EventArgs e)
         {
+            menuItemQuit.FlatAppearance.BorderColor = Color.FromArgb(0, 39, 50, 56); // get rid of border when unfocused
             PositioningNavigationPanel(this.menuItemQuit);
             Properties.Settings.Default.WindowLocation = this.Location; //save Usersettings
             Properties.Settings.Default.WindowSize = this.Size;
@@ -215,10 +219,9 @@ namespace KfzVerwaltung
             Properties.Settings.Default.Reset();
         }
         #endregion
-
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Möchten Sie die Anwendung wirklich schließen? " + Environment.NewLine + "Nicht gespeicherte Daten gehen verloren.", "Anwendung schließen", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
+            if (MessageBox.Show("Möchten Sie die Anwendung wirklich schließen? " + Environment.NewLine + "Nicht gespeicherte Daten gehen verloren.", "Anwendung schließen", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
             {
                 e.Cancel = true;
             }

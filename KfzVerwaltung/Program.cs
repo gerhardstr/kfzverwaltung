@@ -6,15 +6,6 @@ using System.Windows.Forms;
 
 namespace KfzVerwaltung
 {
-
-	// ToDo
-	// Tankkosten berechnen!!!
-    // zurückschreiben in Objekt ausständig
-
-	// nicetohave
-
-	// Testen
-
 	static class Program
     {
         /// <summary>
