@@ -402,7 +402,7 @@
             this.dateTimePickerZulassung.Name = "dateTimePickerZulassung";
             this.dateTimePickerZulassung.Size = new System.Drawing.Size(124, 27);
             this.dateTimePickerZulassung.TabIndex = 4;
-            this.dateTimePickerZulassung.Value = new System.DateTime(2019, 12, 3, 20, 29, 54, 0);
+            this.dateTimePickerZulassung.Value = new System.DateTime(2020, 1, 7, 0, 0, 0, 0);
             // 
             // label16
             // 
@@ -578,13 +578,13 @@
             "Mercedes Benz",
             "Mini",
             "Opel",
+            "Peugeot",
             "Porsche",
             "Saab",
             "Seat",
             "Skoda",
             "Volvo",
-            "Volkswagen",
-            "Peugeot"});
+            "Volkswagen"});
             this.comboBoxMarke.Location = new System.Drawing.Point(323, 48);
             this.comboBoxMarke.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxMarke.Name = "comboBoxMarke";

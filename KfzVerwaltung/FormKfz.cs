@@ -15,6 +15,7 @@ namespace KfzVerwaltung
     {
         #region fields
         private Car car = null;
+        private Cost cost = null;
         #endregion
 
         public Car Car
@@ -49,9 +50,10 @@ namespace KfzVerwaltung
             foreach (Cost cost in car.Costs)
             {
                 uc = new UserControlCost(cost);
-                this.panelListCosts.Controls.Add(uc);
+                this.panelListCosts.Controls.Add(uc);                    
             }
         }
+
         #endregion
 
         #region methods
